@@ -1,0 +1,96 @@
+{
+  "users": [
+    {
+      "id": "user_001",
+      "username": "admin",
+      "email": "admin@uaws.org",
+      "password": "password",
+      "displayName": "Administrator",
+      "photoUrl": null,
+      "role": "admin",
+      "layer": "Layer3",
+      "assignedCity": "Pune",
+      "assignedWard": ["Ward 1", "Ward 2", "Ward 3"],
+      "permissions": {
+        "sterilization": {"create": true, "read": true, "update": true, "delete": true},
+        "vaccination": {"create": true, "read": true, "update": true, "delete": true},
+        "biteCases": {"create": true, "read": true, "update": true, "delete": true},
+        "quarantine": {"create": true, "read": true, "update": true, "delete": true},
+        "rabies": {"create": true, "read": true, "update": true, "delete": true},
+        "education": {"create": true, "read": true, "update": true, "delete": true}
+      },
+      "isActive": true,
+      "lastLogin": "2024-01-15T10:30:00Z",
+      "createdAt": "2024-01-01T08:00:00Z"
+    },
+    {
+      "id": "user_002",
+      "username": "supervisor1",
+      "email": "supervisor@uaws.org",
+      "password": "supervisor123",
+      "displayName": "NGO Supervisor",
+      "photoUrl": null,
+      "role": "ngo_supervisor",
+      "layer": "Layer2",
+      "assignedCity": "Pune",
+      "assignedWard": ["Ward 1", "Ward 2"],
+      "permissions": {
+        "sterilization": {"create": false, "read": true, "update": true, "delete": false},
+        "vaccination": {"create": true, "read": true, "update": true, "delete": false},
+        "biteCases": {"create": true, "read": true, "update": true, "delete": false},
+        "quarantine": {"create": true, "read": true, "update": true, "delete": false},
+        "rabies": {"create": true, "read": true, "update": true, "delete": false},
+        "education": {"create": true, "read": true, "update": true, "delete": false}
+      },
+      "isActive": true,
+      "lastLogin": "2024-01-14T15:20:00Z",
+      "createdAt": "2024-01-02T09:00:00Z"
+    },
+    {
+      "id": "user_003",
+      "username": "fieldstaff1",
+      "email": "field@uaws.org",
+      "password": "field123",
+      "displayName": "Field Staff",
+      "photoUrl": null,
+      "role": "field_staff",
+      "layer": "Layer1",
+      "assignedCity": "Pune",
+      "assignedWard": ["Ward 1"],
+      "permissions": {
+        "sterilization": {"create": true, "read": true, "update": false, "delete": false},
+        "vaccination": {"create": true, "read": true, "update": true, "delete": false},
+        "biteCases": {"create": false, "read": true, "update": false, "delete": false},
+        "quarantine": {"create": false, "read": true, "update": false, "delete": false},
+        "rabies": {"create": false, "read": true, "update": false, "delete": false},
+        "education": {"create": false, "read": true, "update": false, "delete": false}
+      },
+      "isActive": true,
+      "lastLogin": "2024-01-15T12:45:00Z",
+      "createdAt": "2024-01-03T10:00:00Z"
+    },
+    {
+      "id": "user_004",
+      "username": "municipal1",
+      "email": "municipal@pune.gov.in",
+      "password": "municipal123",
+      "displayName": "Municipal Official",
+      "photoUrl": null,
+      "role": "municipal_readonly",
+      "layer": "Layer3",
+      "assignedCity": "Pune",
+      "assignedWard": ["Ward 1", "Ward 2", "Ward 3", "Ward 4", "Ward 5"],
+      "permissions": {
+        "sterilization": {"create": false, "read": true, "update": false, "delete": false},
+        "vaccination": {"create": false, "read": true, "update": false, "delete": false},
+        "biteCases": {"create": false, "read": true, "update": false, "delete": false},
+        "quarantine": {"create": false, "read": true, "update": false, "delete": false},
+        "rabies": {"create": false, "read": true, "update": false, "delete": false},
+        "education": {"create": false, "read": true, "update": false, "delete": false}
+      },
+      "isActive": true,
+      "lastLogin": "2024-01-13T16:30:00Z",
+      "createdAt": "2024-01-04T11:00:00Z"
+    }
+  ]
+}
