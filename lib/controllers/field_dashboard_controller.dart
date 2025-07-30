@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../models/user_model.dart';
+import '../screens/Map_location_of_user.dart';
 import '../services/auth_service.dart';
 
 class FieldDashboardController extends GetxController {
@@ -32,6 +33,7 @@ class FieldDashboardController extends GetxController {
 
   // Start Pickup (Sterilization) function
   void startPickup() {
+
     final user = currentUser;
     if (user != null && user.hasPermission('sterilization', 'create')) {
       Get.snackbar(
@@ -42,6 +44,8 @@ class FieldDashboardController extends GetxController {
         snackPosition: SnackPosition.BOTTOM,
         duration: const Duration(seconds: 3),
       );
+      Get.to(() => const Map_location_of_user());
+
 
       // Navigate to pickup screen (implement when ready)
       // Get.toNamed('/sterilization-pickup');
