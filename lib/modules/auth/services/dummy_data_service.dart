@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import '../core/utils/app_logger.dart';
-import '../shared/models/models.dart';
+import '../../../core/utils/app_logger.dart';
+import '../../../shared/models/models.dart';
 
 class DummyDataService {
   static List<UserModel>? _users;

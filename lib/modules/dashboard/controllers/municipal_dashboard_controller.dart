@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../core/utils/app_logger.dart';
-import '../shared/models/models.dart';
-import '../services/auth_service.dart';
+import '../../../core/utils/app_logger.dart';
+import '../../../shared/models/models.dart';
+import '../../auth/services/auth_service.dart';
 
 class MunicipalDashboardController extends GetxController {
   UserModel? get currentUser => AuthService.to.currentUser;

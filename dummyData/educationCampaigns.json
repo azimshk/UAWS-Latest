@@ -1,0 +1,402 @@
+[
+    {
+        "id": "edu-001",
+        "campaignType": "Workshop",
+        "location": {
+            "ward": "Ward 2",
+            "address": "Gandhi Street, Central Area",
+            "gps": {
+                "lat": 18.5234,
+                "lng": 73.8567
+            }
+        },
+        "eventDate": "2024-07-15T09:00:00Z",
+        "materialsUsed": {
+            "video": true,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "Hand sanitizers, First aid leaflets"
+        },
+        "participantsReached": 85,
+        "photosProofs": [
+            "campaign_photo_1.jpg",
+            "campaign_photo_2.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Priya Patel",
+            "staffId": "staff-001"
+        },
+        "description": "Rabies Awareness Week 2024 - Highly successful campaign with good community participation and engagement.",
+        "outcome": "Increased reporting of stray animal incidents. 5 new vaccination registrations. 3 bite cases reported properly",
+        "createdAt": "2024-07-10T10:00:00Z",
+        "createdBy": "user001"
+    },
+    {
+        "id": "edu-002",
+        "campaignType": "School Visit",
+        "location": {
+            "ward": "Ward 4",
+            "address": "School Road, Education Block",
+            "gps": {
+                "lat": 18.5267,
+                "lng": 73.8389
+            }
+        },
+        "eventDate": "2024-07-18T10:00:00Z",
+        "materialsUsed": {
+            "video": true,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "Colorful stickers, Animal safety bookmarks"
+        },
+        "participantsReached": 142,
+        "photosProofs": [
+            "school_session_1.jpg",
+            "children_learning.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Amit Singh",
+            "staffId": "staff-002"
+        },
+        "description": "School Safety Program - Excellent response from children and teachers. Program to be extended to other schools.",
+        "outcome": "Children now report stray animal sightings to teachers. Zero animal bite incidents in school area since program",
+        "createdAt": "2024-07-12T09:00:00Z",
+        "createdBy": "user002"
+    },
+    {
+        "id": "edu-003",
+        "campaignType": "Others",
+        "location": {
+            "ward": "Ward 6",
+            "address": "Model Town, Residential Complex",
+            "gps": {
+                "lat": 18.5198,
+                "lng": 73.8623
+            }
+        },
+        "eventDate": "2025-07-20T08:00:00Z",
+        "materialsUsed": {
+            "video": false,
+            "pdf": true,
+            "hoardingPhotos": false,
+            "audio": false,
+            "others": "Pet ID tags, Waste disposal bags"
+        },
+        "participantsReached": 68,
+        "photosProofs": [
+            "door_to_door_1.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Neha Sharma",
+            "staffId": "staff-003"
+        },
+        "description": "Pet Owner Responsibility Drive - Good response from cooperative pet owners. Need to work on compliance enforcement.",
+        "outcome": "More pets being walked on leash. 12 new pet registrations. 8 vaccination appointments scheduled",
+        "createdAt": "2025-07-18T10:00:00Z",
+        "createdBy": "user003"
+    },
+    {
+        "id": "edu-004",
+        "campaignType": "Workshop",
+        "location": {
+            "ward": "Ward 5",
+            "address": "Market Road, Commercial Area",
+            "gps": {
+                "lat": 18.5104,
+                "lng": 73.844
+            }
+        },
+        "eventDate": "2025-07-22T15:00:00Z",
+        "materialsUsed": {
+            "video": true,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "First aid kits, Emergency contact cards"
+        },
+        "participantsReached": 54,
+        "photosProofs": [
+            "market_training_1.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Amit Singh",
+            "staffId": "staff-004"
+        },
+        "description": "Street Vendor Animal Safety Workshop - Good practical session. Vendors appreciate hands-on training approach.",
+        "outcome": "Vendors more cautious around stray animals. 2 bite incidents reported properly since training",
+        "createdAt": "2025-07-20T12:00:00Z",
+        "createdBy": "user004"
+    },
+    {
+        "id": "edu-005",
+        "campaignType": "Workshop",
+        "location": {
+            "ward": "Ward 8",
+            "address": "Temple Street, Religious Area",
+            "gps": {
+                "lat": 18.5123,
+                "lng": 73.8445
+            }
+        },
+        "eventDate": "2025-07-25T06:00:00Z",
+        "materialsUsed": {
+            "video": false,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "Animal blessing cards, Feeding guidelines"
+        },
+        "participantsReached": 135,
+        "photosProofs": [
+            "temple_session_1.jpg",
+            "blessing_ceremony.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Anita Desai",
+            "staffId": "staff-005"
+        },
+        "description": "Temple Animal Welfare Program - Excellent religious community engagement. Model for other temples.",
+        "outcome": "More organized feeding, regular health checks for temple animals. Temple animal care fund established. 6 temple dogs vaccinated",
+        "createdAt": "2025-07-23T08:00:00Z",
+        "createdBy": "user005"
+    },
+    {
+        "id": "edu-006",
+        "campaignType": "Workshop",
+        "location": {
+            "ward": "Ward 12",
+            "address": "University Road, Academic Area",
+            "gps": {
+                "lat": 18.5074,
+                "lng": 73.8077
+            }
+        },
+        "eventDate": "2025-07-28T14:00:00Z",
+        "materialsUsed": {
+            "video": true,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "Campus safety cards, Digital resource links"
+        },
+        "participantsReached": 185,
+        "photosProofs": [
+            "campus_session_1.jpg",
+            "student_demo.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Rajesh Kumar",
+            "staffId": "staff-006"
+        },
+        "description": "University Campus Animal Safety - Excellent student engagement. Strong foundation for ongoing campus program.",
+        "outcome": "Students more proactive in reporting animal issues. Campus animal welfare committee established. 15 student volunteers trained",
+        "createdAt": "2025-07-26T10:00:00Z",
+        "createdBy": "user006"
+    },
+    {
+        "id": "edu-007",
+        "campaignType": "Workshop",
+        "location": {
+            "ward": "Ward 11",
+            "address": "Industrial Area, Factory Complex",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "eventDate": "2025-07-30T09:00:00Z",
+        "materialsUsed": {
+            "video": true,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "Safety cards, Emergency contact stickers"
+        },
+        "participantsReached": 76,
+        "photosProofs": [
+            "workplace_training.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Amit Singh",
+            "staffId": "staff-007"
+        },
+        "description": "Industrial Area Worker Safety - Good workplace integration. Management supportive of regular safety training.",
+        "outcome": "Workers more aware of guard dog protocols. Zero workplace animal incidents in following month",
+        "createdAt": "2025-07-28T11:00:00Z",
+        "createdBy": "user007"
+    },
+    {
+        "id": "edu-008",
+        "campaignType": "Others",
+        "location": {
+            "ward": "Ward 15",
+            "address": "Society Road, Residential Area",
+            "gps": {
+                "lat": 18.4584,
+                "lng": 73.8078
+            }
+        },
+        "eventDate": "2025-08-02T17:00:00Z",
+        "materialsUsed": {
+            "video": false,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "Society contact cards, Pet care guidelines"
+        },
+        "participantsReached": 87,
+        "photosProofs": [
+            "society_meeting.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Neha Sharma",
+            "staffId": "staff-008"
+        },
+        "description": "Housing Society Awareness Drive - Good community engagement. Need ongoing support for implementation.",
+        "outcome": "Better compliance with pet rules, more reporting. Society pet registration increased by 40%. Resident complaints reduced by 30%",
+        "createdAt": "2025-07-31T14:00:00Z",
+        "createdBy": "user008"
+    },
+    {
+        "id": "edu-009",
+        "campaignType": "Others",
+        "location": {
+            "ward": "Ward 9",
+            "address": "Park Road, Recreation Area",
+            "gps": {
+                "lat": 18.5345,
+                "lng": 73.8456
+            }
+        },
+        "eventDate": "2025-08-05T06:30:00Z",
+        "materialsUsed": {
+            "video": false,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "Emergency contact bands, Safety whistles"
+        },
+        "participantsReached": 45,
+        "photosProofs": [
+            "park_safety.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Priya Patel",
+            "staffId": "staff-009"
+        },
+        "description": "Park Joggers Safety Workshop - Good practical session for specific user group. Early timing worked well.",
+        "outcome": "Joggers more cautious and aware. No animal incidents reported since workshop",
+        "createdAt": "2025-08-03T05:00:00Z",
+        "createdBy": "user009"
+    },
+    {
+        "id": "edu-010",
+        "campaignType": "Workshop",
+        "location": {
+            "ward": "Ward 7",
+            "address": "Elderly Care Center, Community Area",
+            "gps": {
+                "lat": 18.5285,
+                "lng": 73.8748
+            }
+        },
+        "eventDate": "2025-08-08T15:00:00Z",
+        "materialsUsed": {
+            "video": false,
+            "pdf": true,
+            "hoardingPhotos": false,
+            "audio": false,
+            "others": "Large print emergency cards, Magnifying glasses"
+        },
+        "participantsReached": 32,
+        "photosProofs": [
+            "seniors_session.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Anita Desai",
+            "staffId": "staff-010"
+        },
+        "description": "Senior Citizens Animal Safety - Excellent response from senior citizens. Age-appropriate approach very effective.",
+        "outcome": "Seniors more likely to seek help with animal issues. Family emergency contact system established for 28 seniors",
+        "createdAt": "2025-08-06T12:00:00Z",
+        "createdBy": "user010"
+    },
+    {
+        "id": "edu-011",
+        "campaignType": "Workshop",
+        "location": {
+            "ward": "Ward 3",
+            "address": "Hospital Road, Medical Area",
+            "gps": {
+                "lat": 18.5204,
+                "lng": 73.8567
+            }
+        },
+        "eventDate": "2025-08-10T11:00:00Z",
+        "materialsUsed": {
+            "video": true,
+            "pdf": true,
+            "hoardingPhotos": true,
+            "audio": false,
+            "others": "Medical reference cards, Protocol charts"
+        },
+        "participantsReached": 48,
+        "photosProofs": [
+            "medical_training.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Rajesh Kumar",
+            "staffId": "staff-011"
+        },
+        "description": "Healthcare Workers Training - Excellent professional development session. Critical for proper patient care.",
+        "outcome": "Improved adherence to bite treatment protocols. 100% compliance with new PEP protocols. Better documentation of bite cases",
+        "createdAt": "2025-08-08T09:00:00Z",
+        "createdBy": "user011"
+    },
+    {
+        "id": "edu-012",
+        "campaignType": "Workshop",
+        "location": {
+            "ward": "Ward 10",
+            "address": "Logistics Area, Commercial Zone",
+            "gps": {
+                "lat": 18.5078,
+                "lng": 73.8512
+            }
+        },
+        "eventDate": "2025-08-12T16:00:00Z",
+        "materialsUsed": {
+            "video": false,
+            "pdf": true,
+            "hoardingPhotos": false,
+            "audio": false,
+            "others": "Safety gear, Emergency contact stickers"
+        },
+        "participantsReached": 61,
+        "photosProofs": [
+            "delivery_training.jpg"
+        ],
+        "conductedBy": {
+            "ngoName": "United Animal Welfare Society (UAWS)",
+            "partnerName": "Dr. Amit Singh",
+            "staffId": "staff-012"
+        },
+        "description": "Delivery Workers Safety Training - Practical training much appreciated. Focus on real-world scenarios effective.",
+        "outcome": "Workers more cautious, better reporting. 30% reduction in delivery worker animal incidents",
+        "createdAt": "2025-08-10T13:00:00Z",
+        "createdBy": "user012"
+    }
+]

@@ -1,0 +1,877 @@
+[
+    {
+        "id": "bite-001",
+        "reportedDate": "2024-07-20T10:30:00Z",
+        "incidentDate": "2024-07-20T08:15:00Z",
+        "source": "Public",
+        "location": {
+            "address": "Near Government Hospital, Main Road",
+            "ward": "Ward 3",
+            "gps": {
+                "lat": 18.5204,
+                "lng": 73.8567
+            }
+        },
+        "victimDetails": {
+            "name": "Rahul Sharma",
+            "age": 12,
+            "gender": "Male",
+            "contact": "+91-9876543210",
+            "address": "123 Gandhi Street, Ward 3"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "sex": "Male",
+            "size": "Medium",
+            "color": "Brown with white patches",
+            "behavior": "Aggressive",
+            "ownershipStatus": "Stray",
+            "vaccinationStatus": "Unknown"
+        },
+        "incidentDetails": {
+            "bodyPart": "Left leg",
+            "severity": "Major",
+            "circumstances": "Child was playing in the street when the dog suddenly attacked",
+            "witnesses": [
+                "Neighbor Mrs. Gupta",
+                "Local shopkeeper"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "Government Hospital",
+            "doctorName": "Dr. Amit Singh",
+            "treatmentReceived": "Wound cleaning, tetanus shot, rabies vaccination started",
+            "antiRabiesVaccineStatus": "Given",
+            "treatmentDate": "2024-07-20T12:00:00Z",
+            "followUpRequired": true,
+            "nextAppointment": "2024-07-23T10:00:00Z"
+        },
+        "quarantine": {
+            "quarantineRequired": true,
+            "quarantineId": "quarantine-001"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Priya Patel",
+        "priority": "High",
+        "status": "Under Investigation",
+        "notes": "Animal has been located and quarantined. Victim is recovering well.",
+        "photos": [],
+        "createdAt": "2024-07-20T10:30:00Z",
+        "createdBy": "user001",
+        "lastUpdated": "2024-07-21T14:20:00Z"
+    },
+    {
+        "id": "bite-002",
+        "reportedDate": "2024-07-19T15:45:00Z",
+        "incidentDate": "2024-07-19T14:00:00Z",
+        "source": "PMC",
+        "location": {
+            "address": "School Compound, Children Park",
+            "ward": "Ward 1",
+            "gps": {
+                "lat": 18.5158,
+                "lng": 73.856
+            }
+        },
+        "victimDetails": {
+            "name": "Anita Devi",
+            "age": 35,
+            "gender": "Female",
+            "contact": "+91-9876543211",
+            "address": "456 Nehru Road, Ward 1"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "sex": "Male",
+            "size": "Large",
+            "color": "Black",
+            "behavior": "Defensive",
+            "ownershipStatus": "Owned",
+            "ownerDetails": {
+                "name": "Rajesh Kumar",
+                "contact": "+91-9876543212"
+            },
+            "vaccinationStatus": "Vaccinated"
+        },
+        "incidentDetails": {
+            "bodyPart": "Right hand",
+            "severity": "Minor",
+            "circumstances": "Tried to pet the dog while it was eating",
+            "witnesses": [
+                "School guard",
+                "Another parent"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": false,
+            "doctorName": "Dr. Anita Sharma",
+            "treatmentReceived": "Basic wound cleaning and antiseptic",
+            "antiRabiesVaccineStatus": "Not Required",
+            "followUpRequired": false
+        },
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        },
+        "investigationStatus": "Resolved",
+        "assignedOfficer": "Dr. Amit Singh",
+        "priority": "Low",
+        "status": "Closed",
+        "notes": "Owner cooperative, dog properly vaccinated. Minor incident resolved.",
+        "photos": [],
+        "createdAt": "2024-07-19T15:45:00Z",
+        "createdBy": "user002",
+        "lastUpdated": "2024-07-20T09:15:00Z"
+    },
+    {
+        "id": "bite-003",
+        "reportedDate": "2024-07-18T09:20:00Z",
+        "incidentDate": "2024-07-18T07:30:00Z",
+        "source": "Online",
+        "location": {
+            "address": "Market Area, Vegetable Market",
+            "ward": "Ward 5",
+            "gps": {
+                "lat": 18.5104,
+                "lng": 73.844
+            }
+        },
+        "victimDetails": {
+            "name": "Mohan Lal",
+            "age": 45,
+            "gender": "Male",
+            "contact": "+91-9876543213",
+            "address": "789 Market Street, Ward 5"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "sex": "Female",
+            "size": "Small",
+            "color": "Mixed brown and white",
+            "behavior": "Fearful",
+            "ownershipStatus": "Stray",
+            "vaccinationStatus": "Unknown"
+        },
+        "incidentDetails": {
+            "bodyPart": "Ankle",
+            "severity": "Fatal",
+            "circumstances": "Vendor was setting up shop when stray dog bit ankle",
+            "witnesses": [
+                "Other vendors",
+                "Security guard"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "District Hospital",
+            "doctorName": "Dr. Rajesh Gupta",
+            "treatmentReceived": "Deep wound cleaning, stitches, rabies post-exposure prophylaxis",
+            "antiRabiesVaccineStatus": "Given",
+            "followUpRequired": true,
+            "nextAppointment": "2024-07-25T11:00:00Z"
+        },
+        "quarantine": {
+            "quarantineRequired": true,
+            "quarantineId": "quarantine-003"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Priya Patel",
+        "priority": "High",
+        "status": "Active",
+        "notes": "Animal caught for observation. Victim requires continued medical care.",
+        "photos": [],
+        "createdAt": "2024-07-18T09:20:00Z",
+        "createdBy": "user003",
+        "lastUpdated": "2024-07-21T16:45:00Z"
+    },
+    {
+        "id": "bite-004",
+        "reportedDate": "2025-07-25T14:20:00Z",
+        "incidentDate": "2025-07-25T12:45:00Z",
+        "source": "Public",
+        "location": {
+            "address": "Bus Station, Platform 2",
+            "ward": "Ward 7",
+            "gps": {
+                "lat": 18.5285,
+                "lng": 73.8748
+            }
+        },
+        "victimDetails": {
+            "name": "Priya Joshi",
+            "age": 28,
+            "gender": "Female",
+            "contact": "+91-9876543214",
+            "address": "101 Station Road, Ward 7"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "sex": "Male",
+            "size": "Large",
+            "color": "Golden brown",
+            "behavior": "Territorial",
+            "ownershipStatus": "Stray",
+            "vaccinationStatus": "Unknown"
+        },
+        "incidentDetails": {
+            "bodyPart": "Right arm",
+            "severity": "Major",
+            "circumstances": "Dog was sleeping near bus stand, bit when accidentally stepped on",
+            "witnesses": [
+                "Bus conductor",
+                "Waiting passengers"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "Private Clinic",
+            "doctorName": "Dr. Neha Sharma",
+            "treatmentReceived": "Wound dressing, antibiotics, anti-rabies vaccination",
+            "antiRabiesVaccineStatus": "Given",
+            "followUpRequired": true,
+            "nextAppointment": "2025-07-28T15:00:00Z"
+        },
+        "quarantine": {
+            "quarantineRequired": true,
+            "quarantineId": "quarantine-004"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Neha Sharma",
+        "priority": "Medium",
+        "status": "Active",
+        "notes": "Animal relocated from bus station. Victim stable.",
+        "photos": [],
+        "createdAt": "2025-07-25T14:20:00Z",
+        "createdBy": "user004",
+        "lastUpdated": "2025-07-25T16:30:00Z"
+    },
+    {
+        "id": "bite-005",
+        "reportedDate": "2025-07-24T11:15:00Z",
+        "incidentDate": "2025-07-24T09:30:00Z",
+        "source": "PMC",
+        "location": {
+            "address": "University Campus, Science Block",
+            "ward": "Ward 12",
+            "gps": {
+                "lat": 18.5074,
+                "lng": 73.8077
+            }
+        },
+        "victimDetails": {
+            "name": "Arjun Patel",
+            "age": 22,
+            "gender": "Male",
+            "contact": "+91-9876543215",
+            "address": "University Hostel Block A"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "sex": "Female",
+            "size": "Medium",
+            "color": "Black and tan",
+            "behavior": "Playful",
+            "ownershipStatus": "Campus dog",
+            "vaccinationStatus": "Vaccinated"
+        },
+        "incidentDetails": {
+            "bodyPart": "Left hand",
+            "severity": "Minor",
+            "circumstances": "Student was feeding the campus dog, accidental bite during play",
+            "witnesses": [
+                "Fellow students",
+                "Security guard"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": false,
+            "doctorName": "Campus Medical Officer",
+            "treatmentReceived": "Antiseptic cleaning, bandage",
+            "antiRabiesVaccineStatus": "Not Required",
+            "followUpRequired": false
+        },
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        },
+        "investigationStatus": "Resolved",
+        "assignedOfficer": "Dr. Rajesh Kumar",
+        "priority": "Low",
+        "status": "Closed",
+        "notes": "Campus dog with vaccination records. Minor accidental bite during feeding.",
+        "photos": [],
+        "createdAt": "2025-07-24T11:15:00Z",
+        "createdBy": "user005",
+        "lastUpdated": "2025-07-24T14:20:00Z"
+    },
+    {
+        "id": "bite-006",
+        "reportedDate": "2025-07-23T16:40:00Z",
+        "incidentDate": "2025-07-23T15:00:00Z",
+        "source": "Online",
+        "location": {
+            "address": "Residential Society, Building B",
+            "ward": "Ward 15",
+            "gps": {
+                "lat": 18.4584,
+                "lng": 73.8078
+            }
+        },
+        "victimDetails": {
+            "name": "Kavya Singh",
+            "age": 8,
+            "gender": "Female",
+            "contact": "+91-9876543216",
+            "address": "Sunshine Apartments, Flat 203"
+        },
+        "animalDetails": {
+            "species": "Cat",
+            "sex": "Female",
+            "size": "Small",
+            "color": "Grey and white",
+            "behavior": "Defensive",
+            "ownershipStatus": "Owned",
+            "ownerDetails": {
+                "name": "Mrs. Desai",
+                "contact": "+91-9876543217"
+            },
+            "vaccinationStatus": "Vaccinated"
+        },
+        "incidentDetails": {
+            "bodyPart": "Right finger",
+            "severity": "Minor",
+            "circumstances": "Child tried to pick up neighbor's cat, cat scratched in defense",
+            "witnesses": [
+                "Mother",
+                "Neighbor Mrs. Desai"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": false,
+            "doctorName": "Family Doctor",
+            "treatmentReceived": "Wound cleaning, antiseptic cream",
+            "antiRabiesVaccineStatus": "Not Required",
+            "followUpRequired": false
+        },
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        },
+        "investigationStatus": "Resolved",
+        "assignedOfficer": "Dr. Anita Desai",
+        "priority": "Low",
+        "status": "Closed",
+        "notes": "Pet cat, current vaccinations. Minor defensive scratch, resolved amicably.",
+        "photos": [],
+        "createdAt": "2025-07-23T16:40:00Z",
+        "createdBy": "user006",
+        "lastUpdated": "2025-07-23T18:00:00Z"
+    },
+    {
+        "id": "bite-007",
+        "reportedDate": "2025-07-22T08:30:00Z",
+        "incidentDate": "2025-07-22T06:45:00Z",
+        "location": {
+            "address": "Jogging Track, City Park",
+            "ward": "Ward 9",
+            "gps": {
+                "lat": 18.5345,
+                "lng": 73.8456
+            }
+        },
+        "victimDetails": {
+            "name": "Vikram Rao",
+            "age": 38,
+            "gender": "Male",
+            "contact": "+91-9876543218",
+            "address": "Park View Society, Ward 9"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "size": "Large",
+            "color": "German Shepherd mix",
+            "behavior": "Aggressive",
+            "ownershipStatus": "Stray",
+            "vaccinationStatus": "Unknown",
+            "sex": "Male"
+        },
+        "incidentDetails": {
+            "bodyPart": "Calf muscle",
+            "severity": "Fatal",
+            "circumstances": "Early morning jogger attacked by aggressive stray dog",
+            "witnesses": [
+                "Other joggers",
+                "Park maintenance staff"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "City Hospital",
+            "treatmentReceived": "Emergency wound care, stitches, rabies PEP, tetanus booster",
+            "followUpRequired": true,
+            "nextAppointment": "2025-07-25T09:00:00Z",
+            "doctorName": "Dr. Amit Singh",
+            "antiRabiesVaccineStatus": "Given"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Priya Patel",
+        "priority": "Critical",
+        "status": "Active",
+        "notes": "Serious bite requiring immediate medical attention. Animal search ongoing.",
+        "photos": [],
+        "createdAt": "2025-07-22T08:30:00Z",
+        "createdBy": "user007",
+        "lastUpdated": "2025-07-22T12:15:00Z",
+        "source": "Online",
+        "quarantine": {
+            "quarantineRequired": true,
+            "quarantineId": "quarantine-007"
+        }
+    },
+    {
+        "id": "bite-008",
+        "reportedDate": "2025-07-21T13:20:00Z",
+        "incidentDate": "2025-07-21T11:30:00Z",
+        "location": {
+            "address": "Shopping Mall Parking",
+            "ward": "Ward 6",
+            "gps": {
+                "lat": 18.5198,
+                "lng": 73.8623
+            }
+        },
+        "victimDetails": {
+            "name": "Shreya Kulkarni",
+            "age": 26,
+            "gender": "Female",
+            "contact": "+91-9876543219",
+            "address": "Mall Road Apartments, Ward 6"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "size": "Medium",
+            "color": "White with brown spots",
+            "behavior": "Protective",
+            "ownershipStatus": "Owned",
+            "ownerDetails": {
+                "name": "Security Guard Ramesh",
+                "contact": "+91-9876543220"
+            },
+            "vaccinationStatus": "Vaccinated",
+            "sex": "Male"
+        },
+        "incidentDetails": {
+            "bodyPart": "Left ankle",
+            "severity": "Moderate",
+            "circumstances": "Mall security dog bit visitor who was running towards exit",
+            "witnesses": [
+                "Security staff",
+                "Mall visitors"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "Nearby Medical Center",
+            "treatmentReceived": "Wound cleaning, bandaging, preventive antibiotics",
+            "followUpRequired": true,
+            "nextAppointment": "2025-07-24T10:30:00Z",
+            "doctorName": "Dr. Anita Desai",
+            "antiRabiesVaccineStatus": "Not Required"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Amit Singh",
+        "priority": "Medium",
+        "status": "Active",
+        "notes": "Security dog with valid vaccination. Investigating circumstances.",
+        "photos": [],
+        "createdAt": "2025-07-21T13:20:00Z",
+        "createdBy": "user008",
+        "lastUpdated": "2025-07-21T17:45:00Z",
+        "source": "Public",
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        }
+    },
+    {
+        "id": "bite-009",
+        "reportedDate": "2025-07-20T10:15:00Z",
+        "incidentDate": "2025-07-20T08:30:00Z",
+        "location": {
+            "address": "School Gate, Primary Section",
+            "ward": "Ward 4",
+            "gps": {
+                "lat": 18.5267,
+                "lng": 73.8389
+            }
+        },
+        "victimDetails": {
+            "name": "Rohan Mehta",
+            "age": 10,
+            "gender": "Male",
+            "contact": "+91-9876543221",
+            "address": "Teacher's Colony, Ward 4"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "size": "Small",
+            "color": "Brown",
+            "behavior": "Fearful",
+            "ownershipStatus": "Stray",
+            "vaccinationStatus": "Unknown",
+            "sex": "Female"
+        },
+        "incidentDetails": {
+            "bodyPart": "Right hand",
+            "severity": "Minor",
+            "circumstances": "Child tried to feed school stray dog, minor bite occurred",
+            "witnesses": [
+                "School teacher",
+                "Other children"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "School Medical Room + Family Doctor",
+            "treatmentReceived": "First aid, referred to family doctor for precautionary shots",
+            "followUpRequired": true,
+            "nextAppointment": "2025-07-23T16:00:00Z",
+            "doctorName": "Dr. Rajesh Kumar",
+            "antiRabiesVaccineStatus": "Given"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Neha Sharma",
+        "priority": "Medium",
+        "status": "Active",
+        "notes": "School stray dog. Coordinating with school administration for animal welfare.",
+        "photos": [],
+        "createdAt": "2025-07-20T10:15:00Z",
+        "createdBy": "user009",
+        "lastUpdated": "2025-07-20T14:30:00Z",
+        "source": "Public",
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        }
+    },
+    {
+        "id": "bite-010",
+        "reportedDate": "2025-07-19T17:30:00Z",
+        "incidentDate": "2025-07-19T16:00:00Z",
+        "location": {
+            "address": "Industrial Area, Factory Gate",
+            "ward": "Ward 11",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "victimDetails": {
+            "name": "Ganesh Patil",
+            "age": 42,
+            "gender": "Male",
+            "contact": "+91-9876543222",
+            "address": "Worker's Quarters, Ward 11"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "size": "Large",
+            "color": "Black",
+            "behavior": "Guard dog behavior",
+            "ownershipStatus": "Factory guard dog",
+            "ownerDetails": {
+                "name": "ABC Manufacturing Ltd",
+                "contact": "+91-9876543223"
+            },
+            "vaccinationStatus": "Vaccinated",
+            "sex": "Male"
+        },
+        "incidentDetails": {
+            "bodyPart": "Thigh",
+            "severity": "Moderate",
+            "circumstances": "Factory worker bitten by guard dog during shift change",
+            "witnesses": [
+                "Other workers",
+                "Security supervisor"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "Industrial Hospital",
+            "treatmentReceived": "Wound treatment, antibiotics, updated vaccinations",
+            "followUpRequired": true,
+            "nextAppointment": "2025-07-22T14:00:00Z",
+            "doctorName": "Dr. Anita Desai",
+            "antiRabiesVaccineStatus": "Not Required"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Rajesh Kumar",
+        "priority": "Medium",
+        "status": "Active",
+        "notes": "Workplace incident with factory guard dog. Reviewing safety protocols.",
+        "photos": [],
+        "createdAt": "2025-07-19T17:30:00Z",
+        "createdBy": "user010",
+        "lastUpdated": "2025-07-19T20:15:00Z",
+        "source": "PMC",
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        }
+    },
+    {
+        "id": "bite-011",
+        "reportedDate": "2025-07-18T14:45:00Z",
+        "incidentDate": "2025-07-18T13:15:00Z",
+        "location": {
+            "address": "Temple Complex, Main Entrance",
+            "ward": "Ward 8",
+            "gps": {
+                "lat": 18.5123,
+                "lng": 73.8445
+            }
+        },
+        "victimDetails": {
+            "name": "Sunita Yadav",
+            "age": 55,
+            "gender": "Female",
+            "contact": "+91-9876543224",
+            "address": "Temple Street, Ward 8"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "size": "Medium",
+            "color": "Golden",
+            "behavior": "Temple dog, usually friendly",
+            "ownershipStatus": "Community dog",
+            "vaccinationStatus": "Vaccinated by temple committee",
+            "sex": "Female"
+        },
+        "incidentDetails": {
+            "bodyPart": "Lower leg",
+            "severity": "Minor",
+            "circumstances": "Temple visitor accidentally stepped on sleeping dog",
+            "witnesses": [
+                "Temple priest",
+                "Other devotees"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": false,
+            "treatmentReceived": "Temple first aid, antiseptic application",
+            "followUpRequired": false,
+            "doctorName": "Family Doctor",
+            "antiRabiesVaccineStatus": "Not Required"
+        },
+        "investigationStatus": "Resolved",
+        "assignedOfficer": "Dr. Anita Desai",
+        "priority": "Low",
+        "status": "Closed",
+        "notes": "Well-known temple dog with vaccination records. Accidental minor incident.",
+        "photos": [],
+        "createdAt": "2025-07-18T14:45:00Z",
+        "createdBy": "user011",
+        "lastUpdated": "2025-07-18T16:30:00Z",
+        "source": "PMC",
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        }
+    },
+    {
+        "id": "bite-012",
+        "reportedDate": "2025-07-17T12:00:00Z",
+        "incidentDate": "2025-07-17T10:20:00Z",
+        "location": {
+            "address": "Riverside Park, Jogging Track",
+            "ward": "Ward 13",
+            "gps": {
+                "lat": 18.4956,
+                "lng": 73.8234
+            }
+        },
+        "victimDetails": {
+            "name": "Anil Joshi",
+            "age": 31,
+            "gender": "Male",
+            "contact": "+91-9876543225",
+            "address": "Riverside Apartments, Ward 13"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "size": "Large",
+            "color": "Mixed breed, brown and black",
+            "behavior": "Territorial",
+            "ownershipStatus": "Stray",
+            "vaccinationStatus": "Unknown",
+            "sex": "Female"
+        },
+        "incidentDetails": {
+            "bodyPart": "Right forearm",
+            "severity": "Fatal",
+            "circumstances": "Cyclist bitten while trying to avoid dog on narrow path",
+            "witnesses": [
+                "Park joggers",
+                "Cyclist group members"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "Emergency Hospital",
+            "treatmentReceived": "Deep wound cleaning, sutures, rabies PEP series initiated",
+            "followUpRequired": true,
+            "nextAppointment": "2025-07-20T11:00:00Z",
+            "doctorName": "Dr. Amit Singh",
+            "antiRabiesVaccineStatus": "Given"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Priya Patel",
+        "priority": "High",
+        "status": "Active",
+        "notes": "Serious bite incident. Animal capture team deployed to park area.",
+        "photos": [],
+        "createdAt": "2025-07-17T12:00:00Z",
+        "createdBy": "user012",
+        "lastUpdated": "2025-07-17T15:45:00Z",
+        "source": "Online",
+        "quarantine": {
+            "quarantineRequired": true,
+            "quarantineId": "quarantine-012"
+        }
+    },
+    {
+        "id": "bite-013",
+        "reportedDate": "2025-07-16T09:30:00Z",
+        "incidentDate": "2025-07-16T08:00:00Z",
+        "location": {
+            "address": "Vegetable Market, Wholesale Section",
+            "ward": "Ward 10",
+            "gps": {
+                "lat": 18.5078,
+                "lng": 73.8512
+            }
+        },
+        "victimDetails": {
+            "name": "Deepika Sharma",
+            "age": 29,
+            "gender": "Female",
+            "contact": "+91-9876543226",
+            "address": "Market Area Residence, Ward 10"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "size": "Medium",
+            "color": "Street dog, mixed colors",
+            "behavior": "Food protective",
+            "ownershipStatus": "Market stray",
+            "vaccinationStatus": "Unknown",
+            "sex": "Female"
+        },
+        "incidentDetails": {
+            "bodyPart": "Left hand",
+            "severity": "Moderate",
+            "circumstances": "Vendor bitten while clearing food scraps near dog",
+            "witnesses": [
+                "Other vendors",
+                "Market supervisor"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": true,
+            "hospitalName": "Community Health Center",
+            "treatmentReceived": "Wound care, antibiotics, rabies prevention protocol",
+            "followUpRequired": true,
+            "nextAppointment": "2025-07-19T13:30:00Z",
+            "doctorName": "Dr. Amit Singh",
+            "antiRabiesVaccineStatus": "Given"
+        },
+        "investigationStatus": "Under Investigation",
+        "assignedOfficer": "Dr. Amit Singh",
+        "priority": "Medium",
+        "status": "Active",
+        "notes": "Market area stray. Coordinating with market committee for animal management.",
+        "photos": [],
+        "createdAt": "2025-07-16T09:30:00Z",
+        "createdBy": "user013",
+        "lastUpdated": "2025-07-16T13:20:00Z",
+        "source": "PMC",
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        }
+    },
+    {
+        "id": "bite-014",
+        "reportedDate": "2025-07-15T15:15:00Z",
+        "incidentDate": "2025-07-15T14:30:00Z",
+        "location": {
+            "address": "Housing Society, Children's Play Area",
+            "ward": "Ward 2",
+            "gps": {
+                "lat": 18.5234,
+                "lng": 73.8678
+            }
+        },
+        "victimDetails": {
+            "name": "Tanvi Patil",
+            "age": 6,
+            "gender": "Female",
+            "contact": "+91-9876543227",
+            "address": "Greenview Society, B-Wing"
+        },
+        "animalDetails": {
+            "species": "Dog",
+            "size": "Small",
+            "color": "White and brown",
+            "behavior": "Usually friendly",
+            "ownershipStatus": "Society pet",
+            "vaccinationStatus": "Vaccinated",
+            "sex": "Female"
+        },
+        "incidentDetails": {
+            "bodyPart": "Finger",
+            "severity": "Minor",
+            "circumstances": "Child playing with society dog, accidental nip during play",
+            "witnesses": [
+                "Mother",
+                "Society members"
+            ]
+        },
+        "medicalDetails": {
+            "firstAidGiven": true,
+            "hospitalVisit": false,
+            "treatmentReceived": "Cleaning and bandaging at home",
+            "followUpRequired": false,
+            "doctorName": "Family Doctor",
+            "antiRabiesVaccineStatus": "Not Required"
+        },
+        "investigationStatus": "Resolved",
+        "assignedOfficer": "Dr. Neha Sharma",
+        "priority": "Low",
+        "status": "Closed",
+        "notes": "Society pet with current vaccinations. Very minor accidental contact during play.",
+        "photos": [],
+        "createdAt": "2025-07-15T15:15:00Z",
+        "createdBy": "user014",
+        "lastUpdated": "2025-07-15T17:00:00Z",
+        "source": "Online",
+        "quarantine": {
+            "quarantineRequired": false,
+            "quarantineId": null
+        }
+    }
+]

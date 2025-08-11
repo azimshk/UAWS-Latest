@@ -1,0 +1,392 @@
+[
+    {
+        "id": "vaccination-001",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Adult",
+        "ward": "Ward 3",
+        "zone": "Central Zone",
+        "tagNumber": "UAWS-VAC001",
+        "identificationMarks": "Brown with white patches, friendly temperament",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2024-07-20T14:00:00Z",
+        "nextDueDate": "2025-07-20T14:00:00Z",
+        "batchNumber": "RAB-2024-078",
+        "veterinarianId": "vet001",
+        "location": {
+            "address": "Near Government Hospital, Main Road",
+            "gps": {
+                "lat": 18.5204,
+                "lng": 73.8567
+            }
+        },
+        "photoURL": "vaccination_001.jpg",
+        "notes": "First rabies vaccination, animal cooperative",
+        "createdAt": "2024-07-20T14:00:00Z",
+        "createdBy": "user001"
+    },
+    {
+        "id": "vaccination-002",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Puppy",
+        "ward": "Ward 1",
+        "zone": "North Zone",
+        "tagNumber": "UAWS-VAC002",
+        "identificationMarks": "Small size, black color with white paws",
+        "vaccineType": "DHPP",
+        "vaccinationDate": "2024-07-19T10:30:00Z",
+        "nextDueDate": "2024-08-16T10:30:00Z",
+        "batchNumber": "DHPP-2024-051",
+        "veterinarianId": "vet002",
+        "location": {
+            "address": "School Compound, Children Park",
+            "gps": {
+                "lat": 18.5158,
+                "lng": 73.856
+            }
+        },
+        "photoURL": "vaccination_002.jpg",
+        "notes": "First DHPP shot for puppy, scheduled for follow-up",
+        "createdAt": "2024-07-19T10:30:00Z",
+        "createdBy": "user002"
+    },
+    {
+        "id": "vaccination-003",
+        "species": "Cat",
+        "sex": "Female",
+        "ageGroup": "Adult",
+        "ward": "Ward 5",
+        "zone": "South Zone",
+        "tagNumber": "UAWS-VAC003",
+        "identificationMarks": "Orange tabby with white belly, ear notch present",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2024-07-18T09:15:00Z",
+        "nextDueDate": "2025-07-18T09:15:00Z",
+        "batchNumber": "RAB-2024-079",
+        "veterinarianId": "vet001",
+        "location": {
+            "address": "Market Area, Vegetable Market",
+            "gps": {
+                "lat": 18.5104,
+                "lng": 73.844
+            }
+        },
+        "photoURL": "vaccination_003.jpg",
+        "notes": "Annual rabies vaccination, cat in good health",
+        "createdAt": "2024-07-18T09:15:00Z",
+        "createdBy": "user003"
+    },
+    {
+        "id": "vaccination-004",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Adult",
+        "ward": "Ward 2",
+        "zone": "East Zone",
+        "tagNumber": "UAWS-VAC004",
+        "identificationMarks": "Large breed, golden color, calm behavior",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2024-07-17T15:45:00Z",
+        "nextDueDate": "2025-07-17T15:45:00Z",
+        "batchNumber": "RAB-2024-080",
+        "veterinarianId": "vet002",
+        "location": {
+            "address": "Community Center Area, Gandhi Street",
+            "gps": {
+                "lat": 18.5234,
+                "lng": 73.8678
+            }
+        },
+        "photoURL": "vaccination_004.jpg",
+        "notes": "Booster shot, previously vaccinated animal",
+        "createdAt": "2024-07-17T15:45:00Z",
+        "createdBy": "user001"
+    },
+    {
+        "id": "vaccination-005",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Juvenile",
+        "ward": "Ward 4",
+        "zone": "West Zone",
+        "tagNumber": "UAWS-VAC005",
+        "identificationMarks": "Medium size, mixed breed, brown and white patches",
+        "vaccineType": "DHPP",
+        "vaccinationDate": "2024-07-16T11:20:00Z",
+        "nextDueDate": "2024-08-13T11:20:00Z",
+        "batchNumber": "DHPP-2024-052",
+        "veterinarianId": "vet001",
+        "location": {
+            "address": "Residential Area, Block C",
+            "gps": {
+                "lat": 18.5267,
+                "lng": 73.8389
+            }
+        },
+        "photoURL": "vaccination_005.jpg",
+        "notes": "Second DHPP vaccination in series",
+        "createdAt": "2024-07-16T11:20:00Z",
+        "createdBy": "user002"
+    },
+    {
+        "id": "vaccination-006",
+        "species": "Cat",
+        "sex": "Male",
+        "ageGroup": "Adult",
+        "ward": "Ward 6",
+        "zone": "Central Zone",
+        "tagNumber": "UAWS-VAC006",
+        "identificationMarks": "Black cat with white chest, very friendly",
+        "vaccineType": "Others",
+        "vaccinationDate": "2024-07-15T13:30:00Z",
+        "nextDueDate": "2025-07-15T13:30:00Z",
+        "batchNumber": "FVRCP-2024-025",
+        "veterinarianId": "vet002",
+        "location": {
+            "address": "Park Area, Central Garden",
+            "gps": {
+                "lat": 18.5198,
+                "lng": 73.8623
+            }
+        },
+        "photoURL": "vaccination_006.jpg",
+        "notes": "FVRCP vaccination for feline, excellent response",
+        "createdAt": "2024-07-15T13:30:00Z",
+        "createdBy": "user003"
+    },
+    {
+        "id": "vaccination-007",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Senior",
+        "ward": "Ward 3",
+        "zone": "Central Zone",
+        "tagNumber": "UAWS-VAC007",
+        "identificationMarks": "Large size, grey coat, shows signs of aging",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2024-07-14T08:45:00Z",
+        "nextDueDate": "2025-07-14T08:45:00Z",
+        "batchNumber": "RAB-2024-081",
+        "veterinarianId": "vet001",
+        "location": {
+            "address": "Old Bus Stand Area",
+            "gps": {
+                "lat": 18.5285,
+                "lng": 73.8748
+            }
+        },
+        "photoURL": "vaccination_007.jpg",
+        "notes": "Senior dog vaccination, monitored for adverse reactions",
+        "createdAt": "2024-07-14T08:45:00Z",
+        "createdBy": "user001"
+    },
+    {
+        "id": "vaccination-008",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Puppy",
+        "ward": "Ward 1",
+        "zone": "North Zone",
+        "tagNumber": "UAWS-VAC008",
+        "identificationMarks": "Small puppy, spotted coat, very playful",
+        "vaccineType": "DHPP",
+        "vaccinationDate": "2024-07-13T16:00:00Z",
+        "nextDueDate": "2024-08-10T16:00:00Z",
+        "batchNumber": "DHPP-2024-053",
+        "veterinarianId": "vet002",
+        "location": {
+            "address": "Slum Area, Near Water Tank",
+            "gps": {
+                "lat": 18.5123,
+                "lng": 73.8445
+            }
+        },
+        "photoURL": "vaccination_008.jpg",
+        "notes": "First vaccination for young puppy, mother present during vaccination",
+        "createdAt": "2024-07-13T16:00:00Z",
+        "createdBy": "user002"
+    },
+    {
+        "id": "vaccination-009",
+        "species": "Cat",
+        "sex": "Female",
+        "ageGroup": "Adult",
+        "ward": "Ward 7",
+        "zone": "South Zone",
+        "tagNumber": "UAWS-VAC009",
+        "identificationMarks": "Calico pattern, medium size, slightly shy",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2024-07-12T12:15:00Z",
+        "nextDueDate": "2025-07-12T12:15:00Z",
+        "batchNumber": "RAB-2024-082",
+        "veterinarianId": "vet001",
+        "location": {
+            "address": "Industrial Area, Factory Complex",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "photoURL": "vaccination_009.jpg",
+        "notes": "Factory area cat, part of community program",
+        "createdAt": "2024-07-12T12:15:00Z",
+        "createdBy": "user003"
+    },
+    {
+        "id": "vaccination-010",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Adult",
+        "ward": "Ward 8",
+        "zone": "East Zone",
+        "tagNumber": "UAWS-VAC010",
+        "identificationMarks": "Medium size, street dog, shows signs of previous injuries",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2024-07-11T10:30:00Z",
+        "nextDueDate": "2025-07-11T10:30:00Z",
+        "batchNumber": "RAB-2024-083",
+        "veterinarianId": "vet002",
+        "location": {
+            "address": "Highway Junction, Near Toll Plaza",
+            "gps": {
+                "lat": 18.5345,
+                "lng": 73.8456
+            }
+        },
+        "photoURL": "vaccination_010.jpg",
+        "notes": "Highway area vaccination drive, animal in fair health",
+        "createdAt": "2024-07-11T10:30:00Z",
+        "createdBy": "user001"
+    },
+    {
+        "id": "vaccination-011",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Adult",
+        "ward": "Ward 9",
+        "zone": "West Zone",
+        "tagNumber": "UAWS-VAC011",
+        "identificationMarks": "Park area dog, well-fed by joggers, golden coat",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2025-07-25T09:00:00Z",
+        "nextDueDate": "2026-07-25T09:00:00Z",
+        "batchNumber": "RAB-2025-101",
+        "veterinarianId": "vet003",
+        "location": {
+            "address": "City Central Park, Jogging Track",
+            "gps": {
+                "lat": 18.5345,
+                "lng": 73.8456
+            }
+        },
+        "photoURL": "vaccination_011.jpg",
+        "notes": "Popular park dog, vaccinated during morning rounds",
+        "createdAt": "2025-07-25T09:00:00Z",
+        "createdBy": "user004"
+    },
+    {
+        "id": "vaccination-012",
+        "species": "Cat",
+        "sex": "Male",
+        "ageGroup": "Adult",
+        "ward": "Ward 10",
+        "zone": "East Zone",
+        "tagNumber": "UAWS-VAC012",
+        "identificationMarks": "Market cat, good hunter, grey and white stripes",
+        "vaccineType": "Others",
+        "vaccinationDate": "2025-07-27T11:30:00Z",
+        "nextDueDate": "2026-07-27T11:30:00Z",
+        "batchNumber": "FVRCP-2025-030",
+        "veterinarianId": "vet001",
+        "location": {
+            "address": "Vegetable Market, Wholesale Section",
+            "gps": {
+                "lat": 18.5078,
+                "lng": 73.8512
+            }
+        },
+        "photoURL": "vaccination_012.jpg",
+        "notes": "FVRCP and rabies combo vaccination for market cat",
+        "createdAt": "2025-07-27T11:30:00Z",
+        "createdBy": "user005"
+    },
+    {
+        "id": "vaccination-013",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Juvenile",
+        "ward": "Ward 11",
+        "zone": "Central Zone",
+        "tagNumber": "UAWS-VAC013",
+        "identificationMarks": "Industrial area dog, friendly with workers, mixed breed",
+        "vaccineType": "DHPP",
+        "vaccinationDate": "2025-07-29T14:15:00Z",
+        "nextDueDate": "2025-08-26T14:15:00Z",
+        "batchNumber": "DHPP-2025-065",
+        "veterinarianId": "vet002",
+        "location": {
+            "address": "ABC Manufacturing Zone, Factory Gate",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "photoURL": "vaccination_013.jpg",
+        "notes": "Young dog, second round of DHPP series",
+        "createdAt": "2025-07-29T14:15:00Z",
+        "createdBy": "user006"
+    },
+    {
+        "id": "vaccination-014",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Adult",
+        "ward": "Ward 12",
+        "zone": "North Zone",
+        "tagNumber": "UAWS-VAC014",
+        "identificationMarks": "University campus dog, black and tan, well-socialized",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2025-07-31T10:45:00Z",
+        "nextDueDate": "2026-07-31T10:45:00Z",
+        "batchNumber": "RAB-2025-102",
+        "veterinarianId": "vet003",
+        "location": {
+            "address": "Pune University Science Campus, Main Quad",
+            "gps": {
+                "lat": 18.5074,
+                "lng": 73.8077
+            }
+        },
+        "photoURL": "vaccination_014.jpg",
+        "notes": "Campus dog vaccination program, student volunteers assisted",
+        "createdAt": "2025-07-31T10:45:00Z",
+        "createdBy": "user007"
+    },
+    {
+        "id": "vaccination-015",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Senior",
+        "ward": "Ward 13",
+        "zone": "South Zone",
+        "tagNumber": "UAWS-VAC015",
+        "identificationMarks": "Riverside area dog, old swimmer, grey muzzle, gentle",
+        "vaccineType": "Rabies",
+        "vaccinationDate": "2025-08-02T08:30:00Z",
+        "nextDueDate": "2026-08-02T08:30:00Z",
+        "batchNumber": "RAB-2025-103",
+        "veterinarianId": "vet001",
+        "location": {
+            "address": "Riverside Park, Near Water Feature",
+            "gps": {
+                "lat": 18.4956,
+                "lng": 73.8234
+            }
+        },
+        "photoURL": "vaccination_015.jpg",
+        "notes": "Senior dog, careful monitoring during vaccination, excellent health for age",
+        "createdAt": "2025-08-02T08:30:00Z",
+        "createdBy": "user008"
+    }
+]

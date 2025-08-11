@@ -1,0 +1,604 @@
+[
+    {
+        "id": "sterilization-001",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Adult",
+        "ward": "Ward 3",
+        "zone": "Central Zone",
+        "tagNumber": "UAWS-ST001",
+        "cageNumber": "C-12",
+        "identificationMarks": "Brown patches on back, white chest, small scar on right ear",
+        "pickup": {
+            "dateTime": "2024-07-20T08:30:00Z",
+            "photoURL": "pickup_sterilization_001.jpg",
+            "gps": {
+                "lat": 18.5204,
+                "lng": 73.8567
+            },
+            "pickedBy": "user001"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2024-07-21T10:00:00Z",
+            "surgeonId": "surgeon001",
+            "photoURL": "operation_sterilization_001.jpg",
+            "complications": {
+                "exists": false,
+                "remarks": ""
+            }
+        },
+        "release": {
+            "date": "2024-07-23T16:00:00Z",
+            "releasedBy": "user001",
+            "photoURL": "release_sterilization_001.jpg",
+            "status": "Released",
+            "notes": "Animal recovered well, released at original pickup location",
+            "gps": {
+                "lat": 18.5204,
+                "lng": 73.8567
+            }
+        },
+        "createdAt": "2024-07-20T08:30:00Z",
+        "createdBy": "user001"
+    },
+    {
+        "id": "sterilization-002",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Adult",
+        "ward": "Ward 1",
+        "zone": "North Zone",
+        "tagNumber": "UAWS-ST002",
+        "cageNumber": "C-08",
+        "identificationMarks": "Black color with white paws, collar marks visible",
+        "pickup": {
+            "dateTime": "2024-07-19T09:15:00Z",
+            "photoURL": "pickup_sterilization_002.jpg",
+            "gps": {
+                "lat": 18.5158,
+                "lng": 73.856
+            },
+            "pickedBy": "user002"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2024-07-20T11:30:00Z",
+            "surgeonId": "surgeon002",
+            "photoURL": "operation_sterilization_002.jpg",
+            "complications": {
+                "exists": true,
+                "remarks": "Minor bleeding during surgery, controlled successfully"
+            }
+        },
+        "release": {
+            "date": "2024-07-22T15:30:00Z",
+            "releasedBy": "user002",
+            "photoURL": "release_sterilization_002.jpg",
+            "status": "Released",
+            "notes": "Extended observation due to minor complications, full recovery achieved",
+            "gps": {
+                "lat": 18.5158,
+                "lng": 73.856
+            }
+        },
+        "createdAt": "2024-07-19T09:15:00Z",
+        "createdBy": "user002"
+    },
+    {
+        "id": "sterilization-003",
+        "species": "Cat",
+        "sex": "Female",
+        "ageGroup": "Adult",
+        "ward": "Ward 5",
+        "zone": "South Zone",
+        "tagNumber": "UAWS-ST003",
+        "cageNumber": "C-03",
+        "identificationMarks": "Orange tabby with white belly, notched left ear",
+        "pickup": {
+            "dateTime": "2024-07-18T07:45:00Z",
+            "photoURL": "pickup_sterilization_003.jpg",
+            "gps": {
+                "lat": 18.5104,
+                "lng": 73.844
+            },
+            "pickedBy": "user003"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2024-07-19T09:00:00Z",
+            "surgeonId": "surgeon001",
+            "photoURL": "operation_sterilization_003.jpg",
+            "complications": {
+                "exists": false,
+                "remarks": ""
+            }
+        },
+        "release": {
+            "date": "2024-07-21T14:00:00Z",
+            "releasedBy": "user003",
+            "photoURL": "release_sterilization_003.jpg",
+            "status": "Released",
+            "notes": "Routine spay surgery, normal recovery, returned to territory",
+            "gps": {
+                "lat": 18.5104,
+                "lng": 73.844
+            }
+        },
+        "createdAt": "2024-07-18T07:45:00Z",
+        "createdBy": "user003"
+    },
+    {
+        "id": "sterilization-004",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Juvenile",
+        "ward": "Ward 2",
+        "zone": "East Zone",
+        "tagNumber": "UAWS-ST004",
+        "cageNumber": "C-15",
+        "identificationMarks": "Mixed breed, brown and white patches, friendly behavior",
+        "pickup": {
+            "dateTime": "2024-07-17T10:20:00Z",
+            "photoURL": "pickup_sterilization_004.jpg",
+            "gps": {
+                "lat": 18.5234,
+                "lng": 73.8678
+            },
+            "pickedBy": "user001"
+        },
+        "operation": {
+            "status": "Not Operated",
+            "date": "2024-07-18T10:00:00Z",
+            "surgeonId": "surgeon002",
+            "photoURL": "",
+            "complications": {
+                "exists": false,
+                "remarks": "Animal found to be pregnant, surgery postponed"
+            }
+        },
+        "release": {
+            "date": "2024-07-18T16:00:00Z",
+            "releasedBy": "user001",
+            "photoURL": "release_sterilization_004.jpg",
+            "status": "Postponed",
+            "notes": "Surgery postponed due to pregnancy, will reschedule post-delivery",
+            "gps": {
+                "lat": 18.5234,
+                "lng": 73.8678
+            }
+        },
+        "createdAt": "2024-07-17T10:20:00Z",
+        "createdBy": "user001"
+    },
+    {
+        "id": "sterilization-005",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Senior",
+        "ward": "Ward 4",
+        "zone": "West Zone",
+        "tagNumber": "UAWS-ST005",
+        "cageNumber": "C-07",
+        "identificationMarks": "Large size, grey and black coat, limping on left front leg",
+        "pickup": {
+            "dateTime": "2024-07-16T11:30:00Z",
+            "photoURL": "pickup_sterilization_005.jpg",
+            "gps": {
+                "lat": 18.5267,
+                "lng": 73.8389
+            },
+            "pickedBy": "user002"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2024-07-17T14:30:00Z",
+            "surgeonId": "surgeon001",
+            "photoURL": "operation_sterilization_005.jpg",
+            "complications": {
+                "exists": true,
+                "remarks": "Pre-existing injury required additional care during anesthesia"
+            }
+        },
+        "release": {
+            "date": "2024-07-20T12:00:00Z",
+            "releasedBy": "user002",
+            "photoURL": "release_sterilization_005.jpg",
+            "status": "Released",
+            "notes": "Extended recovery period due to age and pre-existing injury, healed well",
+            "gps": {
+                "lat": 18.5267,
+                "lng": 73.8389
+            }
+        },
+        "createdAt": "2024-07-16T11:30:00Z",
+        "createdBy": "user002"
+    },
+    {
+        "id": "sterilization-006",
+        "species": "Cat",
+        "sex": "Male",
+        "ageGroup": "Adult",
+        "ward": "Ward 6",
+        "zone": "Central Zone",
+        "tagNumber": "UAWS-ST006",
+        "cageNumber": "C-01",
+        "identificationMarks": "Black cat with white chest patch, very sociable",
+        "pickup": {
+            "dateTime": "2024-07-15T08:00:00Z",
+            "photoURL": "pickup_sterilization_006.jpg",
+            "gps": {
+                "lat": 18.5198,
+                "lng": 73.8623
+            },
+            "pickedBy": "user003"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2024-07-16T08:30:00Z",
+            "surgeonId": "surgeon002",
+            "photoURL": "operation_sterilization_006.jpg",
+            "complications": {
+                "exists": false,
+                "remarks": ""
+            }
+        },
+        "release": {
+            "date": "2024-07-18T13:30:00Z",
+            "releasedBy": "user003",
+            "photoURL": "release_sterilization_006.jpg",
+            "status": "Released",
+            "notes": "Standard neuter procedure, excellent recovery, very friendly cat",
+            "gps": {
+                "lat": 18.5198,
+                "lng": 73.8623
+            }
+        },
+        "createdAt": "2024-07-15T08:00:00Z",
+        "createdBy": "user003"
+    },
+    {
+        "id": "sterilization-007",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Puppy",
+        "ward": "Ward 7",
+        "zone": "North Zone",
+        "tagNumber": "UAWS-ST007",
+        "cageNumber": "C-18",
+        "identificationMarks": "Golden retriever mix, long coat, very gentle temperament",
+        "pickup": {
+            "dateTime": "2025-07-25T07:30:00Z",
+            "photoURL": "pickup_sterilization_007.jpg",
+            "gps": {
+                "lat": 18.5285,
+                "lng": 73.8748
+            },
+            "pickedBy": "user004"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2025-07-26T09:30:00Z",
+            "surgeonId": "surgeon003",
+            "photoURL": "operation_sterilization_007.jpg",
+            "complications": {
+                "exists": false,
+                "remarks": ""
+            }
+        },
+        "release": {
+            "date": "2025-07-28T15:00:00Z",
+            "releasedBy": "user004",
+            "photoURL": "release_sterilization_007.jpg",
+            "status": "Released",
+            "notes": "Beautiful friendly dog, surgery went smoothly, excellent recovery",
+            "gps": {
+                "lat": 18.5285,
+                "lng": 73.8748
+            }
+        },
+        "createdAt": "2025-07-25T07:30:00Z",
+        "createdBy": "user004"
+    },
+    {
+        "id": "sterilization-008",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Adult",
+        "ward": "Ward 8",
+        "zone": "South Zone",
+        "tagNumber": "UAWS-ST008",
+        "cageNumber": "C-09",
+        "identificationMarks": "Indian Pariah, tan color, alert ears, temple area dog",
+        "pickup": {
+            "dateTime": "2025-07-27T08:45:00Z",
+            "photoURL": "pickup_sterilization_008.jpg",
+            "gps": {
+                "lat": 18.5123,
+                "lng": 73.8445
+            },
+            "pickedBy": "user005"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2025-07-28T10:15:00Z",
+            "surgeonId": "surgeon001",
+            "photoURL": "operation_sterilization_008.jpg",
+            "complications": {
+                "exists": false,
+                "remarks": ""
+            }
+        },
+        "release": {
+            "date": "2025-07-30T14:30:00Z",
+            "releasedBy": "user005",
+            "photoURL": "release_sterilization_008.jpg",
+            "status": "Released",
+            "notes": "Temple area community dog, coordinated with temple committee for release",
+            "gps": {
+                "lat": 18.5123,
+                "lng": 73.8445
+            }
+        },
+        "createdAt": "2025-07-27T08:45:00Z",
+        "createdBy": "user005"
+    },
+    {
+        "id": "sterilization-009",
+        "species": "Cat",
+        "sex": "Unnoticed",
+        "ageGroup": "Adult",
+        "ward": "Ward 9",
+        "zone": "West Zone",
+        "tagNumber": "UAWS-ST009",
+        "cageNumber": "C-02",
+        "identificationMarks": "Calico cat, three colors, pregnant on arrival",
+        "pickup": {
+            "dateTime": "2025-07-29T09:00:00Z",
+            "photoURL": "pickup_sterilization_009.jpg",
+            "gps": {
+                "lat": 18.5345,
+                "lng": 73.8456
+            },
+            "pickedBy": "user006"
+        },
+        "operation": {
+            "status": "Not Operated",
+            "date": "2025-07-30T09:00:00Z",
+            "surgeonId": "surgeon002",
+            "photoURL": "",
+            "complications": {
+                "exists": false,
+                "remarks": "Cat was pregnant, allowed to deliver kittens before spaying"
+            }
+        },
+        "release": {
+            "date": "2025-07-30T16:00:00Z",
+            "releasedBy": "user006",
+            "photoURL": "release_sterilization_009.jpg",
+            "status": "Postponed",
+            "notes": "Surgery postponed until after kitten delivery and weaning period",
+            "gps": {
+                "lat": 18.5345,
+                "lng": 73.8456
+            }
+        },
+        "createdAt": "2025-07-29T09:00:00Z",
+        "createdBy": "user006"
+    },
+    {
+        "id": "sterilization-010",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Juvenile",
+        "ward": "Ward 10",
+        "zone": "East Zone",
+        "tagNumber": "UAWS-ST010",
+        "cageNumber": "C-14",
+        "identificationMarks": "Young market dog, brown and white, energetic",
+        "pickup": {
+            "dateTime": "2025-08-01T08:15:00Z",
+            "photoURL": "pickup_sterilization_010.jpg",
+            "gps": {
+                "lat": 18.5078,
+                "lng": 73.8512
+            },
+            "pickedBy": "user007"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2025-08-02T11:00:00Z",
+            "surgeonId": "surgeon003",
+            "photoURL": "operation_sterilization_010.jpg",
+            "complications": {
+                "exists": false,
+                "remarks": ""
+            }
+        },
+        "release": {
+            "date": "2025-08-04T13:45:00Z",
+            "releasedBy": "user007",
+            "photoURL": "release_sterilization_010.jpg",
+            "status": "Released",
+            "notes": "Young female spayed successfully, coordinated with market vendors for monitoring",
+            "gps": {
+                "lat": 18.5078,
+                "lng": 73.8512
+            }
+        },
+        "createdAt": "2025-08-01T08:15:00Z",
+        "createdBy": "user007"
+    },
+    {
+        "id": "sterilization-011",
+        "species": "Dog",
+        "sex": "Male",
+        "ageGroup": "Adult",
+        "ward": "Ward 11",
+        "zone": "Central Zone",
+        "tagNumber": "UAWS-ST011",
+        "cageNumber": "C-11",
+        "identificationMarks": "Large street dog, grey color, friendly with workers",
+        "pickup": {
+            "dateTime": "2025-08-03T10:30:00Z",
+            "photoURL": "pickup_sterilization_011.jpg",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            },
+            "pickedBy": "user008"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2025-08-04T09:45:00Z",
+            "surgeonId": "surgeon001",
+            "photoURL": "operation_sterilization_011.jpg",
+            "complications": {
+                "exists": true,
+                "remarks": "Slightly elevated temperature post-surgery, managed with antibiotics"
+            }
+        },
+        "release": {
+            "date": "2025-08-07T11:30:00Z",
+            "releasedBy": "user008",
+            "photoURL": "release_sterilization_011.jpg",
+            "status": "Released",
+            "notes": "Extended recovery due to minor fever, full recovery achieved",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "createdAt": "2025-08-03T10:30:00Z",
+        "createdBy": "user008"
+    },
+    {
+        "id": "sterilization-012",
+        "species": "Cat",
+        "sex": "Male",
+        "ageGroup": "Senior",
+        "ward": "Ward 12",
+        "zone": "North Zone",
+        "tagNumber": "UAWS-ST012",
+        "cageNumber": "C-04",
+        "identificationMarks": "Old tom cat, battle scars, one-eye partially damaged",
+        "pickup": {
+            "dateTime": "2025-08-05T07:20:00Z",
+            "photoURL": "pickup_sterilization_012.jpg",
+            "gps": {
+                "lat": 18.5074,
+                "lng": 73.8077
+            },
+            "pickedBy": "user009"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2025-08-06T08:30:00Z",
+            "surgeonId": "surgeon002",
+            "photoURL": "operation_sterilization_012.jpg",
+            "complications": {
+                "exists": true,
+                "remarks": "Age-related complications, required extended anesthesia monitoring"
+            }
+        },
+        "release": {
+            "date": "2025-08-09T15:00:00Z",
+            "releasedBy": "user009",
+            "photoURL": "release_sterilization_012.jpg",
+            "status": "Released",
+            "notes": "Senior cat surgery successful despite age, careful post-op monitoring",
+            "gps": {
+                "lat": 18.5074,
+                "lng": 73.8077
+            }
+        },
+        "createdAt": "2025-08-05T07:20:00Z",
+        "createdBy": "user009"
+    },
+    {
+        "id": "sterilization-013",
+        "species": "Dog",
+        "sex": "Female",
+        "ageGroup": "Adult",
+        "ward": "Ward 13",
+        "zone": "South Zone",
+        "tagNumber": "UAWS-ST013",
+        "cageNumber": "C-16",
+        "identificationMarks": "Riverside area dog, loves water, swimmer",
+        "pickup": {
+            "dateTime": "2025-08-07T08:00:00Z",
+            "photoURL": "pickup_sterilization_013.jpg",
+            "gps": {
+                "lat": 18.4956,
+                "lng": 73.8234
+            },
+            "pickedBy": "user010"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2025-08-08T10:30:00Z",
+            "surgeonId": "surgeon003",
+            "photoURL": "operation_sterilization_013.jpg",
+            "complications": {
+                "exists": false,
+                "remarks": ""
+            }
+        },
+        "release": {
+            "date": "2025-08-10T16:00:00Z",
+            "releasedBy": "user010",
+            "photoURL": "release_sterilization_013.jpg",
+            "status": "Released",
+            "notes": "Healthy riverside dog, popular with park visitors, smooth surgery",
+            "gps": {
+                "lat": 18.4956,
+                "lng": 73.8234
+            }
+        },
+        "createdAt": "2025-08-07T08:00:00Z",
+        "createdBy": "user010"
+    },
+    {
+        "id": "sterilization-014",
+        "species": "Dog",
+        "sex": "Unnoticed",
+        "ageGroup": "Adult",
+        "ward": "Ward 14",
+        "zone": "West Zone",
+        "tagNumber": "UAWS-ST014",
+        "cageNumber": "C-13",
+        "identificationMarks": "Housing society dog, well-fed, social with residents",
+        "pickup": {
+            "dateTime": "2025-08-09T09:30:00Z",
+            "photoURL": "pickup_sterilization_014.jpg",
+            "gps": {
+                "lat": 18.4584,
+                "lng": 73.8078
+            },
+            "pickedBy": "user011"
+        },
+        "operation": {
+            "status": "Operated",
+            "date": "2025-08-10T11:15:00Z",
+            "surgeonId": "surgeon001",
+            "photoURL": "operation_sterilization_014.jpg",
+            "complications": {
+                "exists": false,
+                "remarks": ""
+            }
+        },
+        "release": {
+            "date": "2025-08-12T14:00:00Z",
+            "releasedBy": "user011",
+            "photoURL": "release_sterilization_014.jpg",
+            "status": "Released",
+            "notes": "Society community dog, residents very supportive of sterilization program",
+            "gps": {
+                "lat": 18.4584,
+                "lng": 73.8078
+            }
+        },
+        "createdAt": "2025-08-09T09:30:00Z",
+        "createdBy": "user011"
+    }
+]

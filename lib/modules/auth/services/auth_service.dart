@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import '../shared/models/models.dart';
-import 'storage_service.dart';
+import '../../../shared/models/models.dart';
+import '../../../services/storage_service.dart';
 import 'dummy_data_service.dart';
 // import 'firebase_service.dart'; // Uncomment when ready for Firebase
 

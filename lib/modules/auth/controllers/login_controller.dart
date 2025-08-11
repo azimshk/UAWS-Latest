@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../shared/models/models.dart';
+import '../../../shared/models/models.dart';
 import '../services/auth_service.dart';
-import '../services/storage_service.dart';
+import '../../../services/storage_service.dart';
 
 class LoginController extends GetxController {
   final usernameController = TextEditingController();

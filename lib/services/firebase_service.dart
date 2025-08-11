@@ -1,6 +1,7 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:google_sign_in/google_sign_in.dart';
+// import '../core/utils/app_logger.dart';
 // import '../models/user_model.dart';
 // import '../models/auth_response_model.dart';
 //
@@ -209,7 +210,7 @@
 //           .map((doc) => UserModel.fromFirestore(doc.data(), doc.id))
 //           .toList();
 //     } catch (e) {
-//       print('Error fetching users by role: $e');
+//       AppLogger.e('Error fetching users by role', e);
 //       return [];
 //     }
 //   }
@@ -235,7 +236,7 @@
 //           .map((doc) => UserModel.fromFirestore(doc.data() as Map<String, dynamic>, doc.id))
 //           .toList();
 //     } catch (e) {
-//       print('Error fetching users by location: $e');
+//       AppLogger.e('Error fetching users by location', e);
 //       return [];
 //     }
 //   }
@@ -257,7 +258,7 @@
 //
 //       return emailQuery.docs.isNotEmpty || usernameQuery.docs.isNotEmpty;
 //     } catch (e) {
-//       print('Error checking user existence: $e');
+//       AppLogger.e('Error checking user existence', e);
 //       return false;
 //     }
 //   }
@@ -271,7 +272,7 @@
 //       }
 //       return null;
 //     } catch (e) {
-//       print('Error fetching user model: $e');
+//       AppLogger.e('Error fetching user model', e);
 //       return null;
 //     }
 //   }
@@ -311,7 +312,7 @@
 //
 //       await _firestore.collection('users').doc(user.id).set(userData);
 //     } catch (e) {
-//       print('Error saving user to Firestore: $e');
+//       AppLogger.e('Error saving user to Firestore', e);
 //       throw Exception('Failed to save user data');
 //     }
 //   }
@@ -323,7 +324,7 @@
 //         'lastLogin': FieldValue.serverTimestamp(),
 //       });
 //     } catch (e) {
-//       print('Error updating last login: $e');
+//       AppLogger.e('Error updating last login', e);
 //     }
 //   }
 //
@@ -343,7 +344,7 @@
 //         }
 //       });
 //     } catch (e) {
-//       print('Error setting user claims: $e');
+//       AppLogger.e('Error setting user claims', e);
 //     }
 //   }
 //
@@ -437,7 +438,7 @@
 //       }
 //       return false;
 //     } catch (e) {
-//       print('Error checking user permission: $e');
+//       AppLogger.e('Error checking user permission', e);
 //       return false;
 //     }
 //   }
@@ -483,7 +484,7 @@
 //           .map((doc) => {'id': doc.id, ...doc.data()})
 //           .toList();
 //     } catch (e) {
-//       print('Error fetching cities: $e');
+//       AppLogger.e('Error fetching cities', e);
 //       return [];
 //     }
 //   }
@@ -501,7 +502,7 @@
 //           .map((doc) => {'id': doc.id, ...doc.data()})
 //           .toList();
 //     } catch (e) {
-//       print('Error fetching hospitals: $e');
+//       AppLogger.e('Error fetching hospitals', e);
 //       return [];
 //     }
 //   }

@@ -81,7 +81,8 @@ class AppTranslations extends Translations {
       'wards': 'Wards:',
       'email_label': 'Email:',
       'coming_soon': 'Dashboard modules coming soon!',
-      'modules_description': 'Sterilization, Vaccination, Bite Cases, and more...',
+      'modules_description':
+          'Sterilization, Vaccination, Bite Cases, and more...',
       'logout': 'Logout',
 
       // Demo Credentials
@@ -134,24 +135,26 @@ class AppTranslations extends Translations {
       'monitor_field_staff': 'Monitor Field Staff Entries',
       'city_district_dashboard': 'City/District Dashboard',
 
-// Descriptions
-      'sterilization_tracker_desc': 'Complete sterilization monitoring and management',
+      // Descriptions
+      'sterilization_tracker_desc':
+          'Complete sterilization monitoring and management',
       'bite_case_tracker_desc': 'Track and manage animal bite incidents',
       'rabies_surveillance_desc': 'Monitor rabies cases and vaccination status',
       'quarantine_tracker_desc': 'Manage animal quarantine procedures',
       'education_tracker_desc': 'Track community education programs',
-      'monitor_field_staff_desc': 'Monitor field staff activities and submissions',
-      'city_dashboard_desc': 'Overview of city/district animal welfare statistics',
+      'monitor_field_staff_desc':
+          'Monitor field staff activities and submissions',
+      'city_dashboard_desc':
+          'Overview of city/district animal welfare statistics',
 
-// Stats and Labels
+      // Stats and Labels
       'supervisor_overview': 'Supervisor Overview',
       'supervising_wards': 'Supervising Wards',
       'active_cases': 'Active Cases',
-      'field_staff': 'Field Staff',
       'pending_reviews': 'Pending Reviews',
       'completed_today': 'Completed Today',
-      'real_time_stats_coming_soon': 'Real-time statistics integration coming soon',
-
+      'real_time_stats_coming_soon':
+          'Real-time statistics integration coming soon',
 
       // Add to 'en_US' section:
       'municipal_dashboard': 'Municipality Official Dashboard',
@@ -169,7 +172,7 @@ class AppTranslations extends Translations {
       'generating_report': 'Generating Report',
       'report_ready': 'Report Ready',
 
-// Statistics Labels
+      // Statistics Labels
       'total': 'Total',
       'thisMonth': 'This Month',
       'pending': 'Pending',
@@ -179,7 +182,7 @@ class AppTranslations extends Translations {
       'vaccinated': 'Vaccinated',
       'surveillance': 'Surveillance',
 
-// Quick Access
+      // Quick Access
       'monthly_report': 'Monthly Report',
       'current_month_summary': 'Current month summary',
       'photo_gallery': 'Photo Gallery',
@@ -193,16 +196,21 @@ class AppTranslations extends Translations {
       'admin_dashboard': 'Central Admin Dashboard',
       'central_admin_access': 'Central Admin Access',
       'full_system_access': 'FULL SYSTEM ACCESS',
-      'access_denied_admin': 'Access denied. Administrator permissions required.',
+      'access_denied_admin':
+          'Access denied. Administrator permissions required.',
 
-// Dashboard Features
+      // Dashboard Features
       'city_center_dashboard': 'City/Center Dashboards',
-      'view_dashboards_per_city_center': 'View detailed dashboards for each city and center',
-      'opening_city_center_dashboard': 'Opening city/center dashboard interface...',
+      'view_dashboards_per_city_center':
+          'View detailed dashboards for each city and center',
+      'opening_city_center_dashboard':
+          'Opening city/center dashboard interface...',
 
       'auto_report_generation': 'Auto-Report Generation',
-      'generate_reports_1st_5th': 'Generate automated reports (1st-5th of month)',
-      'generating_reports_1st_5th': 'Generating automated reports for 1st-5th...',
+      'generate_reports_1st_5th':
+          'Generate automated reports (1st-5th of month)',
+      'generating_reports_1st_5th':
+          'Generating automated reports for 1st-5th...',
       'generating_reports': 'Generating reports...',
       'reports_generated_successfully': 'Reports generated successfully!',
       'report_generation_failed': 'Report generation failed. Please try again.',
@@ -212,24 +220,35 @@ class AppTranslations extends Translations {
       'opening_user_management': 'Opening user management interface...',
 
       'full_tracker_access': 'Full Tracker Access',
-      'access_all_trackers_and_data': 'Access all trackers and data across system',
+      'access_all_trackers_and_data':
+          'Access all trackers and data across system',
       'opening_full_tracker_access': 'Opening full tracker access interface...',
 
-// Logout Dialog
+      // Logout Dialog
       'confirm_logout': 'Confirm Logout',
-      'are_you_sure_logout': 'Are you sure you want to logout from admin dashboard?',
+      'are_you_sure_logout':
+          'Are you sure you want to logout from admin dashboard?',
       'logout_warning_admin': 'This will end your administrative session.',
+      'logout_warning_municipal':
+          'This will end your municipal monitoring session and return you to login.',
+      'logout_warning_field_staff':
+          'This will end your field staff session and return you to login.',
+      'logout_warning_supervisor':
+          'This will end your supervisor session and return you to login.',
       'logging_out': 'Logging Out',
       'admin_session_ending': 'Administrative session ending...',
+      'municipal_session_ending': 'Municipal monitoring session ending...',
+      'field_staff_session_ending': 'Field staff session ending...',
+      'supervisor_session_ending': 'Supervisor session ending...',
 
-// Stats
+      // Stats
       'total_cities': 'Total Cities',
       'total_users': 'Total Users',
       'active_reports': 'Active Reports',
       'pending_approvals': 'Pending Approvals',
       'admin_stats_updated': 'Admin statistics updated successfully',
 
-// System Overview
+      // System Overview
       'system_overview': 'System Overview',
       'admin_capabilities': 'Administrative Capabilities:',
       'manage_all_cities_centers': 'Manage all cities and centers',
@@ -238,39 +257,48 @@ class AppTranslations extends Translations {
       'full_data_access_control': 'Full data access and control',
       'layer_3_admin_access': 'Layer 3 - Full Administrative Access',
 
-
-      // Munciple Logout:
-      // Add to 'en_US' section:
-      'confirm_logout': 'Confirm Logout',
-      'are_you_sure_logout': 'Are you sure you want to logout?',
-      'logout_warning_municipal': 'This will end your municipal monitoring session and return you to login.',
-      'logging_out': 'Logging Out',
-      'municipal_session_ending': 'Municipal monitoring session ending...',
-      'cancel': 'Cancel',
-      'logout': 'Logout',
-
-
-      // Add to 'en_US' section:
-      'confirm_logout': 'Confirm Logout',
-      'are_you_sure_logout': 'Are you sure you want to logout?',
-      'logout_warning_field_staff': 'This will end your field staff session and return you to login.',
-      'logging_out': 'Logging Out',
-      'field_staff_session_ending': 'Field staff session ending...',
-      'cancel': 'Cancel',
-      'logout': 'Logout',
-
-      // Logout of Supervisor
-      'confirm_logout': 'Confirm Logout',
-      'are_you_sure_logout': 'Are you sure you want to logout?',
-      'logout_warning_supervisor': 'This will end your supervisor session and return you to login.',
-      'logging_out': 'Logging Out',
-      'supervisor_session_ending': 'Supervisor session ending...',
-      'cancel': 'Cancel',
-      'logout': 'Logout',
-
-
-
-
+      // Sterilization Module
+      'sterilization_tracker': 'Sterilization Tracker',
+      'sterilization_overview': 'Sterilization Overview',
+      'new_pickup': 'New Pickup',
+      'pickup_stage': 'Pickup',
+      'operation_stage': 'Operation',
+      'release_stage': 'Release',
+      'all': 'All',
+      'pickup': 'Pickup',
+      'operation': 'Operation',
+      'release': 'Release',
+      'search_sterilizations': 'Search sterilizations...',
+      'filter': 'Filter',
+      'filter_options': 'Filter Options',
+      'my_assignments': 'My Assignments',
+      'show_only_my_assignments': 'Show only my assignments',
+      'clear_filters': 'Clear Filters',
+      'refresh': 'Refresh',
+      'no_sterilizations_found': 'No sterilizations found',
+      'try_adjusting_filters': 'Try adjusting your search or filters',
+      'create_new_pickup': 'Create New Pickup',
+      'data_refreshed': 'Data refreshed successfully',
+      'failed_to_load_sterilizations': 'Failed to load sterilizations',
+      'sterilization_created_successfully':
+          'Sterilization created successfully',
+      'failed_to_create_sterilization': 'Failed to create sterilization',
+      'pickup_stage_updated': 'Pickup stage updated successfully',
+      'failed_to_update_pickup_stage': 'Failed to update pickup stage',
+      'operation_stage_updated': 'Operation stage updated successfully',
+      'failed_to_update_operation_stage': 'Failed to update operation stage',
+      'release_stage_updated': 'Release stage updated successfully',
+      'failed_to_update_release_stage': 'Failed to update release stage',
+      'sterilization_deleted': 'Sterilization deleted successfully',
+      'failed_to_delete_sterilization': 'Failed to delete sterilization',
+      'access_denied': 'Access Denied',
+      'only_field_staff_can_create_pickup':
+          'Only field staff can create pickups',
+      'only_supervisors_can_perform_operations':
+          'Only supervisors can perform operations',
+      'invalid_stage': 'Invalid Stage',
+      'pickup_must_be_completed_first': 'Pickup must be completed first',
+      'operation_must_be_completed_first': 'Operation must be completed first',
     },
 
     'mr_IN': {
@@ -351,7 +379,8 @@ class AppTranslations extends Translations {
       'wards': 'प्रभाग:',
       'email_label': 'ईमेल:',
       'coming_soon': 'डॅशबोर्ड मॉड्यूल लवकरच येत आहेत!',
-      'modules_description': 'नसबंदी, लसीकरण, चावण्याच्या घटना आणि बरेच काही...',
+      'modules_description':
+          'नसबंदी, लसीकरण, चावण्याच्या घटना आणि बरेच काही...',
       'logout': 'लॉगआउट',
 
       // Demo Credentials
@@ -404,20 +433,22 @@ class AppTranslations extends Translations {
       'monitor_field_staff': 'फील्ड स्टाफ नोंदी निरीक्षण करा',
       'city_district_dashboard': 'शहर/जिल्हा डॅशबोर्ड',
 
-// Descriptions
+      // Descriptions
       'sterilization_tracker_desc': 'संपूर्ण नसबंदी निरीक्षण आणि व्यवस्थापन',
-      'bite_case_tracker_desc': 'प्राणी चावण्याच्या घटनांचा मागोवा घ्या आणि व्यवस्थापन करा',
-      'rabies_surveillance_desc': 'रेबीज प्रकरणे आणि लसीकरण स्थितीचे निरीक्षण करा',
+      'bite_case_tracker_desc':
+          'प्राणी चावण्याच्या घटनांचा मागोवा घ्या आणि व्यवस्थापन करा',
+      'rabies_surveillance_desc':
+          'रेबीज प्रकरणे आणि लसीकरण स्थितीचे निरीक्षण करा',
       'quarantine_tracker_desc': 'प्राणी क्वारंटाइन प्रक्रिया व्यवस्थापित करा',
       'education_tracker_desc': 'समुदायिक शिक्षण कार्यक्रमांचा मागोवा घ्या',
-      'monitor_field_staff_desc': 'फील्ड स्टाफ क्रियाकलाप आणि सबमिशनचे निरीक्षण करा',
+      'monitor_field_staff_desc':
+          'फील्ड स्टाफ क्रियाकलाप आणि सबमिशनचे निरीक्षण करा',
       'city_dashboard_desc': 'शहर/जिल्हा प्राणी कल्याण आकडेवारीचे विहंगावलोकन',
 
-// Stats and Labels
+      // Stats and Labels
       'supervisor_overview': 'पर्यवेक्षक विहंगावलोकन',
       'supervising_wards': 'पर्यवेक्षण प्रभाग',
       'active_cases': 'सक्रिय प्रकरणे',
-      'field_staff': 'फील्ड स्टाफ',
       'pending_reviews': 'प्रलंबित पुनरावलोकने',
       'completed_today': 'आज पूर्ण झाले',
       'real_time_stats_coming_soon': 'रिअल-टाइम आकडेवारी एकीकरण लवकरच येत आहे',
@@ -438,7 +469,7 @@ class AppTranslations extends Translations {
       'generating_report': 'अहवाल तयार करत आहे',
       'report_ready': 'अहवाल तयार',
 
-// Statistics Labels
+      // Statistics Labels
       'total': 'एकूण',
       'thisMonth': 'या महिन्यात',
       'pending': 'प्रलंबित',
@@ -448,7 +479,7 @@ class AppTranslations extends Translations {
       'vaccinated': 'लसीकरण केले',
       'surveillance': 'पाळत ठेवणे',
 
-// Quick Access
+      // Quick Access
       'monthly_report': 'मासिक अहवाल',
       'current_month_summary': 'चालू महिन्याचा सारांश',
       'photo_gallery': 'फोटो गॅलरी',
@@ -458,47 +489,64 @@ class AppTranslations extends Translations {
       'ward_overview': 'प्रभाग विहंगावलोकन',
       'ward_wise_statistics': 'प्रभागानुसार आकडेवारी',
 
-// Add to 'mr_IN' section:
+      // Add to 'mr_IN' section:
       'admin_dashboard': 'केंद्रीय प्रशासक डॅशबोर्ड',
       'central_admin_access': 'केंद्रीय प्रशासक प्रवेश',
       'full_system_access': 'संपूर्ण सिस्टम प्रवेश',
       'access_denied_admin': 'प्रवेश नाकारला. प्रशासक परवानगी आवश्यक.',
 
-// Dashboard Features
+      // Dashboard Features
       'city_center_dashboard': 'शहर/केंद्र डॅशबोर्ड',
-      'view_dashboards_per_city_center': 'प्रत्येक शहर आणि केंद्रासाठी तपशीलवार डॅशबोर्ड पहा',
-      'opening_city_center_dashboard': 'शहर/केंद्र डॅशबोर्ड इंटरफेस उघडत आहे...',
+      'view_dashboards_per_city_center':
+          'प्रत्येक शहर आणि केंद्रासाठी तपशीलवार डॅशबोर्ड पहा',
+      'opening_city_center_dashboard':
+          'शहर/केंद्र डॅशबोर्ड इंटरफेस उघडत आहे...',
 
       'auto_report_generation': 'स्वयं-अहवाल निर्मिती',
       'generate_reports_1st_5th': 'स्वयंचलित अहवाल तयार करा (महिन्याच्या 1-5)',
-      'generating_reports_1st_5th': '1-5 तारखेसाठी स्वयंचलित अहवाल तयार करत आहे...',
+      'generating_reports_1st_5th':
+          '1-5 तारखेसाठी स्वयंचलित अहवाल तयार करत आहे...',
       'generating_reports': 'अहवाल तयार करत आहे...',
       'reports_generated_successfully': 'अहवाल यशस्वीरित्या तयार केले!',
-      'report_generation_failed': 'अहवाल निर्मिती अयशस्वी. कृपया पुन्हा प्रयत्न करा.',
+      'report_generation_failed':
+          'अहवाल निर्मिती अयशस्वी. कृपया पुन्हा प्रयत्न करा.',
 
       'user_management': 'वापरकर्ता व्यवस्थापन',
-      'manage_users_roles_permissions': 'वापरकर्ते, भूमिका आणि परवानग्या व्यवस्थापित करा',
+      'manage_users_roles_permissions':
+          'वापरकर्ते, भूमिका आणि परवानग्या व्यवस्थापित करा',
       'opening_user_management': 'वापरकर्ता व्यवस्थापन इंटरफेस उघडत आहे...',
 
       'full_tracker_access': 'संपूर्ण ट्रॅकर प्रवेश',
-      'access_all_trackers_and_data': 'सिस्टममधील सर्व ट्रॅकर आणि डेटामध्ये प्रवेश',
-      'opening_full_tracker_access': 'संपूर्ण ट्रॅकर प्रवेश इंटरफेस उघडत आहे...',
+      'access_all_trackers_and_data':
+          'सिस्टममधील सर्व ट्रॅकर आणि डेटामध्ये प्रवेश',
+      'opening_full_tracker_access':
+          'संपूर्ण ट्रॅकर प्रवेश इंटरफेस उघडत आहे...',
 
-// Logout Dialog
+      // Logout Dialog
       'confirm_logout': 'लॉगआउट पुष्टी करा',
-      'are_you_sure_logout': 'तुम्हाला खात्री आहे की तुम्ही प्रशासक डॅशबोर्डमधून लॉगआउट करू इच्छिता?',
+      'are_you_sure_logout':
+          'तुम्हाला खात्री आहे की तुम्ही प्रशासक डॅशबोर्डमधून लॉगआउट करू इच्छिता?',
       'logout_warning_admin': 'हे तुमचे प्रशासकीय सत्र समाप्त करेल.',
+      'logout_warning_municipal':
+          'हे तुमचे नगरपालिका निरीक्षण सत्र समाप्त करेल आणि तुम्हाला लॉगिनवर परत करेल.',
+      'logout_warning_field_staff':
+          'हे तुमचे फील्ड स्टाफ सत्र समाप्त करेल आणि तुम्हाला लॉगिनवर परत करेल.',
+      'logout_warning_supervisor':
+          'हे तुमचे पर्यवेक्षक सत्र समाप्त करेल आणि तुम्हाला लॉगिनवर परत करेल.',
       'logging_out': 'लॉगआउट करत आहे',
       'admin_session_ending': 'प्रशासकीय सत्र समाप्त होत आहे...',
+      'municipal_session_ending': 'नगरपालिका निरीक्षण सत्र समाप्त होत आहे...',
+      'field_staff_session_ending': 'फील्ड स्टाफ सत्र समाप्त होत आहे...',
+      'supervisor_session_ending': 'पर्यवेक्षक सत्र समाप्त होत आहे...',
 
-// Stats
+      // Stats
       'total_cities': 'एकूण शहरे',
       'total_users': 'एकूण वापरकर्ते',
       'active_reports': 'सक्रिय अहवाल',
       'pending_approvals': 'प्रलंबित मंजुरी',
       'admin_stats_updated': 'प्रशासक आकडेवारी यशस्वीरित्या अद्यतनित केली',
 
-// System Overview
+      // System Overview
       'system_overview': 'सिस्टम विहंगावलोकन',
       'admin_capabilities': 'प्रशासकीय क्षमता:',
       'manage_all_cities_centers': 'सर्व शहरे आणि केंद्रे व्यवस्थापित करा',
@@ -507,42 +555,47 @@ class AppTranslations extends Translations {
       'full_data_access_control': 'संपूर्ण डेटा प्रवेश आणि नियंत्रण',
       'layer_3_admin_access': 'स्तर 3 - संपूर्ण प्रशासकीय प्रवेश',
 
-
-
-
-// Logout of Supervisor:
-      'confirm_logout': 'लॉगआउट पुष्टी करा',
-      'are_you_sure_logout': 'तुम्हाला खात्री आहे की तुम्ही लॉगआउट करू इच्छिता?',
-      'logout_warning_supervisor': 'हे तुमचे पर्यवेक्षक सत्र समाप्त करेल आणि तुम्हाला लॉगिनवर परत करेल.',
-      'logging_out': 'लॉगआउट करत आहे',
-      'supervisor_session_ending': 'पर्यवेक्षक सत्र समाप्त होत आहे...',
-      'cancel': 'रद्द करा',
-      'logout': 'लॉगआउट',
-
-
-
-// Add to 'mr_IN' section:
-      'confirm_logout': 'लॉगआउट पुष्टी करा',
-      'are_you_sure_logout': 'तुम्हाला खात्री आहे की तुम्ही लॉगआउट करू इच्छिता?',
-      'logout_warning_field_staff': 'हे तुमचे फील्ड स्टाफ सत्र समाप्त करेल आणि तुम्हाला लॉगिनवर परत करेल.',
-      'logging_out': 'लॉगआउट करत आहे',
-      'field_staff_session_ending': 'फील्ड स्टाफ सत्र समाप्त होत आहे...',
-      'cancel': 'रद्द करा',
-      'logout': 'लॉगआउट',
-
-      // Add to 'mr_IN' section:
-      'confirm_logout': 'लॉगआउट पुष्टी करा',
-      'are_you_sure_logout': 'तुम्हाला खात्री आहे की तुम्ही लॉगआउट करू इच्छिता?',
-      'logout_warning_municipal': 'हे तुमचे नगरपालिका निरीक्षण सत्र समाप्त करेल आणि तुम्हाला लॉगिनवर परत करेल.',
-      'logging_out': 'लॉगआउट करत आहे',
-      'municipal_session_ending': 'नगरपालिका निरीक्षण सत्र समाप्त होत आहे...',
-      'cancel': 'रद्द करा',
-      'logout': 'लॉगआउट',
-
-
-
-
-
+      // Sterilization Module
+      'sterilization_tracker': 'नसबंदी ट्रॅकर',
+      'sterilization_overview': 'नसबंदी विहंगावलोकन',
+      'new_pickup': 'नवीन पिकअप',
+      'pickup_stage': 'पिकअप',
+      'operation_stage': 'ऑपरेशन',
+      'release_stage': 'सोडणे',
+      'all': 'सर्व',
+      'pickup': 'पिकअप',
+      'operation': 'ऑपरेशन',
+      'release': 'सोडणे',
+      'search_sterilizations': 'नसबंदी शोधा...',
+      'filter': 'फिल्टर',
+      'filter_options': 'फिल्टर पर्याय',
+      'my_assignments': 'माझी नियुक्ती',
+      'show_only_my_assignments': 'फक्त माझी नियुक्ती दाखवा',
+      'clear_filters': 'फिल्टर साफ करा',
+      'refresh': 'रीफ्रेश',
+      'no_sterilizations_found': 'नसबंदी सापडली नाही',
+      'try_adjusting_filters': 'तुमचा शोध किंवा फिल्टर समायोजित करून पहा',
+      'create_new_pickup': 'नवीन पिकअप तयार करा',
+      'data_refreshed': 'डेटा यशस्वीरित्या रीफ्रेश केला',
+      'failed_to_load_sterilizations': 'नसबंदी लोड करण्यात अयशस्वी',
+      'sterilization_created_successfully': 'नसबंदी यशस्वीरित्या तयार केली',
+      'failed_to_create_sterilization': 'नसबंदी तयार करण्यात अयशस्वी',
+      'pickup_stage_updated': 'पिकअप स्टेज यशस्वीरित्या अपडेट केला',
+      'failed_to_update_pickup_stage': 'पिकअप स्टेज अपडेट करण्यात अयशस्वी',
+      'operation_stage_updated': 'ऑपरेशन स्टेज यशस्वीरित्या अपडेट केला',
+      'failed_to_update_operation_stage': 'ऑपरेशन स्टेज अपडेट करण्यात अयशस्वी',
+      'release_stage_updated': 'रिलीज स्टेज यशस्वीरित्या अपडेट केला',
+      'failed_to_update_release_stage': 'रिलीज स्टेज अपडेट करण्यात अयशस्वी',
+      'sterilization_deleted': 'नसबंदी यशस्वीरित्या हटवली',
+      'failed_to_delete_sterilization': 'नसबंदी हटवण्यात अयशस्वी',
+      'access_denied': 'प्रवेश नाकारला',
+      'only_field_staff_can_create_pickup':
+          'फक्त फील्ड स्टाफ पिकअप तयार करू शकतात',
+      'only_supervisors_can_perform_operations':
+          'फक्त पर्यवेक्षक ऑपरेशन करू शकतात',
+      'invalid_stage': 'अवैध स्टेज',
+      'pickup_must_be_completed_first': 'पिकअप प्रथम पूर्ण करावा लागेल',
+      'operation_must_be_completed_first': 'ऑपरेशन प्रथम पूर्ण करावे लागेल',
     },
   };
 }

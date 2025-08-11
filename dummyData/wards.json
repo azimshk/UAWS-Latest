@@ -1,0 +1,242 @@
+[
+    {
+        "wardId": "pune-ward-01",
+        "wardName": "Kasba Peth",
+        "wardNumber": "1",
+        "city": "Pune",
+        "area": "2.5 sq km",
+        "population": 45000,
+        "color": "#FF6B6B",
+        "boundaryData": {
+            "type": "Feature",
+            "properties": {
+                "name": "Kasba Peth"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [73.8567, 18.5204],
+                        [73.86, 18.5204],
+                        [73.86, 18.524],
+                        [73.8567, 18.524],
+                        [73.8567, 18.5204]
+                    ]
+                ]
+            }
+        },
+        "centroid": { "lat": 18.5222, "lng": 73.8584 },
+        "notes": "Historic area with traditional markets",
+        "isActive": true
+    },
+    {
+        "wardId": "pune-ward-02",
+        "wardName": "Sadashiv Peth",
+        "wardNumber": "2",
+        "city": "Pune",
+        "area": "3.1 sq km",
+        "population": 52000,
+        "color": "#4ECDC4",
+        "boundaryData": {
+            "type": "Feature",
+            "properties": {
+                "name": "Sadashiv Peth"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [73.85, 18.515],
+                        [73.855, 18.515],
+                        [73.855, 18.52],
+                        [73.85, 18.52],
+                        [73.85, 18.515]
+                    ]
+                ]
+            }
+        },
+        "centroid": { "lat": 18.5175, "lng": 73.8525 },
+        "notes": "Residential area with cultural significance",
+        "isActive": true
+    },
+    {
+        "wardId": "pune-ward-03",
+        "wardName": "Narayan Peth",
+        "wardNumber": "3",
+        "city": "Pune",
+        "area": "2.8 sq km",
+        "population": 38000,
+        "color": "#45B7D1",
+        "boundaryData": {
+            "type": "Feature",
+            "properties": {
+                "name": "Narayan Peth"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [73.845, 18.51],
+                        [73.85, 18.51],
+                        [73.85, 18.515],
+                        [73.845, 18.515],
+                        [73.845, 18.51]
+                    ]
+                ]
+            }
+        },
+        "centroid": { "lat": 18.5125, "lng": 73.8475 },
+        "notes": "Educational hub with schools and colleges",
+        "isActive": true
+    },
+    {
+        "wardId": "pune-ward-04",
+        "wardName": "Rasta Peth",
+        "wardNumber": "4",
+        "city": "Pune",
+        "area": "2.2 sq km",
+        "population": 41000,
+        "color": "#96CEB4",
+        "boundaryData": {
+            "type": "Feature",
+            "properties": {
+                "name": "Rasta Peth"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [73.855, 18.51],
+                        [73.86, 18.51],
+                        [73.86, 18.515],
+                        [73.855, 18.515],
+                        [73.855, 18.51]
+                    ]
+                ]
+            }
+        },
+        "centroid": { "lat": 18.5125, "lng": 73.8575 },
+        "notes": "Commercial area with markets",
+        "isActive": true
+    },
+    {
+        "wardId": "pune-ward-05",
+        "wardName": "Ganj Peth",
+        "wardNumber": "5",
+        "city": "Pune",
+        "area": "3.5 sq km",
+        "population": 48000,
+        "color": "#FFEAA7",
+        "boundaryData": {
+            "type": "Feature",
+            "properties": {
+                "name": "Ganj Peth"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [73.86, 18.51],
+                        [73.865, 18.51],
+                        [73.865, 18.515],
+                        [73.86, 18.515],
+                        [73.86, 18.51]
+                    ]
+                ]
+            }
+        },
+        "centroid": { "lat": 18.5125, "lng": 73.8625 },
+        "notes": "Mixed residential and commercial area",
+        "isActive": true
+    },
+    {
+        "wardId": "pune-ward-06",
+        "wardName": "Shaniwar Peth",
+        "wardNumber": "6",
+        "city": "Pune",
+        "area": "2.9 sq km",
+        "population": 44000,
+        "color": "#DDA0DD",
+        "boundaryData": {
+            "type": "Feature",
+            "properties": {
+                "name": "Shaniwar Peth"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [73.84, 18.505],
+                        [73.845, 18.505],
+                        [73.845, 18.51],
+                        [73.84, 18.51],
+                        [73.84, 18.505]
+                    ]
+                ]
+            }
+        },
+        "centroid": { "lat": 18.5075, "lng": 73.8425 },
+        "notes": "Traditional area with temples",
+        "isActive": true
+    },
+    {
+        "wardId": "pune-ward-07",
+        "wardName": "Somwar Peth",
+        "wardNumber": "7",
+        "city": "Pune",
+        "area": "3.2 sq km",
+        "population": 39000,
+        "color": "#FF9F43",
+        "boundaryData": {
+            "type": "Feature",
+            "properties": {
+                "name": "Somwar Peth"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [73.845, 18.505],
+                        [73.85, 18.505],
+                        [73.85, 18.51],
+                        [73.845, 18.51],
+                        [73.845, 18.505]
+                    ]
+                ]
+            }
+        },
+        "centroid": { "lat": 18.5075, "lng": 73.8475 },
+        "notes": "Residential area with good connectivity",
+        "isActive": true
+    },
+    {
+        "wardId": "pune-ward-08",
+        "wardName": "Mangalwar Peth",
+        "wardNumber": "8",
+        "city": "Pune",
+        "area": "2.7 sq km",
+        "population": 42000,
+        "color": "#55A3FF",
+        "boundaryData": {
+            "type": "Feature",
+            "properties": {
+                "name": "Mangalwar Peth"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [73.85, 18.505],
+                        [73.855, 18.505],
+                        [73.855, 18.51],
+                        [73.85, 18.51],
+                        [73.85, 18.505]
+                    ]
+                ]
+            }
+        },
+        "centroid": { "lat": 18.5075, "lng": 73.8525 },
+        "notes": "Mixed development area",
+        "isActive": true
+    }
+]

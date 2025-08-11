@@ -1,0 +1,1451 @@
+[
+    {
+        "id": "quarantine-001",
+        "biteCaseId": "bite-001",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Adult (2-3 years)",
+            "color": "Brown with white patches",
+            "size": "Medium",
+            "identificationMarks": "Scar on left ear",
+            "tagNumber": "UAWS001"
+        },
+        "startDate": "2024-07-20T12:00:00Z",
+        "endDate": "2024-07-30T12:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Facility",
+            "address": "UAWS Animal Quarantine Facility, Industrial Area",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-001-day1",
+                "date": "2024-07-20T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.2°F",
+                "appetite": "Normal",
+                "behavior": "Normal",
+                "notes": "Animal appears calm, eating and drinking normally",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2024-07-20T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day2",
+                "date": "2024-07-21T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Normal",
+                "behavior": "Normal",
+                "notes": "Continued normal behavior, no signs of illness",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2024-07-21T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day3",
+                "date": "2024-07-22T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Good",
+                "behavior": "Active",
+                "notes": "Animal showing increased activity and confidence in facility environment",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2024-07-22T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day4",
+                "date": "2024-07-23T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.4°F",
+                "appetite": "Good",
+                "behavior": "Active",
+                "notes": "Excellent progress. Animal adapting well to quarantine routine",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2024-07-23T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day5",
+                "date": "2024-07-24T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.2°F",
+                "appetite": "Excellent",
+                "behavior": "Playful",
+                "notes": "Halfway through observation period. Animal showing very positive signs",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2024-07-24T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day6",
+                "date": "2024-07-25T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.1°F",
+                "appetite": "Excellent",
+                "behavior": "Normal",
+                "notes": "Animal very well-adjusted to routine, no concerning behaviors",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2024-07-25T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day7",
+                "date": "2024-07-26T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.0°F",
+                "appetite": "Excellent",
+                "behavior": "Normal",
+                "notes": "Seven days completed successfully, animal remains healthy",
+                "observedBy": "Dr. Anita Desai",
+                "observedAt": "2024-07-26T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day8",
+                "date": "2024-07-27T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "99.9°F",
+                "appetite": "Excellent",
+                "behavior": "Normal",
+                "notes": "Approaching end of observation period, animal continues excellent health",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2024-07-27T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day9",
+                "date": "2024-07-28T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "99.8°F",
+                "appetite": "Excellent",
+                "behavior": "Normal",
+                "notes": "Day 9 completed, animal ready for release tomorrow",
+                "observedBy": "Dr. Rajesh Kumar",
+                "observedAt": "2024-07-28T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-001-day10",
+                "date": "2024-07-29T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "99.7°F",
+                "appetite": "Excellent",
+                "behavior": "Normal",
+                "notes": "Final day of observation completed successfully. Animal cleared for release",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2024-07-29T18:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Animal completed 10-day observation successfully. No signs of rabies observed.",
+        "createdAt": "2024-07-20T12:00:00Z",
+        "createdBy": "user001",
+        "pickupDate": "2024-07-20T12:00:00Z",
+        "cageNumber": "CAGE-001"
+    },
+    {
+        "id": "quarantine-002",
+        "biteCaseId": "bite-003",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Female",
+            "age": "Young adult (1-2 years)",
+            "color": "Mixed brown and white",
+            "size": "Small",
+            "identificationMarks": "White patch on chest",
+            "tagNumber": "UAWS002"
+        },
+        "startDate": "2024-07-18T15:00:00Z",
+        "endDate": "2024-07-28T15:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Facility",
+            "address": "UAWS Animal Quarantine Facility, Industrial Area",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-002-day1",
+                "date": "2024-07-18T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.0°F",
+                "appetite": "Reduced",
+                "behavior": "Lethargic",
+                "notes": "Animal seems stressed from capture, reduced appetite expected",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2024-07-18T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day2",
+                "date": "2024-07-19T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Normal",
+                "behavior": "Normal",
+                "notes": "Animal has adapted well, eating and drinking normally",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2024-07-19T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day3",
+                "date": "2024-07-20T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.4°F",
+                "appetite": "Good",
+                "behavior": "Active",
+                "notes": "Animal showing increased confidence and activity levels",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2024-07-20T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day4",
+                "date": "2024-07-21T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.2°F",
+                "appetite": "Good",
+                "behavior": "Active",
+                "notes": "Continued improvement in overall condition and behavior",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2024-07-21T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day5",
+                "date": "2024-07-22T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.0°F",
+                "appetite": "Excellent",
+                "behavior": "Playful",
+                "notes": "Halfway through observation period. Animal showing excellent progress",
+                "observedBy": "Dr. Rajesh Kumar",
+                "observedAt": "2024-07-22T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day6",
+                "date": "2024-07-23T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "99.9°F",
+                "appetite": "Excellent",
+                "behavior": "Playful",
+                "notes": "Animal very comfortable in environment, playful and social",
+                "observedBy": "Dr. Anita Desai",
+                "observedAt": "2024-07-23T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day7",
+                "date": "2024-07-24T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "99.8°F",
+                "appetite": "Excellent",
+                "behavior": "Playful",
+                "notes": "Seven days completed successfully, animal remains very healthy",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2024-07-24T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day8",
+                "date": "2024-07-25T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "99.7°F",
+                "appetite": "Excellent",
+                "behavior": "Normal",
+                "notes": "Approaching end of observation period, animal shows consistent health",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2024-07-25T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day9",
+                "date": "2024-07-26T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "99.6°F",
+                "appetite": "Excellent",
+                "behavior": "Normal",
+                "notes": "Day 9 completed successfully, animal ready for release",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2024-07-26T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-002-day10",
+                "date": "2024-07-27T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "99.5°F",
+                "appetite": "Excellent",
+                "behavior": "Normal",
+                "notes": "Final day of observation completed successfully. Animal cleared for release",
+                "observedBy": "Dr. Rajesh Kumar",
+                "observedAt": "2024-07-27T20:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Animal showed good recovery and no signs of disease during observation period.",
+        "createdAt": "2024-07-18T15:00:00Z",
+        "createdBy": "user003",
+        "pickupDate": "2024-07-18T15:00:00Z",
+        "cageNumber": "CAGE-002"
+    },
+    {
+        "id": "quarantine-003",
+        "biteCaseId": "bite-007",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Adult (3-5 years)",
+            "color": "German Shepherd mix",
+            "size": "Large",
+            "identificationMarks": "Black mask, pointed ears",
+            "tagNumber": "UAWS003"
+        },
+        "startDate": "2025-07-22T10:00:00Z",
+        "endDate": "2025-08-01T10:00:00Z",
+        "observationStatus": "Under Observation",
+        "quarantineLocation": {
+            "type": "Facility",
+            "address": "UAWS Animal Quarantine Facility, Industrial Area",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-003-day1",
+                "date": "2025-07-22T10:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "102.1°F",
+                "appetite": "Poor",
+                "behavior": "Aggressive",
+                "notes": "Animal very aggressive, refusing food. High stress levels from capture.",
+                "observedBy": "Dr. Rajesh Kumar",
+                "observedAt": "2025-07-22T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-003-day2",
+                "date": "2025-07-23T10:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.5°F",
+                "appetite": "Reduced",
+                "behavior": "Cautious",
+                "notes": "Slight improvement in behavior, drinking water, minimal food intake",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2025-07-23T17:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Tested Positive",
+        "notes": "Large aggressive dog requires careful monitoring. Bite incident was severe.",
+        "createdAt": "2025-07-22T10:00:00Z",
+        "createdBy": "user007",
+        "pickupDate": "2025-07-22T10:00:00Z",
+        "cageNumber": "CAGE-003"
+    },
+    {
+        "id": "quarantine-004",
+        "biteCaseId": "bite-012",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Adult (2-4 years)",
+            "color": "Mixed breed, brown and black",
+            "size": "Large",
+            "identificationMarks": "Torn right ear, limp in left hind leg",
+            "tagNumber": "UAWS004"
+        },
+        "startDate": "2025-07-17T14:00:00Z",
+        "endDate": "2025-07-27T14:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Facility",
+            "address": "UAWS Animal Quarantine Facility, Industrial Area",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-004-day1",
+                "date": "2025-07-17T14:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.8°F",
+                "appetite": "Normal",
+                "behavior": "Defensive but calm",
+                "notes": "Animal has old injury to leg but eating well. Defensive posture normal for capture stress.",
+                "observedBy": "Dr. Anita Desai",
+                "observedAt": "2025-07-17T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-004-day2",
+                "date": "2025-07-18T14:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.4°F",
+                "appetite": "Normal",
+                "behavior": "Less defensive",
+                "notes": "Animal showing adaptation to quarantine environment. Eating regularly.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-18T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-004-day3",
+                "date": "2025-07-19T14:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.9°F",
+                "appetite": "Good",
+                "behavior": "Calm",
+                "notes": "Animal has adapted well to quarantine. Old leg injury not affecting health.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-19T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-004-day4",
+                "date": "2025-07-20T14:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Calm and friendly",
+                "notes": "Continued good progress. Animal allows closer inspection without stress.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-20T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-004-day5",
+                "date": "2025-07-21T14:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Excellent",
+                "behavior": "Calm and friendly",
+                "notes": "Animal well-adjusted to quarantine routine. No health concerns.",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2025-07-21T19:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Animal completed quarantine successfully. Old injury noted but not health concern.",
+        "createdAt": "2025-07-17T14:00:00Z",
+        "createdBy": "user012",
+        "pickupDate": "2025-07-17T14:00:00Z",
+        "cageNumber": "CAGE-004"
+    },
+    {
+        "id": "quarantine-005",
+        "biteCaseId": "bite-004",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Female",
+            "age": "Adult (3-4 years)",
+            "color": "Golden brown",
+            "size": "Large",
+            "identificationMarks": "White chest patch, floppy ears",
+            "tagNumber": "UAWS005"
+        },
+        "startDate": "2025-07-25T16:00:00Z",
+        "endDate": "2025-08-04T16:00:00Z",
+        "observationStatus": "Under Observation",
+        "quarantineLocation": {
+            "type": "Facility",
+            "address": "UAWS Animal Quarantine Facility, Industrial Area",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-005-day1",
+                "date": "2025-07-25T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.0°F",
+                "appetite": "Normal",
+                "behavior": "Calm",
+                "notes": "Friendly demeanor, good appetite. Territorial bite incident at bus station.",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2025-07-25T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-005-day2",
+                "date": "2025-07-26T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Good",
+                "behavior": "Calm",
+                "notes": "Animal adapting well to quarantine environment. Eating regularly.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-26T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-005-day3",
+                "date": "2025-07-27T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Calm and friendly",
+                "notes": "Continued good behavior. Animal shows no signs of illness or aggression.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-27T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-005-day4",
+                "date": "2025-07-28T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Excellent",
+                "behavior": "Calm and friendly",
+                "notes": "Animal well-adjusted to routine. Showing excellent appetite and behavior.",
+                "observedBy": "Dr. Rajesh Kumar",
+                "observedAt": "2025-07-28T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-005-day5",
+                "date": "2025-07-29T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Excellent",
+                "behavior": "Calm and friendly",
+                "notes": "Halfway through observation period. Animal continues to show excellent health.",
+                "observedBy": "Dr. Anita Desai",
+                "observedAt": "2025-07-29T20:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Under Observation",
+        "notes": "Animal appears healthy but needs full observation period after bite incident.",
+        "createdAt": "2025-07-25T16:00:00Z",
+        "createdBy": "user004",
+        "pickupDate": "2025-07-25T16:00:00Z",
+        "cageNumber": "CAGE-005"
+    },
+    {
+        "id": "quarantine-006",
+        "biteCaseId": "bite-008",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Adult (4-5 years)",
+            "color": "White with brown spots",
+            "size": "Medium",
+            "identificationMarks": "Brown spot over left eye, docked tail",
+            "tagNumber": "UAWS006"
+        },
+        "startDate": "2025-07-21T15:00:00Z",
+        "endDate": "2025-07-31T15:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Owner's Property",
+            "address": "Mall Security Office, Commercial Area",
+            "gps": {
+                "lat": 18.5198,
+                "lng": 73.8623
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-006-day1",
+                "date": "2025-07-21T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Normal",
+                "behavior": "Normal",
+                "notes": "Home quarantine. Owner cooperative, dog vaccinated. Security dog doing normal duties.",
+                "observedBy": "Security Supervisor",
+                "observedAt": "2025-07-21T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-006-day2",
+                "date": "2025-07-22T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Normal work routine",
+                "notes": "Dog continues security duties. Owner reports normal behavior at home.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-22T16:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-006-day3",
+                "date": "2025-07-23T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Good",
+                "behavior": "Normal work routine",
+                "notes": "Continued normal security work. No behavioral changes observed.",
+                "observedBy": "Security Supervisor",
+                "observedAt": "2025-07-23T16:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-006-day4",
+                "date": "2025-07-24T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Good",
+                "behavior": "Normal work routine",
+                "notes": "Dog maintaining normal work schedule. No health concerns.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-24T16:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-006-day5",
+                "date": "2025-07-25T15:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Good",
+                "behavior": "Normal work routine",
+                "notes": "Dog continues normal security duties under observation. No behavioral changes.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-25T16:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Home quarantine successful. Vaccinated security dog completed observation without issues.",
+        "createdAt": "2025-07-21T15:00:00Z",
+        "createdBy": "user008",
+        "pickupDate": "2025-07-21T15:00:00Z",
+        "cageNumber": "CAGE-006"
+    },
+    {
+        "id": "quarantine-007",
+        "biteCaseId": "bite-010",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Adult (5-6 years)",
+            "color": "Black",
+            "size": "Large",
+            "identificationMarks": "Gray muzzle, collar with company tag",
+            "tagNumber": "FACT001"
+        },
+        "startDate": "2025-07-19T19:00:00Z",
+        "endDate": "2025-07-29T19:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Owner's Property",
+            "address": "ABC Manufacturing Ltd, Factory Compound",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-007-day1",
+                "date": "2025-07-19T19:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.3°F",
+                "appetite": "Normal",
+                "behavior": "Guard dog behavior",
+                "notes": "Factory guard dog with vaccination records. Workplace incident during shift change.",
+                "observedBy": "Factory Veterinarian",
+                "observedAt": "2025-07-19T21:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-007-day2",
+                "date": "2025-07-20T19:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.0°F",
+                "appetite": "Good",
+                "behavior": "Normal guarding",
+                "notes": "Dog continues guard duties. Eating well and showing normal behavior.",
+                "observedBy": "Factory Veterinarian",
+                "observedAt": "2025-07-20T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-007-day3",
+                "date": "2025-07-21T19:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.9°F",
+                "appetite": "Good",
+                "behavior": "Normal guarding",
+                "notes": "Factory operations normal. Dog maintaining regular patrol schedule.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-21T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-007-day4",
+                "date": "2025-07-22T19:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Good",
+                "behavior": "Normal guarding",
+                "notes": "Dog alert and responsive during security rounds. No health issues.",
+                "observedBy": "Factory Veterinarian",
+                "observedAt": "2025-07-22T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-007-day5",
+                "date": "2025-07-23T19:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Good",
+                "behavior": "Normal guarding",
+                "notes": "Midpoint of observation. Dog showing consistent good health.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-23T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-007-day6",
+                "date": "2025-07-24T19:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Normal guarding",
+                "notes": "Dog continues excellent work performance. No behavioral changes.",
+                "observedBy": "Factory Veterinarian",
+                "observedAt": "2025-07-24T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-007-day7",
+                "date": "2025-07-25T19:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Normal guarding",
+                "notes": "Continues normal guard duties. No behavioral or health changes observed.",
+                "observedBy": "Dr. Rajesh Kumar",
+                "observedAt": "2025-07-25T20:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Factory guard dog completed home quarantine successfully. Updated safety protocols implemented.",
+        "createdAt": "2025-07-19T19:00:00Z",
+        "createdBy": "user010",
+        "pickupDate": "2025-07-19T19:00:00Z",
+        "cageNumber": "CAGE-007"
+    },
+    {
+        "id": "quarantine-008",
+        "biteCaseId": "bite-013",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Female",
+            "age": "Young adult (1-2 years)",
+            "color": "Street dog, mixed colors",
+            "size": "Medium",
+            "identificationMarks": "Notched left ear, thin build",
+            "tagNumber": "UAWS007"
+        },
+        "startDate": "2025-07-16T11:00:00Z",
+        "endDate": "2025-07-26T11:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Facility",
+            "address": "UAWS Animal Quarantine Facility, Industrial Area",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-008-day1",
+                "date": "2025-07-16T11:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.9°F",
+                "appetite": "Hungry",
+                "behavior": "Fearful",
+                "notes": "Market stray, undernourished. Food protective behavior normal for stray. Eating eagerly.",
+                "observedBy": "Dr. Anita Desai",
+                "observedAt": "2025-07-16T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-008-day2",
+                "date": "2025-07-17T11:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Good",
+                "behavior": "Less fearful",
+                "notes": "Animal showing improvement. Less fearful around staff, eating regularly.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-17T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-008-day3",
+                "date": "2025-07-18T11:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Calmer",
+                "notes": "Continued improvement in body condition and behavior. Allowing approach.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-18T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-008-day4",
+                "date": "2025-07-19T11:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Good",
+                "behavior": "Calmer",
+                "notes": "Significant improvement in body condition. Less fearful, allows closer approach.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-19T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-008-day5",
+                "date": "2025-07-20T11:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Excellent",
+                "behavior": "Friendly",
+                "notes": "Remarkable improvement. Now friendly and approachable, excellent appetite.",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2025-07-20T17:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Market stray completed quarantine with health improvement. Relocated away from market.",
+        "createdAt": "2025-07-16T11:00:00Z",
+        "createdBy": "user013",
+        "pickupDate": "2025-07-16T11:00:00Z",
+        "cageNumber": "CAGE-008"
+    },
+    {
+        "id": "quarantine-009",
+        "biteCaseId": "bite-009",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Young (6-12 months)",
+            "color": "Brown",
+            "size": "Small",
+            "identificationMarks": "Puppy teeth, playful demeanor",
+            "tagNumber": "UAWS008"
+        },
+        "startDate": "2025-07-20T12:00:00Z",
+        "endDate": "2025-07-30T12:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Facility",
+            "address": "UAWS Animal Quarantine Facility, Industrial Area",
+            "gps": {
+                "lat": 18.4892,
+                "lng": 73.8567
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-009-day1",
+                "date": "2025-07-20T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.5°F",
+                "appetite": "Excellent",
+                "behavior": "Playful",
+                "notes": "Young school stray, very friendly. Minor bite incident with child. High energy levels.",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2025-07-20T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-009-day2",
+                "date": "2025-07-21T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.2°F",
+                "appetite": "Excellent",
+                "behavior": "Very playful",
+                "notes": "Puppy continues to show high energy. Very social and friendly with staff.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-21T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-009-day3",
+                "date": "2025-07-22T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.0°F",
+                "appetite": "Excellent",
+                "behavior": "Very playful",
+                "notes": "Healthy young dog adapting well to routine. Playful and energetic.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-22T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-009-day4",
+                "date": "2025-07-23T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.9°F",
+                "appetite": "Excellent",
+                "behavior": "Very playful",
+                "notes": "Continues excellent health. Very responsive to interaction and training.",
+                "observedBy": "Dr. Rajesh Kumar",
+                "observedAt": "2025-07-23T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-009-day5",
+                "date": "2025-07-24T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Excellent",
+                "behavior": "Very playful",
+                "notes": "Halfway through observation. Young dog showing consistent good health.",
+                "observedBy": "Dr. Anita Desai",
+                "observedAt": "2025-07-24T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-009-day6",
+                "date": "2025-07-25T12:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Excellent",
+                "behavior": "Very playful",
+                "notes": "Continues to be healthy and playful. No concerning behaviors observed.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-25T18:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Young healthy dog completed quarantine. Arrangements made for school area management.",
+        "createdAt": "2025-07-20T12:00:00Z",
+        "createdBy": "user009",
+        "pickupDate": "2025-07-20T12:00:00Z",
+        "cageNumber": "CAGE-009"
+    },
+    {
+        "id": "quarantine-010",
+        "biteCaseId": "bite-011",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Adult (3-4 years)",
+            "color": "Golden",
+            "size": "Medium",
+            "identificationMarks": "Temple collar, well-groomed",
+            "tagNumber": "TEMP001"
+        },
+        "startDate": "2025-07-18T16:00:00Z",
+        "endDate": "2025-07-28T16:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Community Location",
+            "address": "Temple Complex, Designated Area",
+            "gps": {
+                "lat": 18.5123,
+                "lng": 73.8445
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-010-day1",
+                "date": "2025-07-18T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Normal",
+                "behavior": "Calm, friendly",
+                "notes": "Well-known temple dog with vaccination records. Accidental bite incident.",
+                "observedBy": "Temple Priest",
+                "observedAt": "2025-07-18T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-010-day2",
+                "date": "2025-07-19T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Good",
+                "behavior": "Normal temple routine",
+                "notes": "Dog continuing normal temple activities. Friendly with visitors.",
+                "observedBy": "Temple Priest",
+                "observedAt": "2025-07-19T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-010-day3",
+                "date": "2025-07-20T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Good",
+                "behavior": "Normal temple routine",
+                "notes": "Maintains regular temple routine. No behavioral changes observed.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-20T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-010-day4",
+                "date": "2025-07-21T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Good",
+                "behavior": "Normal temple routine",
+                "notes": "Dog well-adjusted to temple life. Continues friendly interactions.",
+                "observedBy": "Temple Priest",
+                "observedAt": "2025-07-21T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-010-day5",
+                "date": "2025-07-22T16:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Good",
+                "behavior": "Normal temple routine",
+                "notes": "Continues normal temple routine. Friendly with visitors as usual.",
+                "observedBy": "Dr. Anita Desai",
+                "observedAt": "2025-07-22T17:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Temple dog completed community quarantine successfully. Very minor accidental incident.",
+        "createdAt": "2025-07-18T16:00:00Z",
+        "createdBy": "user011",
+        "pickupDate": "2025-07-18T16:00:00Z",
+        "cageNumber": "CAGE-010"
+    },
+    {
+        "id": "quarantine-011",
+        "biteCaseId": "bite-002",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Adult (4-5 years)",
+            "color": "Black",
+            "size": "Large",
+            "identificationMarks": "Collar with owner tag, well-maintained",
+            "tagNumber": "PRIV001"
+        },
+        "startDate": "2024-07-19T17:00:00Z",
+        "endDate": "2024-07-29T17:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Owner's Property",
+            "address": "Owner's residence, Nehru Road",
+            "gps": {
+                "lat": 18.5158,
+                "lng": 73.856
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-011-day1",
+                "date": "2024-07-19T17:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Normal",
+                "behavior": "Normal home behavior",
+                "notes": "Home quarantine for vaccinated pet. Owner very cooperative. Minor defensive bite.",
+                "observedBy": "Owner (Rajesh Kumar)",
+                "observedAt": "2024-07-19T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-011-day10",
+                "date": "2024-07-28T17:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.4°F",
+                "appetite": "Excellent",
+                "behavior": "Normal pet behavior",
+                "notes": "Completed 10-day observation successfully. No changes in behavior or health.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2024-07-28T18:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Successful home quarantine for vaccinated pet. Minor incident resolved amicably.",
+        "createdAt": "2024-07-19T17:00:00Z",
+        "createdBy": "user002",
+        "pickupDate": "2024-07-19T17:00:00Z",
+        "cageNumber": "CAGE-011"
+    },
+    {
+        "id": "quarantine-012",
+        "biteCaseId": "bite-014",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Female",
+            "age": "Adult (2-3 years)",
+            "color": "White and brown",
+            "size": "Small",
+            "identificationMarks": "Society identification collar",
+            "tagNumber": "SOC001"
+        },
+        "startDate": "2025-07-15T17:00:00Z",
+        "endDate": "2025-07-25T17:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Community Location",
+            "address": "Society compound, designated area",
+            "gps": {
+                "lat": 18.5234,
+                "lng": 73.8678
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-012-day1",
+                "date": "2025-07-15T17:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Normal",
+                "behavior": "Playful, friendly",
+                "notes": "Society pet with vaccination records. Very minor play-related contact with child.",
+                "observedBy": "Society Maintenance",
+                "observedAt": "2025-07-15T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-012-day2",
+                "date": "2025-07-16T17:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Playful, friendly",
+                "notes": "Dog continues normal society routine. Very social with residents.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-16T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-012-day3",
+                "date": "2025-07-17T17:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Good",
+                "behavior": "Playful, friendly",
+                "notes": "Animal well-integrated into society life. No behavioral concerns.",
+                "observedBy": "Society Maintenance",
+                "observedAt": "2025-07-17T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-012-day4",
+                "date": "2025-07-18T17:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Good",
+                "behavior": "Playful, friendly",
+                "notes": "Dog maintains excellent health and temperament. Popular with children.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-18T18:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-012-day5",
+                "date": "2025-07-19T17:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Excellent",
+                "behavior": "Playful, friendly",
+                "notes": "Halfway through observation. Dog continues excellent socialization.",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2025-07-19T18:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Society pet completed community quarantine. Very minor incident during play.",
+        "createdAt": "2025-07-15T17:00:00Z",
+        "createdBy": "user014",
+        "pickupDate": "2025-07-15T17:00:00Z",
+        "cageNumber": "CAGE-012"
+    },
+    {
+        "id": "quarantine-013",
+        "biteCaseId": "bite-006",
+        "animalInfo": {
+            "species": "Cat",
+            "sex": "Female",
+            "age": "Adult (2-3 years)",
+            "color": "Grey and white",
+            "size": "Small",
+            "identificationMarks": "White chest and paws, green eyes",
+            "tagNumber": "CAT001"
+        },
+        "startDate": "2025-07-23T18:00:00Z",
+        "endDate": "2025-08-02T18:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Owner's Property",
+            "address": "Sunshine Apartments, owner's flat",
+            "gps": {
+                "lat": 18.4584,
+                "lng": 73.8078
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-013-day1",
+                "date": "2025-07-23T18:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "101.0°F",
+                "appetite": "Normal",
+                "behavior": "Normal cat behavior",
+                "notes": "Home quarantine for vaccinated pet cat. Minor defensive scratch incident.",
+                "observedBy": "Owner (Mrs. Desai)",
+                "observedAt": "2025-07-23T20:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-013-day2",
+                "date": "2025-07-24T18:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Good",
+                "behavior": "Normal cat behavior",
+                "notes": "Cat returning to normal routine. Eating well and showing typical behavior.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-24T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-013-day3",
+                "date": "2025-07-25T18:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Normal cat behavior",
+                "notes": "Cat comfortable with home quarantine. Owner reports normal behavior.",
+                "observedBy": "Owner (Mrs. Desai)",
+                "observedAt": "2025-07-25T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-013-day4",
+                "date": "2025-07-26T18:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Good",
+                "behavior": "Normal cat behavior",
+                "notes": "Cat maintaining normal indoor routine. No behavioral changes noted.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-26T19:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-013-day5",
+                "date": "2025-07-27T18:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Excellent",
+                "behavior": "Normal cat behavior",
+                "notes": "Halfway through observation. Cat showing excellent health and behavior.",
+                "observedBy": "Dr. Anita Desai",
+                "observedAt": "2025-07-27T19:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Pet cat completed home quarantine successfully. Very minor defensive scratch resolved.",
+        "createdAt": "2025-07-23T18:00:00Z",
+        "createdBy": "user006",
+        "pickupDate": "2025-07-23T18:00:00Z",
+        "cageNumber": "CAGE-013"
+    },
+    {
+        "id": "quarantine-014",
+        "biteCaseId": "bite-005",
+        "animalInfo": {
+            "species": "Dog",
+            "sex": "Male",
+            "age": "Young adult (1-2 years)",
+            "color": "Black and tan",
+            "size": "Medium",
+            "identificationMarks": "University campus tag, friendly demeanor",
+            "tagNumber": "UNI001"
+        },
+        "startDate": "2025-07-24T13:00:00Z",
+        "endDate": "2025-08-03T13:00:00Z",
+        "observationStatus": "Alive & Healthy",
+        "quarantineLocation": {
+            "type": "Community Location",
+            "address": "University campus, designated area",
+            "gps": {
+                "lat": 18.5074,
+                "lng": 73.8077
+            }
+        },
+        "dailyObservations": [
+            {
+                "id": "obs-014-day1",
+                "date": "2025-07-24T13:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.9°F",
+                "appetite": "Normal",
+                "behavior": "Playful, friendly",
+                "notes": "Campus dog with vaccination records. Accidental bite during feeding/play.",
+                "observedBy": "Campus Security",
+                "observedAt": "2025-07-24T17:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-014-day2",
+                "date": "2025-07-25T13:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.8°F",
+                "appetite": "Good",
+                "behavior": "Playful, friendly",
+                "notes": "Dog continues normal campus routine. Very social with students and staff.",
+                "observedBy": "Dr. Priya Patel",
+                "observedAt": "2025-07-25T16:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-014-day3",
+                "date": "2025-07-26T13:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.7°F",
+                "appetite": "Good",
+                "behavior": "Playful, friendly",
+                "notes": "Campus favorite maintaining normal behavior. Popular with university community.",
+                "observedBy": "Campus Security",
+                "observedAt": "2025-07-26T16:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-014-day4",
+                "date": "2025-07-27T13:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.6°F",
+                "appetite": "Good",
+                "behavior": "Playful, friendly",
+                "notes": "Dog well-integrated into campus life. Continues friendly interactions.",
+                "observedBy": "Dr. Amit Singh",
+                "observedAt": "2025-07-27T16:00:00Z",
+                "photos": []
+            },
+            {
+                "id": "obs-014-day5",
+                "date": "2025-07-28T13:00:00Z",
+                "status": "Alive & Healthy",
+                "symptoms": "Normal",
+                "temperature": "100.5°F",
+                "appetite": "Excellent",
+                "behavior": "Playful, friendly",
+                "notes": "Halfway through observation. Dog showing excellent health and socialization.",
+                "observedBy": "Dr. Neha Sharma",
+                "observedAt": "2025-07-28T16:00:00Z",
+                "photos": []
+            }
+        ],
+        "finalOutcome": "Released",
+        "notes": "Campus dog completed community quarantine. Accidental contact during friendly interaction.",
+        "createdAt": "2025-07-24T13:00:00Z",
+        "createdBy": "user005",
+        "pickupDate": "2025-07-24T13:00:00Z",
+        "cageNumber": "CAGE-014"
+    }
+]

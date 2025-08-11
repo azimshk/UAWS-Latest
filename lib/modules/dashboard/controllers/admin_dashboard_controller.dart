@@ -1,52 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../core/utils/app_logger.dart';
-import '../shared/models/models.dart';
-import '../services/auth_service.dart';
+import '../../../core/utils/app_logger.dart';
+import '../../../shared/models/models.dart';
+import '../../auth/services/auth_service.dart';
 
-class MunicipalDashboardController extends GetxController {
+class AdminDashboardController extends GetxController {
   UserModel? get currentUser => AuthService.to.currentUser;
 
   // Reactive variables for dashboard state
   var isLoading = false.obs;
+  var reportGenerating = false.obs;
   var selectedLanguage = 'English'.obs;
-  var isGeneratingReport = false.obs;
 
-  // Mock statistics data (replace with real data later)
-  var sterilizationStats = {
-    'total': 1250,
-    'thisMonth': 145,
-    'pending': 23,
-    'completed': 1227,
-  }.obs;
-
-  var biteStats = {
-    'total': 89,
-    'thisMonth': 12,
-    'resolved': 76,
-    'active': 13,
-  }.obs;
-
-  var rabiesStats = {
-    'total': 8,
-    'thisMonth': 2,
-    'vaccinated': 156,
-    'surveillance': 45,
-  }.obs;
+  // Admin stats (mock data for now)
+  var totalCities = 25.obs;
+  var totalUsers = 342.obs;
+  var activeReports = 18.obs;
+  var pendingApprovals = 7.obs;
 
   @override
   void onInit() {
     super.onInit();
-    _checkUserPermissions();
-    _loadStatistics();
+    _checkAdminAccess();
+    _loadAdminStats();
   }
 
-  void _checkUserPermissions() {
+  void _checkAdminAccess() {
     final user = currentUser;
-    if (user == null || (!user.isMunicipalOfficial && !user.isAdmin)) {
+    if (user == null || !user.isAdmin) {
       Get.snackbar(
         'error'.tr,
-        'Access denied. Municipal official permissions required.',
+        'access_denied_admin'.tr,
         backgroundColor: const Color(0xFFD32F2F),
         colorText: Colors.white,
         snackPosition: SnackPosition.TOP,
@@ -55,49 +39,49 @@ class MunicipalDashboardController extends GetxController {
     }
   }
 
-  void _loadStatistics() {
-    // Simulate loading statistics
+  void _loadAdminStats() {
+    // Simulate loading admin-level statistics
     // In real implementation, this would fetch from Firebase/API
-    AppLogger.i('Loading municipal statistics...');
+    AppLogger.i('Loading central admin statistics...');
   }
 
-  // Stats Overview function
-  void viewStatsOverview() {
+  // Full City/Center Dashboards
+  void openCityCenterDashboard() {
     Get.snackbar(
-      'stats_overview'.tr,
-      'Displaying comprehensive statistics overview...',
+      'city_center_dashboard'.tr,
+      'opening_city_center_dashboard'.tr,
       backgroundColor: const Color(0xFF2E7D32),
       colorText: Colors.white,
       snackPosition: SnackPosition.BOTTOM,
       duration: const Duration(seconds: 3),
     );
 
-    // Navigate to detailed stats screen (implement when ready)
-    // Get.toNamed('/municipal-stats-overview');
+    // Navigate to city/center dashboard screen (implement when ready)
+    // Get.toNamed('/city-center-dashboard');
   }
 
-  // City Report PDF Download
-  Future<void> downloadCityReport() async {
-    final user = currentUser;
+  // Auto-report generation (1st–5th)
+  Future<void> generateAutoReports() async {
+    if (reportGenerating.value) return; // Prevent multiple calls
 
     try {
-      isGeneratingReport.value = true;
+      reportGenerating.value = true;
 
       Get.snackbar(
-        'generating_report'.tr,
-        'Preparing city report PDF for ${user?.assignedCity}...',
+        'auto_report_generation'.tr,
+        'generating_reports_1st_5th'.tr,
         backgroundColor: const Color(0xFF2E7D32),
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,
         duration: const Duration(seconds: 2),
       );
 
-      // Simulate report generation delay
-      await Future.delayed(const Duration(seconds: 3));
+      // Simulate report generation process
+      await Future.delayed(const Duration(seconds: 4));
 
       Get.snackbar(
-        'report_ready'.tr,
-        'City report PDF generated successfully!',
+        'auto_report_generation'.tr,
+        'reports_generated_successfully'.tr,
         backgroundColor: const Color(0xFF4CAF50),
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,
@@ -105,66 +89,54 @@ class MunicipalDashboardController extends GetxController {
       );
 
       // In real implementation, this would:
-      // 1. Generate PDF with statistics
-      // 2. Download or share the file
-      // await _generateAndDownloadPDF();
+      // 1. Generate reports for 1st to 5th of current month
+      // 2. Create PDF files with statistics
+      // 3. Send notifications to relevant stakeholders
+      // await _generateMonthlyReports();
     } catch (e) {
       Get.snackbar(
         'error'.tr,
-        'Failed to generate report. Please try again.',
+        'report_generation_failed'.tr,
         backgroundColor: const Color(0xFFD32F2F),
         colorText: Colors.white,
         snackPosition: SnackPosition.TOP,
       );
     } finally {
-      isGeneratingReport.value = false;
+      reportGenerating.value = false;
     }
   }
 
-  // Photo Logs function
-  void viewPhotoLogs() {
+  // User Management
+  void openUserManagement() {
     Get.snackbar(
-      'photo_logs'.tr,
-      'Opening photo logs gallery...',
+      'user_management'.tr,
+      'opening_user_management'.tr,
       backgroundColor: const Color(0xFF2E7D32),
       colorText: Colors.white,
       snackPosition: SnackPosition.BOTTOM,
       duration: const Duration(seconds: 3),
     );
 
-    // Navigate to photo logs screen (implement when ready)
-    // Get.toNamed('/municipal-photo-logs');
+    // Navigate to user management screen (implement when ready)
+    // Get.toNamed('/user-management');
   }
 
-  // Refresh statistics
-  Future<void> refreshStats() async {
-    isLoading.value = true;
-
-    // Simulate data refresh
-    await Future.delayed(const Duration(seconds: 2));
-
-    // Update stats with new mock data
-    sterilizationStats.value = {
-      'total': sterilizationStats['total']! + 5,
-      'thisMonth': sterilizationStats['thisMonth']! + 3,
-      'pending': sterilizationStats['pending']! - 1,
-      'completed': sterilizationStats['completed']! + 4,
-    };
-
-    isLoading.value = false;
-
+  // Full Tracker Access
+  void openFullTrackerAccess() {
     Get.snackbar(
-      'success'.tr,
-      'Statistics updated successfully',
-      backgroundColor: const Color(0xFF4CAF50),
+      'full_tracker_access'.tr,
+      'opening_full_tracker_access'.tr,
+      backgroundColor: const Color(0xFF2E7D32),
       colorText: Colors.white,
       snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 3),
     );
+
+    // Navigate to full tracker access screen (implement when ready)
+    // Get.toNamed('/full-tracker-access');
   }
 
-  // Logout function
-  // Enhanced Logout with confirmation dialog for Municipal Official
+  // Logout with confirmation dialog
   Future<void> logout() async {
     bool? confirm = await Get.dialog<bool>(
       AlertDialog(
@@ -189,7 +161,7 @@ class MunicipalDashboardController extends GetxController {
             ),
             const SizedBox(height: 12),
             Text(
-              'logout_warning_municipal'.tr,
+              'logout_warning_admin'.tr,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey[600],
@@ -230,7 +202,7 @@ class MunicipalDashboardController extends GetxController {
       // Show logout process
       Get.snackbar(
         'logging_out'.tr,
-        'municipal_session_ending'.tr,
+        'admin_session_ending'.tr,
         backgroundColor: const Color(0xFF2E7D32),
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,
@@ -240,5 +212,29 @@ class MunicipalDashboardController extends GetxController {
       await AuthService.to.logout();
       Get.offAllNamed('/login');
     }
+  }
+
+  // Refresh admin stats
+  Future<void> refreshStats() async {
+    isLoading.value = true;
+
+    // Simulate data refresh
+    await Future.delayed(const Duration(seconds: 2));
+
+    // Update stats with new mock data
+    totalUsers.value += 5;
+    activeReports.value += 2;
+    pendingApprovals.value -= 1;
+
+    isLoading.value = false;
+
+    Get.snackbar(
+      'success'.tr,
+      'admin_stats_updated'.tr,
+      backgroundColor: const Color(0xFF4CAF50),
+      colorText: Colors.white,
+      snackPosition: SnackPosition.BOTTOM,
+      duration: const Duration(seconds: 2),
+    );
   }
 }

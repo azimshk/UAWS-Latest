@@ -1,52 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../core/utils/app_logger.dart';
-import '../shared/models/models.dart';
-import '../services/auth_service.dart';
+import '../../../shared/models/models.dart';
+import '../../auth/services/auth_service.dart';
 
-class MunicipalDashboardController extends GetxController {
+class FieldDashboardController extends GetxController {
   UserModel? get currentUser => AuthService.to.currentUser;
 
   // Reactive variables for dashboard state
   var isLoading = false.obs;
   var selectedLanguage = 'English'.obs;
-  var isGeneratingReport = false.obs;
-
-  // Mock statistics data (replace with real data later)
-  var sterilizationStats = {
-    'total': 1250,
-    'thisMonth': 145,
-    'pending': 23,
-    'completed': 1227,
-  }.obs;
-
-  var biteStats = {
-    'total': 89,
-    'thisMonth': 12,
-    'resolved': 76,
-    'active': 13,
-  }.obs;
-
-  var rabiesStats = {
-    'total': 8,
-    'thisMonth': 2,
-    'vaccinated': 156,
-    'surveillance': 45,
-  }.obs;
 
   @override
   void onInit() {
     super.onInit();
     _checkUserPermissions();
-    _loadStatistics();
   }
 
   void _checkUserPermissions() {
     final user = currentUser;
-    if (user == null || (!user.isMunicipalOfficial && !user.isAdmin)) {
+    if (user == null || !user.isFieldStaff) {
       Get.snackbar(
         'error'.tr,
-        'Access denied. Municipal official permissions required.',
+        'Access denied. Field staff permissions required.',
         backgroundColor: const Color(0xFFD32F2F),
         colorText: Colors.white,
         snackPosition: SnackPosition.TOP,
@@ -55,116 +30,75 @@ class MunicipalDashboardController extends GetxController {
     }
   }
 
-  void _loadStatistics() {
-    // Simulate loading statistics
-    // In real implementation, this would fetch from Firebase/API
-    AppLogger.i('Loading municipal statistics...');
-  }
-
-  // Stats Overview function
-  void viewStatsOverview() {
-    Get.snackbar(
-      'stats_overview'.tr,
-      'Displaying comprehensive statistics overview...',
-      backgroundColor: const Color(0xFF2E7D32),
-      colorText: Colors.white,
-      snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 3),
-    );
-
-    // Navigate to detailed stats screen (implement when ready)
-    // Get.toNamed('/municipal-stats-overview');
-  }
-
-  // City Report PDF Download
-  Future<void> downloadCityReport() async {
+  // Start Pickup (Sterilization) function
+  void startPickup() {
     final user = currentUser;
-
-    try {
-      isGeneratingReport.value = true;
-
+    if (user != null && user.hasPermission('sterilization', 'create')) {
       Get.snackbar(
-        'generating_report'.tr,
-        'Preparing city report PDF for ${user?.assignedCity}...',
+        'sterilization_pickup'.tr,
+        'Opening sterilization tracker...',
         backgroundColor: const Color(0xFF2E7D32),
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,
         duration: const Duration(seconds: 2),
       );
 
-      // Simulate report generation delay
-      await Future.delayed(const Duration(seconds: 3));
-
+      // Navigate to sterilization tracker screen
+      Get.toNamed('/sterilization');
+    } else {
       Get.snackbar(
-        'report_ready'.tr,
-        'City report PDF generated successfully!',
-        backgroundColor: const Color(0xFF4CAF50),
+        'error'.tr,
+        'You do not have permission to start sterilization pickup',
+        backgroundColor: const Color(0xFFD32F2F),
+        colorText: Colors.white,
+        snackPosition: SnackPosition.TOP,
+      );
+    }
+  }
+
+  // Add Vaccination Entry function
+  void addVaccinationEntry() {
+    final user = currentUser;
+    if (user != null && user.hasPermission('vaccination', 'create')) {
+      Get.snackbar(
+        'vaccination_entry'.tr,
+        'Adding new vaccination entry...',
+        backgroundColor: const Color(0xFF2E7D32),
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,
         duration: const Duration(seconds: 3),
       );
 
-      // In real implementation, this would:
-      // 1. Generate PDF with statistics
-      // 2. Download or share the file
-      // await _generateAndDownloadPDF();
-    } catch (e) {
+      // Navigate to vaccination entry screen (implement when ready)
+      // Get.toNamed('/vaccination-entry');
+    } else {
       Get.snackbar(
         'error'.tr,
-        'Failed to generate report. Please try again.',
+        'You do not have permission to add vaccination entries',
         backgroundColor: const Color(0xFFD32F2F),
         colorText: Colors.white,
         snackPosition: SnackPosition.TOP,
       );
-    } finally {
-      isGeneratingReport.value = false;
     }
   }
 
-  // Photo Logs function
-  void viewPhotoLogs() {
+  // View My Submissions function
+  void viewMySubmissions() {
     Get.snackbar(
-      'photo_logs'.tr,
-      'Opening photo logs gallery...',
+      'my_submissions'.tr,
+      'Loading your submissions...',
       backgroundColor: const Color(0xFF2E7D32),
       colorText: Colors.white,
       snackPosition: SnackPosition.BOTTOM,
       duration: const Duration(seconds: 3),
     );
 
-    // Navigate to photo logs screen (implement when ready)
-    // Get.toNamed('/municipal-photo-logs');
-  }
-
-  // Refresh statistics
-  Future<void> refreshStats() async {
-    isLoading.value = true;
-
-    // Simulate data refresh
-    await Future.delayed(const Duration(seconds: 2));
-
-    // Update stats with new mock data
-    sterilizationStats.value = {
-      'total': sterilizationStats['total']! + 5,
-      'thisMonth': sterilizationStats['thisMonth']! + 3,
-      'pending': sterilizationStats['pending']! - 1,
-      'completed': sterilizationStats['completed']! + 4,
-    };
-
-    isLoading.value = false;
-
-    Get.snackbar(
-      'success'.tr,
-      'Statistics updated successfully',
-      backgroundColor: const Color(0xFF4CAF50),
-      colorText: Colors.white,
-      snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 2),
-    );
+    // Navigate to submissions screen (implement when ready)
+    // Get.toNamed('/my-submissions');
   }
 
   // Logout function
-  // Enhanced Logout with confirmation dialog for Municipal Official
+  // Enhanced Logout with confirmation dialog for Field Staff
   Future<void> logout() async {
     bool? confirm = await Get.dialog<bool>(
       AlertDialog(
@@ -189,7 +123,7 @@ class MunicipalDashboardController extends GetxController {
             ),
             const SizedBox(height: 12),
             Text(
-              'logout_warning_municipal'.tr,
+              'logout_warning_field_staff'.tr,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey[600],
@@ -230,7 +164,7 @@ class MunicipalDashboardController extends GetxController {
       // Show logout process
       Get.snackbar(
         'logging_out'.tr,
-        'municipal_session_ending'.tr,
+        'field_staff_session_ending'.tr,
         backgroundColor: const Color(0xFF2E7D32),
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,

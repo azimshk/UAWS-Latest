@@ -86,10 +86,7 @@ class FieldDashboardScreen extends GetView<FieldDashboardController> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            const Color(0xFF2E7D32),
-            const Color(0xFF4CAF50),
-          ],
+          colors: [const Color(0xFF2E7D32), const Color(0xFF4CAF50)],
         ),
       ),
       child: Column(
@@ -105,11 +102,8 @@ class FieldDashboardScreen extends GetView<FieldDashboardController> {
           ),
           const SizedBox(height: 8),
           Text(
-            '${'assigned_area'.tr}: ${user?.assignedCity} - ${user?.assignedWard?.join(', ')}',
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.white70,
-            ),
+            '${'assigned_area'.tr}: ${user?.assignedCity} - ${user?.assignedWard.join(', ')}',
+            style: const TextStyle(fontSize: 16, color: Colors.white70),
           ),
         ],
       ),
@@ -130,33 +124,20 @@ class FieldDashboardScreen extends GetView<FieldDashboardController> {
         leading: CircleAvatar(
           backgroundColor: color,
           radius: 30,
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: 28,
-          ),
+          child: Icon(icon, color: Colors.white, size: 28),
         ),
         title: Text(
           title,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 8),
           child: Text(
             subtitle,
-            style: TextStyle(
-              color: Colors.grey[600],
-              fontSize: 14,
-            ),
+            style: TextStyle(color: Colors.grey[600], fontSize: 14),
           ),
         ),
-        trailing: const Icon(
-          Icons.arrow_forward_ios,
-          color: Color(0xFF2E7D32),
-        ),
+        trailing: const Icon(Icons.arrow_forward_ios, color: Color(0xFF2E7D32)),
         onTap: onTap,
       ),
     );
@@ -172,11 +153,7 @@ class FieldDashboardScreen extends GetView<FieldDashboardController> {
           children: [
             Row(
               children: [
-                const Icon(
-                  Icons.analytics,
-                  color: Color(0xFF2E7D32),
-                  size: 24,
-                ),
+                const Icon(Icons.analytics, color: Color(0xFF2E7D32), size: 24),
                 const SizedBox(width: 12),
                 Text(
                   'quick_stats'.tr,
@@ -211,12 +188,9 @@ class FieldDashboardScreen extends GetView<FieldDashboardController> {
               width: double.infinity,
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xFFFFA000).withOpacity(0.1),
+                color: const Color(0xFFFFA000).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: const Color(0xFFFFA000),
-                  width: 1,
-                ),
+                border: Border.all(color: const Color(0xFFFFA000), width: 1),
               ),
               child: Text(
                 'stats_coming_soon'.tr,
@@ -251,10 +225,7 @@ class FieldDashboardScreen extends GetView<FieldDashboardController> {
         const SizedBox(height: 4),
         Text(
           label,
-          style: TextStyle(
-            fontSize: 12,
-            color: Colors.grey[600],
-          ),
+          style: TextStyle(fontSize: 12, color: Colors.grey[600]),
           textAlign: TextAlign.center,
         ),
       ],

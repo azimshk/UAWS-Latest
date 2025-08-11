@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../models/user_model.dart';
-import '../screens/Map_location_of_user.dart';
+import '../shared/models/models.dart';
 import '../services/auth_service.dart';
 
 class FieldDashboardController extends GetxController {
@@ -33,23 +32,19 @@ class FieldDashboardController extends GetxController {
 
   // Start Pickup (Sterilization) function
   void startPickup() {
-
     final user = currentUser;
     if (user != null && user.hasPermission('sterilization', 'create')) {
       Get.snackbar(
         'sterilization_pickup'.tr,
-        'Sterilization pickup started for ${user.assignedWard?.join(', ')}',
+        'Opening sterilization tracker...',
         backgroundColor: const Color(0xFF2E7D32),
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: 2),
       );
-      Get.to(() => const Map_location_of_user());
 
-
-      // Navigate to pickup screen (implement when ready)
-      // Get.toNamed('/sterilization-pickup');
-
+      // Navigate to sterilization tracker screen
+      Get.toNamed('/sterilization');
     } else {
       Get.snackbar(
         'error'.tr,
@@ -76,7 +71,6 @@ class FieldDashboardController extends GetxController {
 
       // Navigate to vaccination entry screen (implement when ready)
       // Get.toNamed('/vaccination-entry');
-
     } else {
       Get.snackbar(
         'error'.tr,
@@ -108,23 +102,14 @@ class FieldDashboardController extends GetxController {
   Future<void> logout() async {
     bool? confirm = await Get.dialog<bool>(
       AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         title: Row(
           children: [
-            Icon(
-              Icons.logout,
-              color: const Color(0xFF2E7D32),
-              size: 28,
-            ),
+            Icon(Icons.logout, color: const Color(0xFF2E7D32), size: 28),
             const SizedBox(width: 12),
             Text(
               'confirm_logout'.tr,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -155,10 +140,7 @@ class FieldDashboardController extends GetxController {
             ),
             child: Text(
               'cancel'.tr,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
+              style: const TextStyle(fontSize: 16, color: Colors.grey),
             ),
           ),
           ElevatedButton(
@@ -171,10 +153,7 @@ class FieldDashboardController extends GetxController {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            child: Text(
-              'logout'.tr,
-              style: const TextStyle(fontSize: 16),
-            ),
+            child: Text('logout'.tr, style: const TextStyle(fontSize: 16)),
           ),
         ],
       ),
@@ -196,5 +175,4 @@ class FieldDashboardController extends GetxController {
       Get.offAllNamed('/login');
     }
   }
-
 }

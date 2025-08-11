@@ -1,0 +1,923 @@
+[
+  {
+    "id": "rabies-001",
+    "relatedBiteCaseId": "bite-001",
+    "relatedQuarantineId": "quarantine-001",
+    "reportDate": "2025-07-22T14:00:00Z",
+    "suspicionLevel": "Low",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Male",
+      "age": "Adult (2-3 years)",
+      "color": "Brown with white patches",
+      "size": "Medium",
+      "identificationMarks": "Scar on left ear",
+      "tagNumber": "UAWS001",
+      "vaccinationStatus": "Unknown"
+    },
+    "location": {
+      "address": "Near Government Hospital, Main Road",
+      "ward": "Ward 3",
+      "gps": {
+        "lat": 18.5204,
+        "lng": 73.8567
+      },
+      "zone": "Zone-1"
+    },
+    "clinicalSigns": {
+      "behavioral": [],
+      "neurological": [],
+      "physical": [],
+      "onset": "Unknown",
+      "progression": "Stable"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Brain tissue",
+        "collectionDate": "2025-07-23T09:00:00Z",
+        "labName": "State Veterinary Laboratory",
+        "testMethod": "DFA",
+        "result": "Positive"
+      }
+    ],
+    "outcome": {
+      "status": "Under observation",
+      "date": "2025-07-22T14:00:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": true,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Priya Patel",
+    "notes": "Animal under observation, no clinical signs of rabies observed during quarantine period. Lab sample sent for testing.",
+    "photos": [],
+    "createdAt": "2025-07-22T14:00:00Z",
+    "createdBy": "user001",
+    "firstSeenDate": "2025-07-21T14:00:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Positive",
+    "videos": [
+      "video_rabies-001_1753681128930.mp4"
+    ]
+  },
+  {
+    "id": "rabies-002",
+    "reportDate": "2024-07-15T10:30:00Z",
+    "suspicionLevel": "High",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Unknown",
+      "age": "Adult",
+      "color": "Black and tan",
+      "size": "Large",
+      "identificationMarks": "None visible",
+      "vaccinationStatus": "Unvaccinated"
+    },
+    "location": {
+      "address": "Old Bus Stand Area",
+      "ward": "Ward 7",
+      "gps": {
+        "lat": 18.5104,
+        "lng": 73.8467
+      },
+      "zone": "Zone-1"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Aggression",
+        "Restlessness"
+      ],
+      "neurological": [
+        "Circling"
+      ],
+      "physical": [
+        "Drooling",
+        "Difficulty Swallowing"
+      ],
+      "onset": "Acute",
+      "progression": "Worsening"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Brain tissue",
+        "collectionDate": "2024-07-16T09:00:00Z",
+        "labName": "State Veterinary Laboratory",
+        "testMethod": "DFA",
+        "result": "Positive",
+        "resultDate": "2024-07-17T16:00:00Z",
+        "labReportNumber": "SVL-2024-0756"
+      }
+    ],
+    "outcome": {
+      "status": "Dead",
+      "date": "2024-07-16T08:00:00Z",
+      "cause": "Rabies infection",
+      "postMortemDone": true,
+      "disposalMethod": "Burning"
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": true,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": true,
+      "massVaccination": true,
+      "quarantineArea": true
+    },
+    "reportedBy": "Dr. Amit Singh",
+    "verifiedBy": "Chief Veterinary Officer",
+    "notes": "Confirmed rabies case. All public health measures implemented. Area vaccination drive conducted.",
+    "photos": [],
+    "createdAt": "2024-07-15T10:30:00Z",
+    "createdBy": "user002",
+    "firstSeenDate": "2024-07-13T10:30:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Positive"
+  },
+  {
+    "id": "rabies-003",
+    "reportDate": "2025-07-20T09:15:00Z",
+    "suspicionLevel": "Medium",
+    "animalInfo": {
+      "species": "Cat",
+      "sex": "Female",
+      "age": "Adult (1-2 years)",
+      "color": "Grey and white",
+      "size": "Small",
+      "identificationMarks": "White patch on chest",
+      "tagNumber": "UAWS003",
+      "vaccinationStatus": "Vaccinated"
+    },
+    "location": {
+      "address": "Pune University Area, College Road",
+      "ward": "Ward 12",
+      "gps": {
+        "lat": 18.5074,
+        "lng": 73.8077
+      },
+      "zone": "Zone-2"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Restlessness"
+      ],
+      "neurological": [],
+      "physical": [
+        "Loss of Appetite"
+      ],
+      "onset": "Gradual",
+      "progression": "Stable"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Saliva",
+        "collectionDate": "2025-07-20T10:30:00Z",
+        "labName": "Regional Diagnostic Lab",
+        "testMethod": "RT-PCR",
+        "result": "Negative",
+        "resultDate": "2025-07-21T14:00:00Z",
+        "labReportNumber": "RDL-2025-0123"
+      }
+    ],
+    "outcome": {
+      "status": "Recovered",
+      "date": "2025-07-24T10:00:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": false,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Neha Sharma",
+    "notes": "Cat showed mild symptoms but recovered well. Lab test negative for rabies. Monitoring completed.",
+    "photos": [],
+    "createdAt": "2025-07-20T09:15:00Z",
+    "createdBy": "user003",
+    "firstSeenDate": "2025-07-17T09:15:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Negative"
+  },
+  {
+    "id": "rabies-004",
+    "reportDate": "2025-07-25T16:45:00Z",
+    "suspicionLevel": "High",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Male",
+      "age": "Young (6 months - 1 year)",
+      "color": "Golden brown",
+      "size": "Medium",
+      "identificationMarks": "Missing tail tip",
+      "tagNumber": "UAWS004",
+      "vaccinationStatus": "Unvaccinated"
+    },
+    "location": {
+      "address": "Market Area, Near Railway Station",
+      "ward": "Ward 5",
+      "gps": {
+        "lat": 18.5285,
+        "lng": 73.8748
+      },
+      "zone": "Zone-2"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Aggression",
+        "Restlessness"
+      ],
+      "neurological": [
+        "Circling"
+      ],
+      "physical": [
+        "Drooling",
+        "Difficulty Swallowing"
+      ],
+      "onset": "Acute",
+      "progression": "Rapidly worsening"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Brain tissue",
+        "collectionDate": "2025-07-26T08:00:00Z",
+        "labName": "State Veterinary Laboratory",
+        "testMethod": "DFA",
+        "result": "Pending"
+      }
+    ],
+    "outcome": {
+      "status": "Dead",
+      "date": "2025-07-26T07:30:00Z",
+      "cause": "Suspected rabies",
+      "postMortemDone": true,
+      "disposalMethod": "Burial with lime"
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": true,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": true,
+      "massVaccination": true,
+      "quarantineArea": true
+    },
+    "reportedBy": "Dr. Rajesh Kumar",
+    "notes": "High suspicion rabies case with classic furious form symptoms. Emergency vaccination drive initiated in the area.",
+    "photos": [],
+    "createdAt": "2025-07-25T16:45:00Z",
+    "createdBy": "user004",
+    "firstSeenDate": "2025-07-24T16:45:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Pending",
+    "videos": [
+      "video_rabies-004_1753681128930.mp4"
+    ]
+  },
+  {
+    "id": "rabies-005",
+    "reportDate": "2025-07-18T11:20:00Z",
+    "suspicionLevel": "Low",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Female",
+      "age": "Senior (5+ years)",
+      "color": "White with brown spots",
+      "size": "Large",
+      "identificationMarks": "Collar with blue tag",
+      "tagNumber": "UAWS005",
+      "vaccinationStatus": "Vaccinated"
+    },
+    "location": {
+      "address": "Residential Colony, Sector 27",
+      "ward": "Ward 15",
+      "gps": {
+        "lat": 18.4584,
+        "lng": 73.8078
+      },
+      "zone": "Zone-3"
+    },
+    "clinicalSigns": {
+      "behavioral": [],
+      "neurological": [],
+      "physical": [],
+      "onset": "Unknown",
+      "progression": "No progression"
+    },
+    "labSamples": [],
+    "outcome": {
+      "status": "Under observation",
+      "date": "2025-07-18T11:20:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": false,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Anita Desai",
+    "notes": "Vaccinated pet dog reported after minor incident. Low risk case, routine monitoring only.",
+    "photos": [],
+    "createdAt": "2025-07-18T11:20:00Z",
+    "createdBy": "user005",
+    "firstSeenDate": "2025-07-16T11:20:00.000Z",
+    "sampleSent": false,
+    "finalLabResult": null
+  },
+  {
+    "id": "rabies-006",
+    "relatedBiteCaseId": "bite-006",
+    "relatedQuarantineId": "quarantine-006",
+    "reportDate": "2025-07-21T08:30:00Z",
+    "suspicionLevel": "Medium",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Female",
+      "age": "Adult (3-4 years)",
+      "color": "Black",
+      "size": "Large",
+      "identificationMarks": "White chest patch",
+      "tagNumber": "UAWS006",
+      "vaccinationStatus": "Expired"
+    },
+    "location": {
+      "address": "Industrial Area, Phase 2",
+      "ward": "Ward 8",
+      "gps": {
+        "lat": 18.5324,
+        "lng": 73.8456
+      },
+      "zone": "Zone-3"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Restlessness"
+      ],
+      "neurological": [],
+      "physical": [
+        "Loss of Appetite"
+      ],
+      "onset": "Gradual",
+      "progression": "Worsening"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Saliva",
+        "collectionDate": "2025-07-21T10:00:00Z",
+        "labName": "Regional Diagnostic Lab",
+        "testMethod": "RT-PCR",
+        "result": "Negative"
+      }
+    ],
+    "outcome": {
+      "status": "Under observation",
+      "date": "2025-07-21T08:30:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": true,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": true
+    },
+    "reportedBy": "Dr. Suresh Patil",
+    "notes": "Dog showing behavioral changes. Vaccination history expired. Close monitoring required.",
+    "photos": [],
+    "createdAt": "2025-07-21T08:30:00Z",
+    "createdBy": "user006",
+    "firstSeenDate": "2025-07-18T08:30:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Negative"
+  },
+  {
+    "id": "rabies-007",
+    "reportDate": "2025-07-19T13:45:00Z",
+    "suspicionLevel": "Low",
+    "animalInfo": {
+      "species": "Cat",
+      "sex": "Male",
+      "age": "Young (8 months)",
+      "color": "Orange tabby",
+      "size": "Small",
+      "identificationMarks": "Notched left ear",
+      "tagNumber": "UAWS007",
+      "vaccinationStatus": "Vaccinated"
+    },
+    "location": {
+      "address": "School Campus, Education District",
+      "ward": "Ward 11",
+      "gps": {
+        "lat": 18.5156,
+        "lng": 73.8234
+      },
+      "zone": "Zone-4"
+    },
+    "clinicalSigns": {
+      "behavioral": [],
+      "neurological": [],
+      "physical": [],
+      "onset": "Unknown",
+      "progression": "No progression"
+    },
+    "labSamples": [],
+    "outcome": {
+      "status": "Released",
+      "date": "2025-07-24T10:00:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": false,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Kavita Joshi",
+    "notes": "Vaccinated cat with minor exposure. Observation period completed successfully.",
+    "photos": [],
+    "createdAt": "2025-07-19T13:45:00Z",
+    "createdBy": "user007",
+    "firstSeenDate": "2025-07-18T13:45:00.000Z",
+    "sampleSent": false,
+    "finalLabResult": null,
+    "isolationEndDate": "2025-08-03T10:00:00.000Z",
+    "videos": [
+      "video_rabies-007_1753681128931.mp4"
+    ]
+  },
+  {
+    "id": "rabies-008",
+    "relatedBiteCaseId": "bite-008",
+    "relatedQuarantineId": "quarantine-008",
+    "reportDate": "2025-07-23T11:15:00Z",
+    "suspicionLevel": "High",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Male",
+      "age": "Adult (2-3 years)",
+      "color": "Mixed brown and black",
+      "size": "Medium",
+      "identificationMarks": "Limping on right leg",
+      "vaccinationStatus": "Unknown"
+    },
+    "location": {
+      "address": "Old City Area, Heritage Zone",
+      "ward": "Ward 2",
+      "gps": {
+        "lat": 18.5194,
+        "lng": 73.8556
+      },
+      "zone": "Zone-4"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Aggression",
+        "Restlessness"
+      ],
+      "neurological": [
+        "Circling"
+      ],
+      "physical": [
+        "Drooling",
+        "Difficulty Swallowing"
+      ],
+      "onset": "Acute",
+      "progression": "Rapidly deteriorating"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Brain tissue",
+        "collectionDate": "2025-07-24T07:00:00Z",
+        "labName": "State Veterinary Laboratory",
+        "testMethod": "DFA",
+        "result": "Positive",
+        "resultDate": "2025-07-25T15:00:00Z",
+        "labReportNumber": "SVL-2025-0892"
+      }
+    ],
+    "outcome": {
+      "status": "Dead",
+      "date": "2025-07-24T06:30:00Z",
+      "cause": "Rabies infection",
+      "postMortemDone": true,
+      "disposalMethod": "Burning"
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": true,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": true,
+      "massVaccination": true,
+      "quarantineArea": true
+    },
+    "reportedBy": "Dr. Manoj Kulkarni",
+    "verifiedBy": "District Veterinary Officer",
+    "notes": "Confirmed rabies case with aggressive form. Emergency response activated. Area cordoned and mass vaccination conducted.",
+    "photos": [],
+    "createdAt": "2025-07-23T11:15:00Z",
+    "createdBy": "user008",
+    "firstSeenDate": "2025-07-21T11:15:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Positive"
+  },
+  {
+    "id": "rabies-009",
+    "reportDate": "2025-07-17T14:20:00Z",
+    "suspicionLevel": "Medium",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Female",
+      "age": "Senior (6+ years)",
+      "color": "Grey and white",
+      "size": "Medium",
+      "identificationMarks": "Blind in left eye",
+      "tagNumber": "UAWS009",
+      "vaccinationStatus": "Vaccinated"
+    },
+    "location": {
+      "address": "Hospital Complex, Medical District",
+      "ward": "Ward 6",
+      "gps": {
+        "lat": 18.5067,
+        "lng": 73.8445
+      },
+      "zone": "Zone-5"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Restlessness"
+      ],
+      "neurological": [],
+      "physical": [
+        "Loss of Appetite"
+      ],
+      "onset": "Gradual",
+      "progression": "Stable"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Blood serum",
+        "collectionDate": "2025-07-18T09:00:00Z",
+        "labName": "Regional Diagnostic Lab",
+        "testMethod": "ELISA",
+        "result": "Negative",
+        "resultDate": "2025-07-19T16:00:00Z",
+        "labReportNumber": "RDL-2025-0156"
+      }
+    ],
+    "outcome": {
+      "status": "Recovered",
+      "date": "2025-07-22T12:00:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": false,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Sunita Reddy",
+    "notes": "Senior dog with age-related symptoms initially suspected. Lab tests negative. Full recovery observed.",
+    "photos": [],
+    "createdAt": "2025-07-17T14:20:00Z",
+    "createdBy": "user009",
+    "firstSeenDate": "2025-07-14T14:20:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Negative"
+  },
+  {
+    "id": "rabies-010",
+    "relatedBiteCaseId": "bite-010",
+    "reportDate": "2025-07-24T09:30:00Z",
+    "suspicionLevel": "Low",
+    "animalInfo": {
+      "species": "Cat",
+      "sex": "Female",
+      "age": "Adult (2-3 years)",
+      "color": "Calico",
+      "size": "Medium",
+      "identificationMarks": "Distinctive calico pattern",
+      "tagNumber": "UAWS010",
+      "vaccinationStatus": "Vaccinated"
+    },
+    "location": {
+      "address": "Shopping Complex, Commercial Area",
+      "ward": "Ward 9",
+      "gps": {
+        "lat": 18.5234,
+        "lng": 73.8367
+      },
+      "zone": "Zone-5"
+    },
+    "clinicalSigns": {
+      "behavioral": [],
+      "neurological": [],
+      "physical": [],
+      "onset": "Unknown",
+      "progression": "Healing"
+    },
+    "labSamples": [],
+    "outcome": {
+      "status": "Released",
+      "date": "2025-07-26T10:00:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": false,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Rahul Mehta",
+    "notes": "Minor incident with vaccinated cat. No signs of rabies. Routine observation completed.",
+    "photos": [],
+    "createdAt": "2025-07-24T09:30:00Z",
+    "createdBy": "user010",
+    "firstSeenDate": "2025-07-23T09:30:00.000Z",
+    "sampleSent": false,
+    "finalLabResult": null,
+    "isolationEndDate": "2025-08-05T10:00:00.000Z",
+    "videos": [
+      "video_rabies-010_1753681128931.mp4"
+    ]
+  },
+  {
+    "id": "rabies-011",
+    "reportDate": "2025-07-16T16:00:00Z",
+    "suspicionLevel": "High",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Male",
+      "age": "Young (1-2 years)",
+      "color": "Brindle",
+      "size": "Large",
+      "identificationMarks": "Torn right ear",
+      "vaccinationStatus": "Unvaccinated"
+    },
+    "location": {
+      "address": "Slum Area, Outskirts",
+      "ward": "Ward 14",
+      "gps": {
+        "lat": 18.4789,
+        "lng": 73.8123
+      },
+      "zone": "Zone-6"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Aggression",
+        "Restlessness"
+      ],
+      "neurological": [
+        "Circling"
+      ],
+      "physical": [
+        "Drooling",
+        "Difficulty Swallowing"
+      ],
+      "onset": "Acute",
+      "progression": "Rapidly fatal"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Brain tissue",
+        "collectionDate": "2025-07-17T08:30:00Z",
+        "labName": "State Veterinary Laboratory",
+        "testMethod": "DFA",
+        "result": "Pending"
+      }
+    ],
+    "outcome": {
+      "status": "Dead",
+      "date": "2025-07-17T07:45:00Z",
+      "cause": "Suspected rabies",
+      "postMortemDone": true,
+      "disposalMethod": "Deep burial with lime"
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": true,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": true,
+      "massVaccination": true,
+      "quarantineArea": true
+    },
+    "reportedBy": "Dr. Pooja Agarwal",
+    "notes": "High suspicion case in high-risk area. Immediate containment measures implemented. Community education intensified.",
+    "photos": [],
+    "createdAt": "2025-07-16T16:00:00Z",
+    "createdBy": "user011",
+    "firstSeenDate": "2025-07-14T16:00:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Pending"
+  },
+  {
+    "id": "rabies-012",
+    "relatedBiteCaseId": "bite-012",
+    "relatedQuarantineId": "quarantine-012",
+    "reportDate": "2025-07-22T12:45:00Z",
+    "suspicionLevel": "Medium",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Female",
+      "age": "Adult (4-5 years)",
+      "color": "Golden retriever mix",
+      "size": "Large",
+      "identificationMarks": "Collar with bell",
+      "tagNumber": "UAWS012",
+      "vaccinationStatus": "Expired"
+    },
+    "location": {
+      "address": "Park Area, Recreational Zone",
+      "ward": "Ward 10",
+      "gps": {
+        "lat": 18.5145,
+        "lng": 73.8289
+      },
+      "zone": "Zone-6"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Restlessness"
+      ],
+      "neurological": [],
+      "physical": [
+        "Loss of Appetite"
+      ],
+      "onset": "Gradual",
+      "progression": "Monitoring"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Saliva",
+        "collectionDate": "2025-07-23T10:30:00Z",
+        "labName": "Regional Diagnostic Lab",
+        "testMethod": "RT-PCR",
+        "result": "Negative",
+        "resultDate": "2025-07-24T14:00:00Z",
+        "labReportNumber": "RDL-2025-0167"
+      }
+    ],
+    "outcome": {
+      "status": "Released",
+      "date": "2025-07-26T11:00:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": false,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Vikram Singh",
+    "notes": "Pet dog with expired vaccination. Mild symptoms but lab test negative. Owner advised for revaccination.",
+    "photos": [],
+    "createdAt": "2025-07-22T12:45:00Z",
+    "createdBy": "user012",
+    "firstSeenDate": "2025-07-19T12:45:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Negative",
+    "isolationEndDate": "2025-08-05T11:00:00.000Z"
+  },
+  {
+    "id": "rabies-013",
+    "reportDate": "2025-07-20T15:30:00Z",
+    "suspicionLevel": "Low",
+    "animalInfo": {
+      "species": "Cat",
+      "sex": "Male",
+      "age": "Young (6 months)",
+      "color": "Black with white paws",
+      "size": "Small",
+      "identificationMarks": "White mittens pattern",
+      "tagNumber": "UAWS013",
+      "vaccinationStatus": "Vaccinated"
+    },
+    "location": {
+      "address": "Veterinary Clinic Area",
+      "ward": "Ward 4",
+      "gps": {
+        "lat": 18.5178,
+        "lng": 73.8512
+      },
+      "zone": "Zone-7"
+    },
+    "clinicalSigns": {
+      "behavioral": [],
+      "neurological": [],
+      "physical": [],
+      "onset": "None observed",
+      "progression": "Normal"
+    },
+    "labSamples": [],
+    "outcome": {
+      "status": "Released",
+      "date": "2025-07-23T09:00:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": false,
+      "contactTracing": false,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Deepak Shah",
+    "notes": "Young vaccinated kitten reported as precaution. No symptoms observed. Preventive observation only.",
+    "photos": [],
+    "createdAt": "2025-07-20T15:30:00Z",
+    "createdBy": "user013",
+    "firstSeenDate": "2025-07-19T15:30:00.000Z",
+    "sampleSent": false,
+    "finalLabResult": null,
+    "isolationEndDate": "2025-08-02T09:00:00.000Z",
+    "videos": [
+      "video_rabies-013_1753681128931.mp4"
+    ]
+  },
+  {
+    "id": "rabies-014",
+    "relatedBiteCaseId": "bite-014",
+    "relatedQuarantineId": "quarantine-014",
+    "reportDate": "2025-07-25T07:15:00Z",
+    "suspicionLevel": "Medium",
+    "animalInfo": {
+      "species": "Dog",
+      "sex": "Male",
+      "age": "Adult (3-4 years)",
+      "color": "German Shepherd mix",
+      "size": "Large",
+      "identificationMarks": "Scar on muzzle",
+      "tagNumber": "UAWS014",
+      "vaccinationStatus": "Unknown"
+    },
+    "location": {
+      "address": "Construction Site, Development Area",
+      "ward": "Ward 13",
+      "gps": {
+        "lat": 18.4923,
+        "lng": 73.8234
+      },
+      "zone": "Zone-7"
+    },
+    "clinicalSigns": {
+      "behavioral": [
+        "Restlessness"
+      ],
+      "neurological": [],
+      "physical": [
+        "Loss of Appetite"
+      ],
+      "onset": "Recent",
+      "progression": "Improving"
+    },
+    "labSamples": [
+      {
+        "sampleType": "Blood serum",
+        "collectionDate": "2025-07-25T09:00:00Z",
+        "labName": "Regional Diagnostic Lab",
+        "testMethod": "ELISA",
+        "result": "Negative"
+      }
+    ],
+    "outcome": {
+      "status": "Under observation",
+      "date": "2025-07-25T07:15:00Z",
+      "postMortemDone": false
+    },
+    "publicHealthMeasures": {
+      "areaDisinfection": true,
+      "contactTracing": true,
+      "exposureAssessment": true,
+      "communityAlert": false,
+      "massVaccination": false,
+      "quarantineArea": false
+    },
+    "reportedBy": "Dr. Ashwini Patil",
+    "notes": "Dog from construction site with unknown vaccination history. Monitoring for precautionary measures.",
+    "photos": [],
+    "createdAt": "2025-07-25T07:15:00Z",
+    "createdBy": "user014",
+    "firstSeenDate": "2025-07-23T07:15:00.000Z",
+    "sampleSent": true,
+    "finalLabResult": "Negative"
+  }
+]

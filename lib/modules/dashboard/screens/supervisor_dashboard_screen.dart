@@ -130,10 +130,7 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            const Color(0xFF2E7D32),
-            const Color(0xFF4CAF50),
-          ],
+          colors: [const Color(0xFF2E7D32), const Color(0xFF4CAF50)],
         ),
       ),
       child: Column(
@@ -162,18 +159,12 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
           const SizedBox(height: 8),
           Text(
             '${'layer'.tr}: ${user?.layer} | ${'assigned_area'.tr}: ${user?.assignedCity}',
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.white70,
-            ),
+            style: const TextStyle(fontSize: 16, color: Colors.white70),
           ),
           const SizedBox(height: 4),
           Text(
-            '${'supervising_wards'.tr}: ${user?.assignedWard?.join(', ')}',
-            style: const TextStyle(
-              fontSize: 14,
-              color: Colors.white60,
-            ),
+            '${'supervising_wards'.tr}: ${user?.assignedWard.join(', ')}',
+            style: const TextStyle(fontSize: 14, color: Colors.white60),
           ),
         ],
       ),
@@ -194,40 +185,26 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
         leading: CircleAvatar(
           backgroundColor: color,
           radius: 30,
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: 28,
-          ),
+          child: Icon(icon, color: Colors.white, size: 28),
         ),
         title: Text(
           title,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 8),
           child: Text(
             subtitle,
-            style: TextStyle(
-              color: Colors.grey[600],
-              fontSize: 14,
-            ),
+            style: TextStyle(color: Colors.grey[600], fontSize: 14),
           ),
         ),
         trailing: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
+            color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Icon(
-            Icons.arrow_forward_ios,
-            color: color,
-            size: 16,
-          ),
+          child: Icon(Icons.arrow_forward_ios, color: color, size: 16),
         ),
         onTap: onTap,
       ),
@@ -244,11 +221,7 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
           children: [
             Row(
               children: [
-                const Icon(
-                  Icons.analytics,
-                  color: Color(0xFF2E7D32),
-                  size: 24,
-                ),
+                const Icon(Icons.analytics, color: Color(0xFF2E7D32), size: 24),
                 const SizedBox(width: 12),
                 Text(
                   'supervisor_overview'.tr,
@@ -303,12 +276,9 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
               width: double.infinity,
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xFFFFA000).withOpacity(0.1),
+                color: const Color(0xFFFFA000).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: const Color(0xFFFFA000),
-                  width: 1,
-                ),
+                border: Border.all(color: const Color(0xFFFFA000), width: 1),
               ),
               child: Row(
                 children: [
@@ -346,20 +316,13 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: color.withOpacity(0.3),
-          width: 1,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1),
       ),
       child: Row(
         children: [
-          Icon(
-            icon,
-            color: color,
-            size: 20,
-          ),
+          Icon(icon, color: color, size: 20),
           const SizedBox(width: 8),
           Expanded(
             child: Column(
@@ -378,7 +341,7 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
                   label,
                   style: TextStyle(
                     fontSize: 11,
-                    color: color.withOpacity(0.8),
+                    color: color.withValues(alpha: 0.8),
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

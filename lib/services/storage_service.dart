@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import '../models/user_model.dart';
+import '../shared/models/models.dart';
 
 class StorageService extends GetxService {
   static StorageService get to => Get.find();
@@ -74,5 +74,4 @@ class StorageService extends GetxService {
       return 'English';
     }
   }
-
 }

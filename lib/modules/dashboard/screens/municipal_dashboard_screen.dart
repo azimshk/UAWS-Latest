@@ -124,7 +124,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
@@ -264,7 +264,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
@@ -283,7 +283,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
             label,
             style: TextStyle(
               fontSize: 10,
-              color: color.withOpacity(0.8),
+              color: color.withValues(alpha: 0.8),
             ),
             textAlign: TextAlign.center,
             maxLines: 1,
@@ -422,7 +422,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                backgroundColor: color.withOpacity(0.2),
+                backgroundColor: color.withValues(alpha: 0.2),
                 radius: 24,
                 child: Icon(
                   icon,

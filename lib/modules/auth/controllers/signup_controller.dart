@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../services/auth_service.dart';
-import '../services/storage_service.dart';
+import '../../../services/storage_service.dart';
 
 class SignupController extends GetxController {
   final formKey = GlobalKey<FormState>();
@@ -155,7 +155,6 @@ class SignupController extends GetxController {
 
         // Navigate to login
         Get.offAllNamed('/login');
-
       } else {
         Get.snackbar(
           'error'.tr,
@@ -165,7 +164,6 @@ class SignupController extends GetxController {
           snackPosition: SnackPosition.TOP,
         );
       }
-
     } catch (e) {
       Get.snackbar(
         'error'.tr,

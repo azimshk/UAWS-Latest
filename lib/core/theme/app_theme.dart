@@ -104,9 +104,7 @@ class AppTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: primaryColor,
         foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         textStyle: GoogleFonts.poppins(
           fontSize: 16,
@@ -121,9 +119,7 @@ class AppTheme {
         foregroundColor: primaryColor,
         backgroundColor: Colors.white,
         side: const BorderSide(color: primaryColor, width: 1.5),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         textStyle: GoogleFonts.poppins(
           fontSize: 16,
@@ -149,11 +145,11 @@ class AppTheme {
       fillColor: surfaceColor,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: primaryColor.withOpacity(0.3)),
+        borderSide: BorderSide(color: primaryColor.withValues(alpha: 0.3)),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: primaryColor.withOpacity(0.3)),
+        borderSide: BorderSide(color: primaryColor.withValues(alpha: 0.3)),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
@@ -194,9 +190,7 @@ class AppTheme {
       elevation: 2,
       shadowColor: Colors.black26,
       surfaceTintColor: Colors.transparent,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       margin: const EdgeInsets.all(4),
     ),
   );
@@ -218,23 +212,24 @@ class AppTheme {
       onError: Colors.white,
     ),
 
-    textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme).copyWith(
-      displayLarge: GoogleFonts.poppins(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
-        color: darkPrimaryTextColor,
-      ),
-      bodyLarge: GoogleFonts.poppins(
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-        color: darkPrimaryTextColor,
-      ),
-      bodyMedium: GoogleFonts.poppins(
-        fontSize: 14,
-        fontWeight: FontWeight.normal,
-        color: darkSecondaryTextColor,
-      ),
-    ),
+    textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme)
+        .copyWith(
+          displayLarge: GoogleFonts.poppins(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: darkPrimaryTextColor,
+          ),
+          bodyLarge: GoogleFonts.poppins(
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+            color: darkPrimaryTextColor,
+          ),
+          bodyMedium: GoogleFonts.poppins(
+            fontSize: 14,
+            fontWeight: FontWeight.normal,
+            color: darkSecondaryTextColor,
+          ),
+        ),
 
     // Dark Theme Card Theme - CORRECTED VERSION
     cardTheme: CardThemeData(
@@ -242,9 +237,7 @@ class AppTheme {
       elevation: 2,
       shadowColor: Colors.black54,
       surfaceTintColor: Colors.transparent,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       margin: const EdgeInsets.all(4),
     ),
   );

@@ -1,33 +1,43 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:get/get.dart';
-import 'package:uaws/screens/admin_dashboard_screen.dart';
-import 'package:uaws/screens/field_dashboard_screen.dart';
-import 'package:uaws/screens/municipal_dashboard_screen.dart';
-import 'package:uaws/screens/sign_up_screen.dart';
-import 'package:uaws/screens/supervisor_dashboard_screen.dart';
-import 'controllers/admin_dashboard_controller.dart';
-import 'controllers/field_dashboard_controller.dart';
-import 'controllers/municipal_dashboard_controller.dart';
-import 'controllers/supervisor_dashboard_controller.dart';
+import 'package:uaws/modules/dashboard/screens/admin_dashboard_screen.dart';
+import 'package:uaws/modules/dashboard/screens/field_dashboard_screen.dart';
+import 'package:uaws/modules/dashboard/screens/municipal_dashboard_screen.dart';
+import 'package:uaws/modules/auth/screens/sign_up_screen.dart';
+import 'package:uaws/modules/dashboard/screens/supervisor_dashboard_screen.dart';
+import 'package:uaws/modules/sterilization/screens/sterilization_list_screen.dart';
+import 'modules/dashboard/controllers/admin_dashboard_controller.dart';
+import 'modules/dashboard/controllers/field_dashboard_controller.dart';
+import 'modules/dashboard/controllers/municipal_dashboard_controller.dart';
+import 'modules/dashboard/controllers/supervisor_dashboard_controller.dart';
+import 'modules/sterilization/controllers/sterilization_controller.dart';
 import 'core/theme/app_theme.dart';
+import 'core/utils/app_logger.dart';
 import 'services/storage_service.dart';
-import 'services/auth_service.dart';
-import 'services/dummy_data_service.dart';
+import 'modules/auth/services/auth_service.dart';
+import 'modules/auth/services/dummy_data_service.dart';
 import 'translations/app_translations.dart';
-import 'screens/login_screen.dart';
-import 'controllers/login_controller.dart';
+import 'modules/auth/screens/login_screen.dart';
+import 'modules/auth/controllers/login_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await FlutterDisplayMode.setHighRefreshRate().catchError((e) {
+    log('Error setting the High Refresh Rate.');
+  });
+
   await DummyDataService.loadDummyData();
   await initServices();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 Future<void> initServices() async {
-  print('🚀 Starting UAWS services...');
+  AppLogger.i('🚀 Starting UAWS services...');
 
   try {
     await Get.putAsync(() => StorageService().init());
@@ -36,13 +46,15 @@ Future<void> initServices() async {
     // Pre-initialize LoginController to avoid lag
     Get.lazyPut(() => LoginController());
 
-    print('🎉 All UAWS services started successfully!');
+    AppLogger.i('🎉 All UAWS services started successfully!');
   } catch (e) {
-    print('❌ Error initializing services: $e');
+    AppLogger.e('❌ Error initializing services', e);
   }
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -122,6 +134,16 @@ class MyApp extends StatelessWidget {
           transition: Transition.cupertino,
           binding: BindingsBuilder(() {
             Get.lazyPut(() => FieldDashboardController());
+          }),
+        ),
+
+        // Sterilization Module Routes
+        GetPage(
+          name: '/sterilization',
+          page: () => const SterilizationListScreen(),
+          transition: Transition.cupertino,
+          binding: BindingsBuilder(() {
+            Get.lazyPut(() => SterilizationController());
           }),
         ),
       ],
