@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/admin_dashboard_controller.dart';
+import '../../../shared/utils/responsive_utils.dart';
 
 class AdminDashboardScreen extends GetView<AdminDashboardController> {
   const AdminDashboardScreen({super.key});
@@ -15,156 +16,148 @@ class AdminDashboardScreen extends GetView<AdminDashboardController> {
         foregroundColor: Colors.white,
         centerTitle: true,
         automaticallyImplyLeading: false,
+        toolbarHeight: ResponsiveUtils.getAppBarHeight(context),
         actions: [
-          Obx(() => IconButton(
-            onPressed: controller.isLoading.value ? null : controller.refreshStats,
-            icon: controller.isLoading.value
-                ? const SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-              ),
-            )
-                : const Icon(Icons.refresh),
-            tooltip: 'refresh_stats'.tr,
-          )),
+          Obx(
+            () => IconButton(
+              onPressed: controller.isLoading.value
+                  ? null
+                  : controller.refreshStats,
+              icon: controller.isLoading.value
+                  ? SizedBox(
+                      width: ResponsiveUtils.getIconSize(context, 20),
+                      height: ResponsiveUtils.getIconSize(context, 20),
+                      child: const CircularProgressIndicator(
+                        strokeWidth: 2,
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      ),
+                    )
+                  : Icon(
+                      Icons.refresh,
+                      size: ResponsiveUtils.getIconSize(context, 24),
+                    ),
+              tooltip: 'refresh_stats'.tr,
+            ),
+          ),
           IconButton(
             onPressed: controller.logout,
-            icon: const Icon(Icons.logout),
+            icon: Icon(
+              Icons.logout,
+              size: ResponsiveUtils.getIconSize(context, 24),
+            ),
             tooltip: 'logout'.tr,
           ),
         ],
       ),
       body: RefreshIndicator(
         onRefresh: controller.refreshStats,
-        child: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          child: Column(
-            children: [
-              // Admin Header
-              _buildAdminHeader(),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              padding: ResponsiveUtils.getResponsivePadding(context),
+              child: Column(
+                children: [
+                  // Admin Header
+                  _buildAdminHeader(context),
 
-              // Admin Stats Overview
-              _buildAdminStats(),
+                  SizedBox(
+                    height: ResponsiveUtils.getResponsiveSpacing(context, 20),
+                  ),
 
-              // Main Dashboard Features
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    // Full City/Center Dashboards
-                    _buildDashboardTile(
-                      icon: Icons.location_city,
-                      title: 'city_center_dashboard'.tr,
-                      subtitle: 'view_dashboards_per_city_center'.tr,
-                      color: const Color(0xFF2E7D32),
-                      onTap: controller.openCityCenterDashboard,
-                    ),
+                  // Admin Stats Overview
+                  _buildAdminStats(context),
 
-                    const SizedBox(height: 12),
+                  SizedBox(
+                    height: ResponsiveUtils.getResponsiveSpacing(context, 16),
+                  ),
 
-                    // Auto-report generation (1st–5th)
-                    Obx(() => _buildReportGenerationTile()),
+                  // Main Dashboard Features
+                  _buildDashboardFeatures(context),
 
-                    const SizedBox(height: 12),
+                  SizedBox(
+                    height: ResponsiveUtils.getResponsiveSpacing(context, 24),
+                  ),
 
-                    // User Management
-                    _buildDashboardTile(
-                      icon: Icons.people_alt,
-                      title: 'user_management'.tr,
-                      subtitle: 'manage_users_roles_permissions'.tr,
-                      color: const Color(0xFF4CAF50),
-                      onTap: controller.openUserManagement,
-                    ),
-
-                    const SizedBox(height: 12),
-
-                    // Full Tracker Access
-                    _buildDashboardTile(
-                      icon: Icons.track_changes,
-                      title: 'full_tracker_access'.tr,
-                      subtitle: 'access_all_trackers_and_data'.tr,
-                      color: const Color(0xFF66BB6A),
-                      onTap: controller.openFullTrackerAccess,
-                    ),
-
-                    const SizedBox(height: 24),
-
-                    // System Overview Card
-                    _buildSystemOverviewCard(),
-                  ],
-                ),
+                  // System Overview Card
+                  _buildSystemOverviewCard(context),
+                ],
               ),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );
   }
 
-  Widget _buildAdminHeader() {
+  Widget _buildAdminHeader(BuildContext context) {
     final user = controller.currentUser;
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(20),
+      padding: ResponsiveUtils.getResponsivePadding(context),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            const Color(0xFF2E7D32),
-            const Color(0xFF4CAF50),
-          ],
+          colors: [Color(0xFF2E7D32), Color(0xFF4CAF50)],
         ),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              const Icon(
-                Icons.admin_panel_settings,
-                color: Colors.white,
-                size: 32,
+              CircleAvatar(
+                radius: ResponsiveUtils.getIconSize(context, 25),
+                backgroundColor: Colors.white.withValues(alpha: 0.2),
+                child: Icon(
+                  Icons.admin_panel_settings,
+                  color: Colors.white,
+                  size: ResponsiveUtils.getIconSize(context, 30),
+                ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(
+                width: ResponsiveUtils.getResponsiveSpacing(context, 16),
+              ),
               Expanded(
-                child: Text(
-                  '${'welcome'.tr}, ${user?.displayName ?? 'Administrator'}!',
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'welcome_admin'.tr,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: ResponsiveUtils.getResponsiveFontSize(
+                          context,
+                          14,
+                        ),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      user?.displayName ?? 'Admin',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: ResponsiveUtils.getResponsiveFontSize(
+                          context,
+                          20,
+                        ),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 16)),
           Text(
-            '${'central_admin_access'.tr} | ${'layer'.tr}: ${user?.layer}',
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.white70,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text(
-              'full_system_access'.tr,
-              style: const TextStyle(
-                fontSize: 12,
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-              ),
+            'total_system_overview'.tr,
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.9),
+              fontSize: ResponsiveUtils.getResponsiveFontSize(context, 16),
             ),
           ),
         ],
@@ -172,83 +165,168 @@ class AdminDashboardScreen extends GetView<AdminDashboardController> {
     );
   }
 
-  Widget _buildAdminStats() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: GridView.count(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        crossAxisCount: 2,
-        childAspectRatio: 1.5,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-        children: [
-          Obx(() => _buildStatCard(
-            icon: Icons.location_city,
-            label: 'total_cities'.tr,
-            value: controller.totalCities.value.toString(),
-            color: const Color(0xFF2E7D32),
-          )),
-          Obx(() => _buildStatCard(
-            icon: Icons.people,
-            label: 'total_users'.tr,
-            value: controller.totalUsers.value.toString(),
-            color: const Color(0xFF4CAF50),
-          )),
-          Obx(() => _buildStatCard(
-            icon: Icons.assessment,
-            label: 'active_reports'.tr,
-            value: controller.activeReports.value.toString(),
-            color: const Color(0xFF66BB6A),
-          )),
-          Obx(() => _buildStatCard(
-            icon: Icons.pending_actions,
-            label: 'pending_approvals'.tr,
-            value: controller.pendingApprovals.value.toString(),
-            color: const Color(0xFF81C784),
-          )),
-        ],
+  Widget _buildAdminStats(BuildContext context) {
+    return Obx(() {
+      if (controller.isLoading.value) {
+        return _buildLoadingStats(context);
+      }
+
+      return ResponsiveUtils.isMobile(context)
+          ? _buildMobileStats(context)
+          : _buildGridStats(context);
+    });
+  }
+
+  Widget _buildLoadingStats(BuildContext context) {
+    return GridView.count(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: ResponsiveUtils.getGridColumns(context),
+      crossAxisSpacing: ResponsiveUtils.getResponsiveSpacing(context, 16),
+      mainAxisSpacing: ResponsiveUtils.getResponsiveSpacing(context, 16),
+      childAspectRatio: ResponsiveUtils.isMobile(context) ? 1.5 : 1.2,
+      children: List.generate(4, (index) => _buildLoadingCard(context)),
+    );
+  }
+
+  Widget _buildLoadingCard(BuildContext context) {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Container(
+        padding: ResponsiveUtils.getResponsivePadding(context),
+        child: const Center(child: CircularProgressIndicator()),
       ),
     );
   }
 
-  Widget _buildStatCard({
+  Widget _buildMobileStats(BuildContext context) {
+    return Column(
+      children: [
+        _buildStatCard(
+          context,
+          icon: Icons.people,
+          title: 'total_users'.tr,
+          value: controller.totalUsers.value.toString(),
+          color: const Color(0xFF1976D2),
+        ),
+        SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 12)),
+        _buildStatCard(
+          context,
+          icon: Icons.location_city,
+          title: 'total_cities'.tr,
+          value: controller.totalCities.value.toString(),
+          color: const Color(0xFF388E3C),
+        ),
+        SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 12)),
+        _buildStatCard(
+          context,
+          icon: Icons.report,
+          title: 'active_reports'.tr,
+          value: controller.activeReports.value.toString(),
+          color: const Color(0xFFF57C00),
+        ),
+        SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 12)),
+        _buildStatCard(
+          context,
+          icon: Icons.pending_actions,
+          title: 'pending_approvals'.tr,
+          value: controller.pendingApprovals.value.toString(),
+          color: const Color(0xFF7B1FA2),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildGridStats(BuildContext context) {
+    return GridView.count(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: ResponsiveUtils.getGridColumns(context),
+      crossAxisSpacing: ResponsiveUtils.getResponsiveSpacing(context, 16),
+      mainAxisSpacing: ResponsiveUtils.getResponsiveSpacing(context, 16),
+      childAspectRatio: ResponsiveUtils.isTablet(context) ? 1.3 : 1.2,
+      children: [
+        _buildStatCard(
+          context,
+          icon: Icons.people,
+          title: 'total_users'.tr,
+          value: controller.totalUsers.value.toString(),
+          color: const Color(0xFF1976D2),
+        ),
+        _buildStatCard(
+          context,
+          icon: Icons.location_city,
+          title: 'total_cities'.tr,
+          value: controller.totalCities.value.toString(),
+          color: const Color(0xFF388E3C),
+        ),
+        _buildStatCard(
+          context,
+          icon: Icons.report,
+          title: 'active_reports'.tr,
+          value: controller.activeReports.value.toString(),
+          color: const Color(0xFFF57C00),
+        ),
+        _buildStatCard(
+          context,
+          icon: Icons.pending_actions,
+          title: 'pending_approvals'.tr,
+          value: controller.pendingApprovals.value.toString(),
+          color: const Color(0xFF7B1FA2),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildStatCard(
+    BuildContext context, {
     required IconData icon,
-    required String label,
+    required String title,
     required String value,
     required Color color,
   }) {
     return Card(
       elevation: 4,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Container(
+        padding: ResponsiveUtils.getResponsivePadding(context),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              color.withValues(alpha: 0.1),
+              color.withValues(alpha: 0.05),
+            ],
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               icon,
+              size: ResponsiveUtils.getIconSize(context, 32),
               color: color,
-              size: 32,
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 8)),
             Text(
               value,
               style: TextStyle(
-                fontSize: 24,
+                fontSize: ResponsiveUtils.getResponsiveFontSize(context, 24),
                 fontWeight: FontWeight.bold,
                 color: color,
               ),
             ),
-            const SizedBox(height: 4),
+            SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 4)),
             Text(
-              label,
+              title,
               style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey[600],
+                fontSize: ResponsiveUtils.getResponsiveFontSize(context, 12),
+                color: Theme.of(context).textTheme.bodySmall?.color,
               ),
               textAlign: TextAlign.center,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
@@ -256,7 +334,41 @@ class AdminDashboardScreen extends GetView<AdminDashboardController> {
     );
   }
 
-  Widget _buildDashboardTile({
+  Widget _buildDashboardFeatures(BuildContext context) {
+    return Column(
+      children: [
+        _buildDashboardTile(
+          context,
+          icon: Icons.location_city,
+          title: 'city_center_dashboard'.tr,
+          subtitle: 'view_dashboards_per_city_center'.tr,
+          color: const Color(0xFF2E7D32),
+          onTap: controller.openCityCenterDashboard,
+        ),
+        SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 16)),
+        _buildDashboardTile(
+          context,
+          icon: Icons.people,
+          title: 'user_management'.tr,
+          subtitle: 'manage_users_permissions'.tr,
+          color: const Color(0xFFF57C00),
+          onTap: controller.openUserManagement,
+        ),
+        SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 16)),
+        _buildDashboardTile(
+          context,
+          icon: Icons.track_changes,
+          title: 'full_tracker_access'.tr,
+          subtitle: 'access_all_tracking_modules'.tr,
+          color: const Color(0xFF7B1FA2),
+          onTap: controller.openFullTrackerAccess,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDashboardTile(
+    BuildContext context, {
     required IconData icon,
     required String title,
     required String subtitle,
@@ -264,192 +376,112 @@ class AdminDashboardScreen extends GetView<AdminDashboardController> {
     required VoidCallback onTap,
   }) {
     return Card(
-      elevation: 4,
-      child: ListTile(
-        contentPadding: const EdgeInsets.all(16),
-        leading: CircleAvatar(
-          backgroundColor: color,
-          radius: 30,
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: 28,
-          ),
-        ),
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
-        ),
-        subtitle: Padding(
-          padding: const EdgeInsets.only(top: 8),
-          child: Text(
-            subtitle,
-            style: TextStyle(
-              color: Colors.grey[600],
-              fontSize: 14,
-            ),
-          ),
-        ),
-        trailing: Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Icon(
-            Icons.arrow_forward_ios,
-            color: color,
-            size: 16,
-          ),
-        ),
+      elevation: 3,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: InkWell(
         onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          width: double.infinity,
+          padding: ResponsiveUtils.getResponsivePadding(context),
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(
+                  ResponsiveUtils.getResponsiveSpacing(context, 12),
+                ),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Icon(
+                  icon,
+                  color: color,
+                  size: ResponsiveUtils.getIconSize(context, 24),
+                ),
+              ),
+              SizedBox(
+                width: ResponsiveUtils.getResponsiveSpacing(context, 16),
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: ResponsiveUtils.getResponsiveFontSize(
+                          context,
+                          16,
+                        ),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: ResponsiveUtils.getResponsiveSpacing(context, 4),
+                    ),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        fontSize: ResponsiveUtils.getResponsiveFontSize(
+                          context,
+                          14,
+                        ),
+                        color: Theme.of(context).textTheme.bodySmall?.color,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(
+                Icons.arrow_forward_ios,
+                color: Theme.of(context).textTheme.bodySmall?.color,
+                size: ResponsiveUtils.getIconSize(context, 16),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 
-  Widget _buildReportGenerationTile() {
+  Widget _buildSystemOverviewCard(BuildContext context) {
     return Card(
       elevation: 4,
-      child: ListTile(
-        contentPadding: const EdgeInsets.all(16),
-        leading: CircleAvatar(
-          backgroundColor: controller.reportGenerating.value
-              ? Colors.orange
-              : const Color(0xFF4CAF50),
-          radius: 30,
-          child: controller.reportGenerating.value
-              ? const SizedBox(
-            width: 20,
-            height: 20,
-            child: CircularProgressIndicator(
-              strokeWidth: 2,
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-            ),
-          )
-              : const Icon(
-            Icons.auto_awesome,
-            color: Colors.white,
-            size: 28,
-          ),
-        ),
-        title: Text(
-          'auto_report_generation'.tr,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
-        ),
-        subtitle: Padding(
-          padding: const EdgeInsets.only(top: 8),
-          child: Text(
-            controller.reportGenerating.value
-                ? 'generating_reports'.tr
-                : 'generate_reports_1st_5th'.tr,
-            style: TextStyle(
-              color: controller.reportGenerating.value
-                  ? Colors.orange
-                  : Colors.grey[600],
-              fontSize: 14,
-            ),
-          ),
-        ),
-        trailing: Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: const Color(0xFF4CAF50).withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Icon(
-            controller.reportGenerating.value
-                ? Icons.hourglass_top
-                : Icons.play_circle_fill,
-            color: const Color(0xFF4CAF50),
-            size: 16,
-          ),
-        ),
-        onTap: controller.reportGenerating.value ? null : controller.generateAutoReports,
-      ),
-    );
-  }
-
-  Widget _buildSystemOverviewCard() {
-    return Card(
-      elevation: 4,
-      child: Padding(
-        padding: const EdgeInsets.all(20),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Container(
+        width: double.infinity,
+        padding: ResponsiveUtils.getResponsivePadding(context),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                const Icon(
-                  Icons.dashboard,
-                  color: Color(0xFF2E7D32),
-                  size: 24,
-                ),
-                const SizedBox(width: 12),
-                Text(
-                  'system_overview'.tr,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-
             Text(
-              'admin_capabilities'.tr,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-                color: Color(0xFF2E7D32),
+              'system_overview'.tr,
+              style: TextStyle(
+                fontSize: ResponsiveUtils.getResponsiveFontSize(context, 18),
+                fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8),
-
-            _buildCapabilityItem('manage_all_cities_centers'.tr),
-            _buildCapabilityItem('automated_report_generation'.tr),
-            _buildCapabilityItem('complete_user_management'.tr),
-            _buildCapabilityItem('full_data_access_control'.tr),
-
-            const SizedBox(height: 16),
-
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: const Color(0xFF2E7D32).withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: const Color(0xFF2E7D32),
-                  width: 1,
-                ),
-              ),
-              child: Row(
-                children: [
-                  const Icon(
-                    Icons.security,
-                    color: Color(0xFF2E7D32),
-                    size: 20,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      'layer_3_admin_access'.tr,
-                      style: const TextStyle(
-                        color: Color(0xFF2E7D32),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 16)),
+            _buildOverviewItem(
+              context,
+              icon: Icons.people,
+              title: 'total_users'.tr,
+              value: controller.totalUsers.value.toString(),
+            ),
+            SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 12)),
+            _buildOverviewItem(
+              context,
+              icon: Icons.location_city,
+              title: 'total_cities'.tr,
+              value: controller.totalCities.value.toString(),
+            ),
+            SizedBox(height: ResponsiveUtils.getResponsiveSpacing(context, 12)),
+            _buildOverviewItem(
+              context,
+              icon: Icons.report,
+              title: 'active_reports'.tr,
+              value: controller.activeReports.value.toString(),
             ),
           ],
         ),
@@ -457,28 +489,37 @@ class AdminDashboardScreen extends GetView<AdminDashboardController> {
     );
   }
 
-  Widget _buildCapabilityItem(String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
-      child: Row(
-        children: [
-          const Icon(
-            Icons.check_circle,
-            color: Color(0xFF4CAF50),
-            size: 16,
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontSize: 13,
-                color: Colors.grey[700],
-              ),
+  Widget _buildOverviewItem(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+    required String value,
+  }) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          size: ResponsiveUtils.getIconSize(context, 20),
+          color: const Color(0xFF2E7D32),
+        ),
+        SizedBox(width: ResponsiveUtils.getResponsiveSpacing(context, 12)),
+        Expanded(
+          child: Text(
+            title,
+            style: TextStyle(
+              fontSize: ResponsiveUtils.getResponsiveFontSize(context, 14),
             ),
           ),
-        ],
-      ),
+        ),
+        Text(
+          value,
+          style: TextStyle(
+            fontSize: ResponsiveUtils.getResponsiveFontSize(context, 14),
+            fontWeight: FontWeight.w600,
+            color: const Color(0xFF2E7D32),
+          ),
+        ),
+      ],
     );
   }
 }

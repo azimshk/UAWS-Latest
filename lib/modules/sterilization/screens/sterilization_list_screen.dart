@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/sterilization_controller.dart';
 import '../../../shared/models/models.dart';
+import '../../../shared/utils/responsive_utils.dart';
 
 class SterilizationListScreen extends GetView<SterilizationController> {
   const SterilizationListScreen({super.key});
@@ -15,6 +16,7 @@ class SterilizationListScreen extends GetView<SterilizationController> {
         backgroundColor: const Color(0xFF2E7D32),
         foregroundColor: Colors.white,
         centerTitle: true,
+        toolbarHeight: ResponsiveUtils.getAppBarHeight(context),
         actions: [
           IconButton(
             onPressed: controller.refreshSterilizations,

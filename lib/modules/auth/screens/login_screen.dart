@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/login_controller.dart';
+import '../../../shared/utils/responsive_utils.dart';
 
 class LoginScreen extends GetView<LoginController> {
   const LoginScreen({super.key});
@@ -10,87 +11,177 @@ class LoginScreen extends GetView<LoginController> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Obx(
-            () => Form(
-              key: controller.formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 20),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return Center(
+              child: Container(
+                width: ResponsiveUtils.getMaxContentWidth(context),
+                constraints: BoxConstraints(
+                  minHeight: ResponsiveUtils.getSafeAreaHeight(context),
+                ),
+                child: SingleChildScrollView(
+                  padding: ResponsiveUtils.getResponsivePadding(context),
+                  child: Obx(
+                    () => Form(
+                      key: controller.formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              20,
+                            ),
+                          ),
 
-                  // Language Selector and Demo Credentials
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [_buildDemoButton(), _buildLanguageSelector()],
-                  ),
+                          // Language Selector and Demo Credentials
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              _buildDemoButton(),
+                              _buildLanguageSelector(),
+                            ],
+                          ),
 
-                  const SizedBox(height: 40),
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              40,
+                            ),
+                          ),
 
-                  // Logo / Branding
-                  _buildLogo(),
+                          // Logo / Branding
+                          _buildLogo(),
 
-                  const SizedBox(height: 32),
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              32,
+                            ),
+                          ),
 
-                  // Headline Text
-                  Text(
-                    'login'.tr,
-                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
+                          // Headline Text
+                          Text(
+                            'login'.tr,
+                            style: Theme.of(context).textTheme.displayMedium
+                                ?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize:
+                                      ResponsiveUtils.getResponsiveFontSize(
+                                        context,
+                                        32,
+                                      ),
+                                ),
+                          ),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              8,
+                            ),
+                          ),
+
+                          // Subheading Text
+                          Text(
+                            'welcome_message'.tr,
+                            style: Theme.of(context).textTheme.bodyLarge
+                                ?.copyWith(
+                                  color: Theme.of(
+                                    context,
+                                  ).textTheme.bodySmall?.color,
+                                  fontSize:
+                                      ResponsiveUtils.getResponsiveFontSize(
+                                        context,
+                                        16,
+                                      ),
+                                ),
+                            textAlign: TextAlign.center,
+                          ),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              40,
+                            ),
+                          ),
+
+                          // Username TextField
+                          _buildUsernameField(),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              20,
+                            ),
+                          ),
+
+                          // Password TextField
+                          _buildPasswordField(),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              16,
+                            ),
+                          ),
+
+                          // Remember Me Checkbox
+                          _buildRememberMe(),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              32,
+                            ),
+                          ),
+
+                          // Sign In Button
+                          _buildSignInButton(),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              16,
+                            ),
+                          ),
+
+                          // Google Sign In Button
+                          _buildGoogleSignInButton(),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              16,
+                            ),
+                          ),
+
+                          // Forgot Password Button
+                          _buildForgotPasswordButton(),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              32,
+                            ),
+                          ),
+
+                          // Navigation Link
+                          _buildSignupLink(),
+
+                          SizedBox(
+                            height: ResponsiveUtils.getResponsiveSpacing(
+                              context,
+                              40,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-
-                  const SizedBox(height: 8),
-
-                  // Subheading Text
-                  Text(
-                    'welcome_message'.tr,
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: Theme.of(context).textTheme.bodySmall?.color,
-                    ),
-                  ),
-
-                  const SizedBox(height: 40),
-
-                  // Username TextField
-                  _buildUsernameField(),
-
-                  const SizedBox(height: 20),
-
-                  // Password TextField
-                  _buildPasswordField(),
-
-                  const SizedBox(height: 16),
-
-                  // Remember Me Checkbox
-                  _buildRememberMe(),
-
-                  const SizedBox(height: 32),
-
-                  // Sign In Button
-                  _buildSignInButton(),
-
-                  const SizedBox(height: 16),
-
-                  // Google Sign In Button
-                  _buildGoogleSignInButton(),
-
-                  const SizedBox(height: 16),
-
-                  // Forgot Password Button
-                  _buildForgotPasswordButton(),
-
-                  const SizedBox(height: 32),
-
-                  // Navigation Link
-                  _buildSignupLink(),
-
-                  const SizedBox(height: 40),
-                ],
+                ),
               ),
-            ),
-          ),
+            );
+          },
         ),
       ),
     );
