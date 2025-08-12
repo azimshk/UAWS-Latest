@@ -8,11 +8,18 @@ import 'package:uaws/modules/dashboard/screens/municipal_dashboard_screen.dart';
 import 'package:uaws/modules/auth/screens/sign_up_screen.dart';
 import 'package:uaws/modules/dashboard/screens/supervisor_dashboard_screen.dart';
 import 'package:uaws/modules/sterilization/screens/sterilization_list_screen.dart';
+import 'package:uaws/modules/rabies/screens/rabies_list_screen.dart';
+import 'package:uaws/modules/education/screens/education_list_screen.dart';
+import 'package:uaws/modules/quarantine/screens/quarantine_list_screen.dart';
+import 'package:uaws/modules/quarantine/screens/quarantine_detail_screen.dart';
 import 'modules/dashboard/controllers/admin_dashboard_controller.dart';
 import 'modules/dashboard/controllers/field_dashboard_controller.dart';
 import 'modules/dashboard/controllers/municipal_dashboard_controller.dart';
 import 'modules/dashboard/controllers/supervisor_dashboard_controller.dart';
 import 'modules/sterilization/controllers/sterilization_controller.dart';
+import 'modules/rabies/controllers/rabies_controller.dart';
+import 'modules/education/controllers/education_controller.dart';
+import 'modules/quarantine/controllers/quarantine_controller.dart';
 import 'core/theme/app_theme.dart';
 import 'services/storage_service.dart';
 import 'modules/auth/services/auth_service.dart';
@@ -143,6 +150,41 @@ class MyApp extends StatelessWidget {
           binding: BindingsBuilder(() {
             Get.lazyPut(() => SterilizationController());
           }),
+        ),
+
+        // Rabies Module Routes
+        GetPage(
+          name: '/rabies',
+          page: () => const RabiesListScreen(),
+          transition: Transition.cupertino,
+          binding: BindingsBuilder(() {
+            Get.lazyPut(() => RabiesController());
+          }),
+        ),
+
+        // Education Module Routes
+        GetPage(
+          name: '/education',
+          page: () => const EducationListScreen(),
+          transition: Transition.cupertino,
+          binding: BindingsBuilder(() {
+            Get.lazyPut(() => EducationController());
+          }),
+        ),
+
+        // Quarantine Module Routes
+        GetPage(
+          name: '/quarantine',
+          page: () => const QuarantineListScreen(),
+          transition: Transition.cupertino,
+          binding: BindingsBuilder(() {
+            Get.lazyPut(() => QuarantineController());
+          }),
+        ),
+        GetPage(
+          name: '/quarantine/detail',
+          page: () => const QuarantineDetailScreen(),
+          transition: Transition.cupertino,
         ),
       ],
 
