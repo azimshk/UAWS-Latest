@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:get/get.dart';
 import 'package:uaws/core/utils/app_logger.dart';
 import 'package:uaws/modules/dashboard/screens/admin_dashboard_screen.dart';
@@ -22,6 +23,7 @@ import 'modules/education/controllers/education_controller.dart';
 import 'modules/quarantine/controllers/quarantine_controller.dart';
 import 'core/theme/app_theme.dart';
 import 'services/storage_service.dart';
+import 'services/media_services_initializer.dart';
 import 'modules/auth/services/auth_service.dart';
 import 'modules/auth/services/dummy_data_service.dart';
 import 'translations/app_translations.dart';
@@ -35,6 +37,9 @@ Future<void> main() async {
     AppLogger.w('Error setting the High Refresh Rate.');
   });
 
+  // Initialize Hive for local storage
+  await Hive.initFlutter();
+
   await DummyDataService.loadDummyData();
   await initServices();
 
@@ -47,6 +52,9 @@ Future<void> initServices() async {
   try {
     await Get.putAsync(() => StorageService().init());
     Get.put(AuthService());
+
+    // Initialize media services (camera, location, storage, sync)
+    await MediaServicesInitializer.initializeServices();
 
     // Pre-initialize LoginController to avoid lag
     Get.lazyPut(() => LoginController());
