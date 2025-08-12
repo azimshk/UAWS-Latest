@@ -63,8 +63,8 @@ class SterilizationService {
             ?.where(
               (s) =>
                   s.pickupStage.staffId == staffId ||
-                  s.operationStage.veterinarianId == staffId ||
-                  s.releaseStage.staffId == staffId,
+                  s.operationStage?.veterinarianId == staffId ||
+                  s.releaseStage?.staffId == staffId,
             )
             .toList() ??
         [];
@@ -156,7 +156,6 @@ class SterilizationService {
     final newSterilization = sterilization.copyWith(
       id: 'sterilization-${DateTime.now().millisecondsSinceEpoch}',
       createdAt: DateTime.now(),
-      updatedAt: DateTime.now(),
     );
 
     await loadSterilizationData();
@@ -179,13 +178,10 @@ class SterilizationService {
         (s) => s.id == sterilization.id,
       );
       if (index != -1) {
-        final updatedSterilization = sterilization.copyWith(
-          updatedAt: DateTime.now(),
-        );
-        _sterilizations![index] = updatedSterilization;
+        _sterilizations![index] = sterilization;
 
         AppLogger.i('✅ Updated sterilization record: ${sterilization.id}');
-        return updatedSterilization;
+        return sterilization;
       }
     }
 
@@ -204,10 +200,6 @@ class SterilizationService {
 
     final updatedSterilization = sterilization.copyWith(
       pickupStage: pickupStage,
-      currentStage: pickupStage.isCompleted
-          ? SterilizationStage.operation
-          : SterilizationStage.pickup,
-      updatedAt: DateTime.now(),
     );
 
     return updateSterilization(updatedSterilization);
@@ -224,10 +216,6 @@ class SterilizationService {
 
     final updatedSterilization = sterilization.copyWith(
       operationStage: operationStage,
-      currentStage: operationStage.isCompleted
-          ? SterilizationStage.release
-          : SterilizationStage.operation,
-      updatedAt: DateTime.now(),
     );
 
     return updateSterilization(updatedSterilization);
@@ -244,7 +232,6 @@ class SterilizationService {
 
     final updatedSterilization = sterilization.copyWith(
       releaseStage: releaseStage,
-      updatedAt: DateTime.now(),
     );
 
     return updateSterilization(updatedSterilization);
@@ -290,11 +277,11 @@ class SterilizationService {
                   s.pickupStage.staffName.toLowerCase().contains(
                     lowercaseQuery,
                   ) ||
-                  s.operationStage.veterinarianName?.toLowerCase().contains(
+                  s.operationStage?.veterinarianName?.toLowerCase().contains(
                         lowercaseQuery,
                       ) ==
                       true ||
-                  s.id?.toLowerCase().contains(lowercaseQuery) == true,
+                  s.id.toLowerCase().contains(lowercaseQuery),
             )
             .toList() ??
         [];

@@ -4,313 +4,500 @@ import '../common/animal_info.dart';
 // Enum for sterilization stages
 enum SterilizationStage { pickup, operation, release }
 
+// Enum for operation status
+enum OperationStatus { operated, notOperated, postponed }
+
+// Enum for release status
+enum ReleaseStatus { released, death, postponed }
+
 // Pickup stage model
 class PickupStage {
-  final DateTime timestamp;
-  final String staffId;
-  final String staffName;
-  final LocationModel location;
-  final List<String> photos;
-  final String? notes;
-  final bool isCompleted;
+  final DateTime dateTime;
+  final String? photoURL;
+  final LocationModel gps;
+  final String pickedBy;
 
   PickupStage({
-    required this.timestamp,
-    required this.staffId,
-    required this.staffName,
-    required this.location,
-    required this.photos,
-    this.notes,
-    this.isCompleted = false,
+    required this.dateTime,
+    this.photoURL,
+    required this.gps,
+    required this.pickedBy,
   });
-
-  Map<String, dynamic> toJson() {
-    return {
-      'timestamp': timestamp.toIso8601String(),
-      'staffId': staffId,
-      'staffName': staffName,
-      'location': location.toJson(),
-      'photos': photos,
-      'notes': notes,
-      'isCompleted': isCompleted,
-    };
-  }
 
   factory PickupStage.fromJson(Map<String, dynamic> json) {
     return PickupStage(
-      timestamp: DateTime.parse(json['timestamp']),
-      staffId: json['staffId'],
-      staffName: json['staffName'],
-      location: LocationModel.fromJson(json['location']),
-      photos: List<String>.from(json['photos'] ?? []),
-      notes: json['notes'],
-      isCompleted: json['isCompleted'] ?? false,
+      dateTime: DateTime.parse(json['dateTime']),
+      photoURL: json['photoURL'],
+      gps: LocationModel.fromJson(json['gps']),
+      pickedBy: json['pickedBy'] ?? '',
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'dateTime': dateTime.toIso8601String(),
+      'photoURL': photoURL,
+      'gps': gps.toJson(),
+      'pickedBy': pickedBy,
+    };
+  }
+
+  // Backward compatibility
+  bool get isCompleted => true; // Pickup is always completed if record exists
+  String get staffName => pickedBy;
+  String get staffId =>
+      pickedBy; // Assuming staff ID is same as name for backward compatibility
+}
+
+// Complications model
+class Complications {
+  final bool exists;
+  final String? remarks;
+
+  Complications({required this.exists, this.remarks});
+
+  factory Complications.fromJson(Map<String, dynamic> json) {
+    return Complications(
+      exists: json['exists'] ?? false,
+      remarks: json['remarks'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {'exists': exists, 'remarks': remarks};
   }
 }
 
 // Operation stage model
 class OperationStage {
-  final DateTime? timestamp;
-  final String? veterinarianId;
-  final String? veterinarianName;
-  final String? procedureType;
-  final String? operationNotes;
-  final String? complications;
-  final String? medicationGiven;
-  final String? postOpCondition;
-  final List<String> photos;
-  final bool isCompleted;
+  final OperationStatus status;
+  final DateTime? date;
+  final String? surgeonId;
+  final String? photoURL;
+  final Complications complications;
 
   OperationStage({
-    this.timestamp,
-    this.veterinarianId,
-    this.veterinarianName,
-    this.procedureType,
-    this.operationNotes,
-    this.complications,
-    this.medicationGiven,
-    this.postOpCondition,
-    this.photos = const [],
-    this.isCompleted = false,
-  });
+    this.status = OperationStatus.notOperated,
+    this.date,
+    this.surgeonId,
+    this.photoURL,
+    Complications? complications,
+  }) : complications = complications ?? Complications(exists: false);
 
-  Map<String, dynamic> toJson() {
-    return {
-      'timestamp': timestamp?.toIso8601String(),
-      'veterinarianId': veterinarianId,
-      'veterinarianName': veterinarianName,
-      'procedureType': procedureType,
-      'operationNotes': operationNotes,
-      'complications': complications,
-      'medicationGiven': medicationGiven,
-      'postOpCondition': postOpCondition,
-      'photos': photos,
-      'isCompleted': isCompleted,
-    };
-  }
+  // Named constructor for completed operation
+  OperationStage.completed({
+    required this.date,
+    required this.surgeonId,
+    this.photoURL,
+    Complications? complications,
+  }) : status = OperationStatus.operated,
+       complications = complications ?? Complications(exists: false);
 
   factory OperationStage.fromJson(Map<String, dynamic> json) {
     return OperationStage(
-      timestamp: json['timestamp'] != null
-          ? DateTime.parse(json['timestamp'])
-          : null,
-      veterinarianId: json['veterinarianId'],
-      veterinarianName: json['veterinarianName'],
-      procedureType: json['procedureType'],
-      operationNotes: json['operationNotes'],
-      complications: json['complications'],
-      medicationGiven: json['medicationGiven'],
-      postOpCondition: json['postOpCondition'],
-      photos: List<String>.from(json['photos'] ?? []),
-      isCompleted: json['isCompleted'] ?? false,
+      status: _parseOperationStatus(json['status']),
+      date: json['date'] != null ? DateTime.parse(json['date']) : null,
+      surgeonId: json['surgeonId'],
+      photoURL: json['photoURL'],
+      complications: Complications.fromJson(
+        json['complications'] ?? {'exists': false},
+      ),
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'status': status.name,
+      'date': date?.toIso8601String(),
+      'surgeonId': surgeonId,
+      'photoURL': photoURL,
+      'complications': complications.toJson(),
+    };
+  }
+
+  static OperationStatus _parseOperationStatus(String? status) {
+    switch (status?.toLowerCase()) {
+      case 'operated':
+        return OperationStatus.operated;
+      case 'not operated':
+      case 'notOperated':
+        return OperationStatus.notOperated;
+      case 'postponed':
+        return OperationStatus.postponed;
+      default:
+        return OperationStatus.notOperated;
+    }
+  }
+
+  String get statusDisplayName {
+    switch (status) {
+      case OperationStatus.operated:
+        return 'Operated';
+      case OperationStatus.notOperated:
+        return 'Not Operated';
+      case OperationStatus.postponed:
+        return 'Postponed';
+    }
+  }
+
+  // Backward compatibility
+  bool get isCompleted => status == OperationStatus.operated;
+  String? get veterinarianName => surgeonId;
+  String? get veterinarianId => surgeonId;
 }
 
 // Release stage model
 class ReleaseStage {
-  final DateTime? timestamp;
-  final String? staffId;
-  final String? staffName;
-  final LocationModel? location;
-  final String? finalHealthStatus;
-  final String? releaseNotes;
-  final bool requiresFollowUp;
-  final DateTime? followUpDate;
-  final List<String> photos;
-  final bool isCompleted;
+  final DateTime? date;
+  final String? releasedBy;
+  final String? photoURL;
+  final ReleaseStatus status;
+  final String? notes;
+  final LocationModel? gps;
 
   ReleaseStage({
-    this.timestamp,
-    this.staffId,
-    this.staffName,
-    this.location,
-    this.finalHealthStatus,
-    this.releaseNotes,
-    this.requiresFollowUp = false,
-    this.followUpDate,
-    this.photos = const [],
-    this.isCompleted = false,
+    this.date,
+    this.releasedBy,
+    this.photoURL,
+    this.status = ReleaseStatus.postponed,
+    this.notes,
+    this.gps,
   });
 
-  Map<String, dynamic> toJson() {
-    return {
-      'timestamp': timestamp?.toIso8601String(),
-      'staffId': staffId,
-      'staffName': staffName,
-      'location': location?.toJson(),
-      'finalHealthStatus': finalHealthStatus,
-      'releaseNotes': releaseNotes,
-      'requiresFollowUp': requiresFollowUp,
-      'followUpDate': followUpDate?.toIso8601String(),
-      'photos': photos,
-      'isCompleted': isCompleted,
-    };
-  }
+  // Named constructor for completed release
+  ReleaseStage.completed({
+    required this.date,
+    required this.releasedBy,
+    this.photoURL,
+    this.notes,
+    this.gps,
+  }) : status = ReleaseStatus.released;
 
   factory ReleaseStage.fromJson(Map<String, dynamic> json) {
     return ReleaseStage(
-      timestamp: json['timestamp'] != null
-          ? DateTime.parse(json['timestamp'])
-          : null,
-      staffId: json['staffId'],
-      staffName: json['staffName'],
-      location: json['location'] != null
-          ? LocationModel.fromJson(json['location'])
-          : null,
-      finalHealthStatus: json['finalHealthStatus'],
-      releaseNotes: json['releaseNotes'],
-      requiresFollowUp: json['requiresFollowUp'] ?? false,
-      followUpDate: json['followUpDate'] != null
-          ? DateTime.parse(json['followUpDate'])
-          : null,
-      photos: List<String>.from(json['photos'] ?? []),
-      isCompleted: json['isCompleted'] ?? false,
+      date: json['date'] != null ? DateTime.parse(json['date']) : null,
+      releasedBy: json['releasedBy'],
+      photoURL: json['photoURL'],
+      status: _parseReleaseStatus(json['status']),
+      notes: json['notes'],
+      gps: json['gps'] != null ? LocationModel.fromJson(json['gps']) : null,
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'date': date?.toIso8601String(),
+      'releasedBy': releasedBy,
+      'photoURL': photoURL,
+      'status': status.name,
+      'notes': notes,
+      'gps': gps?.toJson(),
+    };
+  }
+
+  static ReleaseStatus _parseReleaseStatus(String? status) {
+    switch (status?.toLowerCase()) {
+      case 'released':
+        return ReleaseStatus.released;
+      case 'death':
+        return ReleaseStatus.death;
+      case 'postponed':
+        return ReleaseStatus.postponed;
+      default:
+        return ReleaseStatus.postponed;
+    }
+  }
+
+  String get statusDisplayName {
+    switch (status) {
+      case ReleaseStatus.released:
+        return 'Released';
+      case ReleaseStatus.death:
+        return 'Death';
+      case ReleaseStatus.postponed:
+        return 'Postponed';
+    }
+  }
+
+  // Backward compatibility
+  bool get isCompleted => status == ReleaseStatus.released;
+  String? get staffName => releasedBy;
+  String? get staffId => releasedBy;
 }
 
 // Main sterilization model
 class SterilizationModel {
-  final String? id;
-  final AnimalInfo animalInfo;
-  final PickupStage pickupStage;
-  final OperationStage operationStage;
-  final ReleaseStage releaseStage;
-  final SterilizationStage currentStage;
+  final String id;
+  final String species;
+  final String sex;
+  final String ageGroup;
+  final String ward;
+  final String? zone;
+  final String tagNumber;
+  final String? cageNumber;
+  final String? identificationMarks;
+  final PickupStage pickup;
+  final OperationStage? operation;
+  final ReleaseStage? release;
   final DateTime createdAt;
-  final DateTime updatedAt;
   final String createdBy;
-  final String? updatedBy;
-  final Map<String, dynamic>? metadata;
 
   SterilizationModel({
-    this.id,
-    required this.animalInfo,
-    required this.pickupStage,
-    required this.operationStage,
-    required this.releaseStage,
-    required this.currentStage,
+    required this.id,
+    required this.species,
+    required this.sex,
+    required this.ageGroup,
+    required this.ward,
+    this.zone,
+    required this.tagNumber,
+    this.cageNumber,
+    this.identificationMarks,
+    required this.pickup,
+    this.operation,
+    this.release,
     required this.createdAt,
-    required this.updatedAt,
     required this.createdBy,
-    this.updatedBy,
-    this.metadata,
   });
 
-  // Computed properties
-  bool get isPickupCompleted => pickupStage.isCompleted;
-  bool get isOperationCompleted => operationStage.isCompleted;
-  bool get isReleaseCompleted => releaseStage.isCompleted;
-  bool get isFullyCompleted =>
-      isPickupCompleted && isOperationCompleted && isReleaseCompleted;
-
-  double get completionPercentage {
-    int completedStages = 0;
-    if (isPickupCompleted) completedStages++;
-    if (isOperationCompleted) completedStages++;
-    if (isReleaseCompleted) completedStages++;
-    return completedStages / 3.0;
-  }
-
-  String get statusDescription {
-    if (isFullyCompleted) return 'Completed';
-    if (isOperationCompleted) return 'Ready for Release';
-    if (isPickupCompleted) return 'Ready for Operation';
-    return 'Pending Pickup';
-  }
-
-  // Create a copy with updated fields
-  SterilizationModel copyWith({
+  // Alternative constructor for backward compatibility
+  SterilizationModel.withAnimalInfo({
     String? id,
-    AnimalInfo? animalInfo,
-    PickupStage? pickupStage,
+    required AnimalInfo animalInfo,
+    required PickupStage pickupStage,
     OperationStage? operationStage,
     ReleaseStage? releaseStage,
-    SterilizationStage? currentStage,
+    SterilizationStage? currentStage, // ignored, computed
     DateTime? createdAt,
-    DateTime? updatedAt,
-    String? createdBy,
-    String? updatedBy,
-    Map<String, dynamic>? metadata,
-  }) {
+    DateTime? updatedAt, // ignored, not stored
+    required this.createdBy,
+    String? ward,
+  }) : id = id ?? DateTime.now().millisecondsSinceEpoch.toString(),
+       species = animalInfo.species.name,
+       sex = animalInfo.sex.name,
+       ageGroup = animalInfo.age.name,
+       ward = ward ?? 'Unknown',
+       zone = null,
+       tagNumber = animalInfo.tagNumber ?? '',
+       cageNumber = animalInfo.cageNumber,
+       identificationMarks = animalInfo.identificationMarks,
+       pickup = pickupStage,
+       operation = operationStage,
+       release = releaseStage,
+       createdAt = createdAt ?? DateTime.now();
+
+  factory SterilizationModel.fromJson(Map<String, dynamic> json) {
     return SterilizationModel(
-      id: id ?? this.id,
-      animalInfo: animalInfo ?? this.animalInfo,
-      pickupStage: pickupStage ?? this.pickupStage,
-      operationStage: operationStage ?? this.operationStage,
-      releaseStage: releaseStage ?? this.releaseStage,
-      currentStage: currentStage ?? this.currentStage,
-      createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt,
-      createdBy: createdBy ?? this.createdBy,
-      updatedBy: updatedBy ?? this.updatedBy,
-      metadata: metadata ?? this.metadata,
+      id: json['id'] ?? '',
+      species: json['species'] ?? '',
+      sex: json['sex'] ?? '',
+      ageGroup: json['ageGroup'] ?? '',
+      ward: json['ward'] ?? '',
+      zone: json['zone'],
+      tagNumber: json['tagNumber'] ?? '',
+      cageNumber: json['cageNumber'],
+      identificationMarks: json['identificationMarks'],
+      pickup: PickupStage.fromJson(json['pickup']),
+      operation: json['operation'] != null
+          ? OperationStage.fromJson(json['operation'])
+          : null,
+      release: json['release'] != null
+          ? ReleaseStage.fromJson(json['release'])
+          : null,
+      createdAt: DateTime.parse(json['createdAt']),
+      createdBy: json['createdBy'] ?? '',
     );
   }
 
-  // Convert to JSON for Firestore
   Map<String, dynamic> toJson() {
     return {
-      'animalInfo': animalInfo.toJson(),
-      'pickupStage': pickupStage.toJson(),
-      'operationStage': operationStage.toJson(),
-      'releaseStage': releaseStage.toJson(),
-      'currentStage': currentStage.name,
+      'id': id,
+      'species': species,
+      'sex': sex,
+      'ageGroup': ageGroup,
+      'ward': ward,
+      'zone': zone,
+      'tagNumber': tagNumber,
+      'cageNumber': cageNumber,
+      'identificationMarks': identificationMarks,
+      'pickup': pickup.toJson(),
+      'operation': operation?.toJson(),
+      'release': release?.toJson(),
       'createdAt': createdAt.toIso8601String(),
-      'updatedAt': updatedAt.toIso8601String(),
       'createdBy': createdBy,
-      'updatedBy': updatedBy,
-      'metadata': metadata,
     };
   }
 
-  // Create from Firestore document
-  factory SterilizationModel.fromFirestore(
-    Map<String, dynamic> data,
-    String id,
-  ) {
-    return SterilizationModel(
-      id: id,
-      animalInfo: AnimalInfo.fromJson(data['animalInfo']),
-      pickupStage: PickupStage.fromJson(data['pickupStage']),
-      operationStage: OperationStage.fromJson(data['operationStage']),
-      releaseStage: ReleaseStage.fromJson(data['releaseStage']),
-      currentStage: SterilizationStage.values.firstWhere(
-        (e) => e.name == data['currentStage'],
-        orElse: () => SterilizationStage.pickup,
-      ),
-      createdAt: DateTime.parse(data['createdAt']),
-      updatedAt: DateTime.parse(data['updatedAt']),
-      createdBy: data['createdBy'],
-      updatedBy: data['updatedBy'],
-      metadata: data['metadata'],
+  // Backward compatibility getters
+  PickupStage get pickupStage => pickup;
+  OperationStage? get operationStage => operation;
+  ReleaseStage? get releaseStage => release;
+
+  // Helper methods
+  SterilizationStage get currentStage {
+    if (release != null) return SterilizationStage.release;
+    if (operation != null) return SterilizationStage.operation;
+    return SterilizationStage.pickup;
+  }
+
+  bool get isCompleted {
+    return release != null && release!.status == ReleaseStatus.released;
+  }
+
+  // Backward compatibility for stage completion checks
+  bool get isPickupCompleted =>
+      true; // Pickup always completed if record exists
+  bool get isOperationCompleted =>
+      operation?.status == OperationStatus.operated;
+  bool get isReleaseCompleted => release?.status == ReleaseStatus.released;
+  bool get isFullyCompleted => isCompleted;
+
+  // Completion percentage (0.0 - 1.0)
+  double get completionPercentage {
+    if (release != null) return 1.0;
+    if (operation != null) return 0.66;
+    return 0.33;
+  }
+
+  // Status description for UI
+  String get statusDescription {
+    return statusSummary;
+  }
+
+  bool get hasComplications {
+    return operation?.complications.exists ?? false;
+  }
+
+  String get statusSummary {
+    if (isCompleted) return 'Completed - Released';
+    if (release?.status == ReleaseStatus.death) return 'Death During Care';
+    if (operation?.status == OperationStatus.operated) {
+      return 'Post-Operation Care';
+    }
+    if (operation?.status == OperationStatus.notOperated) {
+      return 'Operation Pending';
+    }
+    return 'Pickup Completed';
+  }
+
+  Duration? get totalCareTime {
+    if (release?.date == null) return null;
+    return release!.date!.difference(pickup.dateTime);
+  }
+
+  // Get animal info from sterilization data
+  AnimalInfo get animalInfo {
+    return AnimalInfo(
+      species: _parseSpecies(species),
+      sex: _parseSex(sex),
+      age: _parseAge(ageGroup),
+      color: identificationMarks ?? '',
+      size: AnimalSize.medium, // Default
+      identificationMarks: identificationMarks,
+      tagNumber: tagNumber,
+      cageNumber: cageNumber,
     );
   }
 
-  // Create from JSON (for dummy data)
-  factory SterilizationModel.fromJson(Map<String, dynamic> json) {
-    return SterilizationModel(
-      id: json['id'],
-      animalInfo: AnimalInfo.fromJson(json['animalInfo']),
-      pickupStage: PickupStage.fromJson(json['pickupStage']),
-      operationStage: OperationStage.fromJson(json['operationStage']),
-      releaseStage: ReleaseStage.fromJson(json['releaseStage']),
-      currentStage: SterilizationStage.values.firstWhere(
-        (e) => e.name == json['currentStage'],
-        orElse: () => SterilizationStage.pickup,
-      ),
-      createdAt: DateTime.parse(json['createdAt']),
-      updatedAt: DateTime.parse(json['updatedAt']),
-      createdBy: json['createdBy'],
-      updatedBy: json['updatedBy'],
-      metadata: json['metadata'],
-    );
+  // Helper methods for parsing
+  static AnimalSpecies _parseSpecies(String? value) {
+    if (value == null) return AnimalSpecies.other;
+
+    final stringValue = value.toString().toLowerCase();
+    switch (stringValue) {
+      case 'dog':
+        return AnimalSpecies.dog;
+      case 'cat':
+        return AnimalSpecies.cat;
+      default:
+        return AnimalSpecies.other;
+    }
   }
 
-  @override
-  String toString() {
-    return 'SterilizationModel{id: $id, tagNumber: ${animalInfo.tagNumber}, currentStage: $currentStage, completion: ${(completionPercentage * 100).toStringAsFixed(1)}%}';
+  static AnimalSex _parseSex(String? value) {
+    if (value == null) return AnimalSex.unknown;
+
+    final stringValue = value.toString().toLowerCase();
+    switch (stringValue) {
+      case 'male':
+        return AnimalSex.male;
+      case 'female':
+        return AnimalSex.female;
+      default:
+        return AnimalSex.unknown;
+    }
+  }
+
+  static AnimalAge _parseAge(String? value) {
+    if (value == null) return AnimalAge.unknown;
+
+    final stringValue = value.toString().toLowerCase();
+    if (stringValue.contains('puppy') || stringValue.contains('kitten')) {
+      return AnimalAge.puppy;
+    } else if (stringValue.contains('young')) {
+      return AnimalAge.young;
+    } else if (stringValue.contains('adult')) {
+      return AnimalAge.adult;
+    } else if (stringValue.contains('senior')) {
+      return AnimalAge.senior;
+    }
+
+    return AnimalAge.unknown;
+  }
+
+  // Check if ready for next stage
+  bool get canProceedToOperation {
+    return operation == null && pickup.dateTime.isBefore(DateTime.now());
+  }
+
+  bool get canProceedToRelease {
+    return operation?.status == OperationStatus.operated && release == null;
+  }
+
+  // Get progress percentage (0-100)
+  int get progressPercentage {
+    if (release != null) return 100;
+    if (operation != null) return 66;
+    return 33;
+  }
+
+  // Copy with method for immutable updates
+  SterilizationModel copyWith({
+    String? id,
+    String? species,
+    String? sex,
+    String? ageGroup,
+    String? ward,
+    String? zone,
+    String? tagNumber,
+    String? cageNumber,
+    String? identificationMarks,
+    PickupStage? pickup,
+    PickupStage? pickupStage,
+    OperationStage? operation,
+    OperationStage? operationStage,
+    ReleaseStage? release,
+    ReleaseStage? releaseStage,
+    DateTime? createdAt,
+    String? createdBy,
+    DateTime? updatedAt,
+    SterilizationStage? currentStage,
+    AnimalInfo? animalInfo,
+  }) {
+    return SterilizationModel(
+      id: id ?? this.id,
+      species: species ?? this.species,
+      sex: sex ?? this.sex,
+      ageGroup: ageGroup ?? this.ageGroup,
+      ward: ward ?? this.ward,
+      zone: zone ?? this.zone,
+      tagNumber: tagNumber ?? this.tagNumber,
+      cageNumber: cageNumber ?? this.cageNumber,
+      identificationMarks: identificationMarks ?? this.identificationMarks,
+      pickup: pickupStage ?? pickup ?? this.pickup,
+      operation: operationStage ?? operation ?? this.operation,
+      release: releaseStage ?? release ?? this.release,
+      createdAt: createdAt ?? this.createdAt,
+      createdBy: createdBy ?? this.createdBy,
+    );
   }
 }

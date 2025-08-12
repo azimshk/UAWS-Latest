@@ -19,10 +19,7 @@
             "others": "Hand sanitizers, First aid leaflets"
         },
         "participantsReached": 85,
-        "photosProofs": [
-            "campaign_photo_1.jpg",
-            "campaign_photo_2.jpg"
-        ],
+        "photosProofs": ["campaign_photo_1.jpg", "campaign_photo_2.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Priya Patel",
@@ -53,10 +50,7 @@
             "others": "Colorful stickers, Animal safety bookmarks"
         },
         "participantsReached": 142,
-        "photosProofs": [
-            "school_session_1.jpg",
-            "children_learning.jpg"
-        ],
+        "photosProofs": ["school_session_1.jpg", "children_learning.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Amit Singh",
@@ -87,9 +81,7 @@
             "others": "Pet ID tags, Waste disposal bags"
         },
         "participantsReached": 68,
-        "photosProofs": [
-            "door_to_door_1.jpg"
-        ],
+        "photosProofs": ["door_to_door_1.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Neha Sharma",
@@ -120,9 +112,7 @@
             "others": "First aid kits, Emergency contact cards"
         },
         "participantsReached": 54,
-        "photosProofs": [
-            "market_training_1.jpg"
-        ],
+        "photosProofs": ["market_training_1.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Amit Singh",
@@ -153,10 +143,7 @@
             "others": "Animal blessing cards, Feeding guidelines"
         },
         "participantsReached": 135,
-        "photosProofs": [
-            "temple_session_1.jpg",
-            "blessing_ceremony.jpg"
-        ],
+        "photosProofs": ["temple_session_1.jpg", "blessing_ceremony.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Anita Desai",
@@ -187,10 +174,7 @@
             "others": "Campus safety cards, Digital resource links"
         },
         "participantsReached": 185,
-        "photosProofs": [
-            "campus_session_1.jpg",
-            "student_demo.jpg"
-        ],
+        "photosProofs": ["campus_session_1.jpg", "student_demo.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Rajesh Kumar",
@@ -221,9 +205,7 @@
             "others": "Safety cards, Emergency contact stickers"
         },
         "participantsReached": 76,
-        "photosProofs": [
-            "workplace_training.jpg"
-        ],
+        "photosProofs": ["workplace_training.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Amit Singh",
@@ -254,9 +236,7 @@
             "others": "Society contact cards, Pet care guidelines"
         },
         "participantsReached": 87,
-        "photosProofs": [
-            "society_meeting.jpg"
-        ],
+        "photosProofs": ["society_meeting.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Neha Sharma",
@@ -287,9 +267,7 @@
             "others": "Emergency contact bands, Safety whistles"
         },
         "participantsReached": 45,
-        "photosProofs": [
-            "park_safety.jpg"
-        ],
+        "photosProofs": ["park_safety.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Priya Patel",
@@ -320,9 +298,7 @@
             "others": "Large print emergency cards, Magnifying glasses"
         },
         "participantsReached": 32,
-        "photosProofs": [
-            "seniors_session.jpg"
-        ],
+        "photosProofs": ["seniors_session.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Anita Desai",
@@ -353,9 +329,7 @@
             "others": "Medical reference cards, Protocol charts"
         },
         "participantsReached": 48,
-        "photosProofs": [
-            "medical_training.jpg"
-        ],
+        "photosProofs": ["medical_training.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Rajesh Kumar",
@@ -386,9 +360,7 @@
             "others": "Safety gear, Emergency contact stickers"
         },
         "participantsReached": 61,
-        "photosProofs": [
-            "delivery_training.jpg"
-        ],
+        "photosProofs": ["delivery_training.jpg"],
         "conductedBy": {
             "ngoName": "United Animal Welfare Society (UAWS)",
             "partnerName": "Dr. Amit Singh",

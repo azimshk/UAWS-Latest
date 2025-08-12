@@ -32,10 +32,7 @@
             "bodyPart": "Left leg",
             "severity": "Major",
             "circumstances": "Child was playing in the street when the dog suddenly attacked",
-            "witnesses": [
-                "Neighbor Mrs. Gupta",
-                "Local shopkeeper"
-            ]
+            "witnesses": ["Neighbor Mrs. Gupta", "Local shopkeeper"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -99,10 +96,7 @@
             "bodyPart": "Right hand",
             "severity": "Minor",
             "circumstances": "Tried to pet the dog while it was eating",
-            "witnesses": [
-                "School guard",
-                "Another parent"
-            ]
+            "witnesses": ["School guard", "Another parent"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -159,10 +153,7 @@
             "bodyPart": "Ankle",
             "severity": "Fatal",
             "circumstances": "Vendor was setting up shop when stray dog bit ankle",
-            "witnesses": [
-                "Other vendors",
-                "Security guard"
-            ]
+            "witnesses": ["Other vendors", "Security guard"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -221,10 +212,7 @@
             "bodyPart": "Right arm",
             "severity": "Major",
             "circumstances": "Dog was sleeping near bus stand, bit when accidentally stepped on",
-            "witnesses": [
-                "Bus conductor",
-                "Waiting passengers"
-            ]
+            "witnesses": ["Bus conductor", "Waiting passengers"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -283,10 +271,7 @@
             "bodyPart": "Left hand",
             "severity": "Minor",
             "circumstances": "Student was feeding the campus dog, accidental bite during play",
-            "witnesses": [
-                "Fellow students",
-                "Security guard"
-            ]
+            "witnesses": ["Fellow students", "Security guard"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -347,10 +332,7 @@
             "bodyPart": "Right finger",
             "severity": "Minor",
             "circumstances": "Child tried to pick up neighbor's cat, cat scratched in defense",
-            "witnesses": [
-                "Mother",
-                "Neighbor Mrs. Desai"
-            ]
+            "witnesses": ["Mother", "Neighbor Mrs. Desai"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -406,10 +388,7 @@
             "bodyPart": "Calf muscle",
             "severity": "Fatal",
             "circumstances": "Early morning jogger attacked by aggressive stray dog",
-            "witnesses": [
-                "Other joggers",
-                "Park maintenance staff"
-            ]
+            "witnesses": ["Other joggers", "Park maintenance staff"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -472,10 +451,7 @@
             "bodyPart": "Left ankle",
             "severity": "Moderate",
             "circumstances": "Mall security dog bit visitor who was running towards exit",
-            "witnesses": [
-                "Security staff",
-                "Mall visitors"
-            ]
+            "witnesses": ["Security staff", "Mall visitors"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -534,10 +510,7 @@
             "bodyPart": "Right hand",
             "severity": "Minor",
             "circumstances": "Child tried to feed school stray dog, minor bite occurred",
-            "witnesses": [
-                "School teacher",
-                "Other children"
-            ]
+            "witnesses": ["School teacher", "Other children"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -600,10 +573,7 @@
             "bodyPart": "Thigh",
             "severity": "Moderate",
             "circumstances": "Factory worker bitten by guard dog during shift change",
-            "witnesses": [
-                "Other workers",
-                "Security supervisor"
-            ]
+            "witnesses": ["Other workers", "Security supervisor"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -662,10 +632,7 @@
             "bodyPart": "Lower leg",
             "severity": "Minor",
             "circumstances": "Temple visitor accidentally stepped on sleeping dog",
-            "witnesses": [
-                "Temple priest",
-                "Other devotees"
-            ]
+            "witnesses": ["Temple priest", "Other devotees"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -722,10 +689,7 @@
             "bodyPart": "Right forearm",
             "severity": "Fatal",
             "circumstances": "Cyclist bitten while trying to avoid dog on narrow path",
-            "witnesses": [
-                "Park joggers",
-                "Cyclist group members"
-            ]
+            "witnesses": ["Park joggers", "Cyclist group members"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -784,10 +748,7 @@
             "bodyPart": "Left hand",
             "severity": "Moderate",
             "circumstances": "Vendor bitten while clearing food scraps near dog",
-            "witnesses": [
-                "Other vendors",
-                "Market supervisor"
-            ]
+            "witnesses": ["Other vendors", "Market supervisor"]
         },
         "medicalDetails": {
             "firstAidGiven": true,
@@ -846,10 +807,7 @@
             "bodyPart": "Finger",
             "severity": "Minor",
             "circumstances": "Child playing with society dog, accidental nip during play",
-            "witnesses": [
-                "Mother",
-                "Society members"
-            ]
+            "witnesses": ["Mother", "Society members"]
         },
         "medicalDetails": {
             "firstAidGiven": true,

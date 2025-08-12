@@ -137,11 +137,11 @@ class SterilizationController extends GetxController {
                 s.animalInfo.color.toLowerCase().contains(query) ||
                 s.animalInfo.species.name.toLowerCase().contains(query) ||
                 s.pickupStage.staffName.toLowerCase().contains(query) ||
-                s.operationStage.veterinarianName?.toLowerCase().contains(
+                s.operationStage?.veterinarianName?.toLowerCase().contains(
                       query,
                     ) ==
                     true ||
-                s.id?.toLowerCase().contains(query) == true,
+                s.id.toLowerCase().contains(query),
           )
           .toList();
     }
@@ -159,8 +159,8 @@ class SterilizationController extends GetxController {
           .where(
             (s) =>
                 s.pickupStage.staffId == currentUserId ||
-                s.operationStage.veterinarianId == currentUserId ||
-                s.releaseStage.staffId == currentUserId,
+                s.operationStage?.veterinarianId == currentUserId ||
+                s.releaseStage?.staffId == currentUserId,
           )
           .toList();
     }
@@ -192,14 +192,12 @@ class SterilizationController extends GetxController {
     try {
       AppLogger.i('🆕 Creating new sterilization...');
 
-      final newSterilization = SterilizationModel(
+      final newSterilization = SterilizationModel.withAnimalInfo(
         animalInfo: animalInfo,
         pickupStage: pickupStage,
         operationStage: OperationStage(),
         releaseStage: ReleaseStage(),
-        currentStage: SterilizationStage.pickup,
         createdAt: DateTime.now(),
-        updatedAt: DateTime.now(),
         createdBy: currentUserId ?? 'unknown',
       );
 

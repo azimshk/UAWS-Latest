@@ -73,23 +73,11 @@ class AnimalInfo {
 
   factory AnimalInfo.fromJson(Map<String, dynamic> json) {
     return AnimalInfo(
-      species: AnimalSpecies.values.firstWhere(
-        (e) => e.name == json['species'],
-        orElse: () => AnimalSpecies.other,
-      ),
-      sex: AnimalSex.values.firstWhere(
-        (e) => e.name == json['sex'],
-        orElse: () => AnimalSex.unknown,
-      ),
-      age: AnimalAge.values.firstWhere(
-        (e) => e.name == json['age'],
-        orElse: () => AnimalAge.unknown,
-      ),
+      species: _parseSpecies(json['species']),
+      sex: _parseSex(json['sex']),
+      age: _parseAge(json['age']),
       color: json['color'] ?? '',
-      size: AnimalSize.values.firstWhere(
-        (e) => e.name == json['size'],
-        orElse: () => AnimalSize.medium,
-      ),
+      size: _parseSize(json['size']),
       identificationMarks: json['identificationMarks'],
       tagNumber: json['tagNumber'],
       cageNumber: json['cageNumber'],
@@ -100,6 +88,71 @@ class AnimalInfo {
       isVaccinated: json['isVaccinated'] ?? false,
       microchipNumber: json['microchipNumber'],
     );
+  }
+
+  // Helper methods for parsing string values to enums
+  static AnimalSpecies _parseSpecies(dynamic value) {
+    if (value == null) return AnimalSpecies.other;
+
+    final stringValue = value.toString().toLowerCase();
+    switch (stringValue) {
+      case 'dog':
+        return AnimalSpecies.dog;
+      case 'cat':
+        return AnimalSpecies.cat;
+      default:
+        return AnimalSpecies.other;
+    }
+  }
+
+  static AnimalSex _parseSex(dynamic value) {
+    if (value == null) return AnimalSex.unknown;
+
+    final stringValue = value.toString().toLowerCase();
+    switch (stringValue) {
+      case 'male':
+        return AnimalSex.male;
+      case 'female':
+        return AnimalSex.female;
+      default:
+        return AnimalSex.unknown;
+    }
+  }
+
+  static AnimalAge _parseAge(dynamic value) {
+    if (value == null) return AnimalAge.unknown;
+
+    final stringValue = value.toString().toLowerCase();
+    if (stringValue.contains('puppy') || stringValue.contains('kitten')) {
+      return AnimalAge.puppy;
+    } else if (stringValue.contains('young')) {
+      return AnimalAge.young;
+    } else if (stringValue.contains('adult')) {
+      return AnimalAge.adult;
+    } else if (stringValue.contains('senior')) {
+      return AnimalAge.senior;
+    }
+
+    return AnimalAge.unknown;
+  }
+
+  static AnimalSize _parseSize(dynamic value) {
+    if (value == null) return AnimalSize.medium;
+
+    final stringValue = value.toString().toLowerCase();
+    switch (stringValue) {
+      case 'small':
+        return AnimalSize.small;
+      case 'medium':
+        return AnimalSize.medium;
+      case 'large':
+        return AnimalSize.large;
+      case 'extra large':
+      case 'extralarge':
+        return AnimalSize.extraLarge;
+      default:
+        return AnimalSize.medium;
+    }
   }
 
   AnimalInfo copyWith({

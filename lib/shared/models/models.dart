@@ -10,17 +10,20 @@ export 'common/photo_model.dart';
 // Sterilization Models
 export 'sterilization/sterilization_model.dart';
 
-// Vaccination Models (to be added)
-// export 'vaccination/vaccination_model.dart';
-// export 'vaccination/vaccine_type_model.dart';
+// Vaccination Models
+export 'vaccination/vaccination_model.dart';
 
-// Bite Case Models (to be added)
-// export 'bite_case/bite_case_model.dart';
-// export 'bite_case/victim_model.dart';
+// Bite Case Models
+export 'bite_case/bite_case_model.dart';
 
-// Quarantine Models (to be added)
-// export 'quarantine/quarantine_record_model.dart';
-// export 'quarantine/daily_observation_model.dart';
+// Quarantine Models
+export 'quarantine/quarantine_record_model.dart';
 
-// Education Models (to be added)
-// export 'education/education_campaign_model.dart';
+// Rabies Case Models
+export 'rabies/rabies_case_model.dart';
+
+// Education Campaign Models
+export 'education/education_campaign_model.dart';
+
+// Ward Management Models
+export 'ward/ward_model.dart';

@@ -272,7 +272,7 @@ class SterilizationListScreen extends GetView<SterilizationController> {
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
-        onTap: () => controller.navigateToDetails(sterilization.id!),
+        onTap: () => controller.navigateToDetails(sterilization.id),
         borderRadius: BorderRadius.circular(12),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
