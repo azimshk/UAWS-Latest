@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../controllers/sterilization_controller.dart';
 import '../../../shared/models/models.dart';
 import '../../../shared/utils/responsive_utils.dart';
+import '../../../shared/widgets/premium_ui.dart';
 
 class SterilizationListScreen extends GetView<SterilizationController> {
   const SterilizationListScreen({super.key});
@@ -76,7 +77,11 @@ class SterilizationListScreen extends GetView<SterilizationController> {
             child: Obx(() {
               if (controller.isLoading) {
                 return const Center(
-                  child: CircularProgressIndicator(color: Color(0xFF2E7D32)),
+                  child: PremiumLoading(
+                    type: LoadingType.spinner,
+                    size: 48,
+                    color: Color(0xFF2E7D32),
+                  ),
                 );
               }
 
@@ -103,104 +108,145 @@ class SterilizationListScreen extends GetView<SterilizationController> {
         ],
       ),
       floatingActionButton: controller.canCreatePickup()
-          ? FloatingActionButton.extended(
-              onPressed: controller.navigateToPickupForm,
-              backgroundColor: const Color(0xFF2E7D32),
-              foregroundColor: Colors.white,
-              icon: const Icon(Icons.add),
-              label: Text('new_pickup'.tr),
+          ? PremiumAnimations.floating(
+              child: PremiumButton(
+                onPressed: controller.navigateToPickupForm,
+                text: 'new_pickup'.tr,
+                icon: Icons.add,
+                backgroundColor: const Color(0xFF2E7D32),
+                foregroundColor: Colors.white,
+              ),
             )
           : null,
     );
   }
 
   Widget _buildStatsHeader() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Color(0xFF2E7D32), Color(0xFF4CAF50)],
-        ),
-      ),
-      child: Obx(() {
-        final stats = controller.statistics;
-        return Column(
-          children: [
-            Text(
-              'sterilization_overview'.tr,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildStatItem('total'.tr, stats['total'] ?? 0, Icons.pets),
-                _buildStatItem(
-                  'pending'.tr,
-                  (stats['pending_pickup'] ?? 0) +
-                      (stats['pending_operation'] ?? 0) +
-                      (stats['pending_release'] ?? 0),
-                  Icons.pending,
-                ),
-                _buildStatItem(
-                  'completed'.tr,
-                  stats['completed'] ?? 0,
-                  Icons.check_circle,
-                ),
-              ],
+    return PremiumAnimations.fadeInScale(
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              const Color(0xFF2E7D32),
+              const Color(0xFF2E7D32).withValues(alpha: 0.8),
+            ],
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF2E7D32).withValues(alpha: 0.3),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
             ),
           ],
-        );
-      }),
+        ),
+        child: Obx(() {
+          final stats = controller.statistics;
+          return Column(
+            children: [
+              PremiumAnimations.slideIn(
+                direction: SlideDirection.top,
+                child: Text(
+                  'sterilization_overview'.tr,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    letterSpacing: -0.5,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              PremiumAnimations.staggeredList(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      _buildStatItem(
+                        'total'.tr,
+                        stats['total'] ?? 0,
+                        Icons.pets,
+                      ),
+                      _buildStatItem(
+                        'pending'.tr,
+                        (stats['pending_pickup'] ?? 0) +
+                            (stats['pending_operation'] ?? 0) +
+                            (stats['pending_release'] ?? 0),
+                        Icons.pending,
+                      ),
+                      _buildStatItem(
+                        'completed'.tr,
+                        stats['completed'] ?? 0,
+                        Icons.check_circle,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          );
+        }),
+      ),
     );
   }
 
   Widget _buildStatItem(String label, int value, IconData icon) {
-    return Column(
-      children: [
-        Icon(icon, color: Colors.white, size: 28),
-        const SizedBox(height: 4),
-        Text(
-          value.toString(),
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.2),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.3),
+          width: 1,
+        ),
+      ),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Icon(icon, color: Colors.white, size: 24),
           ),
-        ),
-        Text(
-          label,
-          style: const TextStyle(fontSize: 12, color: Colors.white70),
-        ),
-      ],
+          const SizedBox(height: 8),
+          Text(
+            value.toString(),
+            style: const TextStyle(
+              fontSize: 26,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              letterSpacing: -0.5,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            label,
+            style: const TextStyle(
+              fontSize: 12,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
   Widget _buildSearchBar() {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: TextField(
-        onChanged: controller.searchSterilizations,
-        decoration: InputDecoration(
+      child: PremiumAnimations.slideIn(
+        direction: SlideDirection.right,
+        child: PremiumSearchField(
           hintText: 'search_sterilizations'.tr,
-          prefixIcon: const Icon(Icons.search, color: Color(0xFF2E7D32)),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Color(0xFF2E7D32)),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Color(0xFF2E7D32), width: 2),
-          ),
-          filled: true,
-          fillColor: Colors.white,
+          onChanged: controller.searchSterilizations,
+          prefixIcon: const Icon(Icons.search),
         ),
       ),
     );
