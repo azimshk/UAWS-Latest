@@ -1,8 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:get/get.dart';
+import 'package:uaws/core/utils/app_logger.dart';
 import 'package:uaws/modules/dashboard/screens/admin_dashboard_screen.dart';
 import 'package:uaws/modules/dashboard/screens/field_dashboard_screen.dart';
 import 'package:uaws/modules/dashboard/screens/municipal_dashboard_screen.dart';
@@ -15,7 +14,6 @@ import 'modules/dashboard/controllers/municipal_dashboard_controller.dart';
 import 'modules/dashboard/controllers/supervisor_dashboard_controller.dart';
 import 'modules/sterilization/controllers/sterilization_controller.dart';
 import 'core/theme/app_theme.dart';
-import 'core/utils/app_logger.dart';
 import 'services/storage_service.dart';
 import 'modules/auth/services/auth_service.dart';
 import 'modules/auth/services/dummy_data_service.dart';
@@ -27,7 +25,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await FlutterDisplayMode.setHighRefreshRate().catchError((e) {
-    log('Error setting the High Refresh Rate.');
+    AppLogger.w('Error setting the High Refresh Rate.');
   });
 
   await DummyDataService.loadDummyData();

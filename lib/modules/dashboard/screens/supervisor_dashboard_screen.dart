@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/supervisor_dashboard_controller.dart';
+import '../../../shared/utils/responsive_utils.dart';
 
 class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
   const SupervisorDashboardScreen({super.key});
@@ -31,7 +32,7 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
           // Dashboard Items
           Expanded(
             child: ListView(
-              padding: const EdgeInsets.all(16.0),
+              padding: context.responsivePadding,
               children: [
                 // Sterilization Tracker (Full)
                 _buildDashboardTile(
@@ -42,7 +43,9 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
                   color: const Color(0xFF2E7D32),
                 ),
 
-                const SizedBox(height: 12),
+                SizedBox(
+                  height: ResponsiveUtils.getResponsiveSpacing(context, 12),
+                ),
 
                 // Bite Case Tracker (Full)
                 _buildDashboardTile(
@@ -53,7 +56,9 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
                   color: const Color(0xFF4CAF50),
                 ),
 
-                const SizedBox(height: 12),
+                SizedBox(
+                  height: ResponsiveUtils.getResponsiveSpacing(context, 12),
+                ),
 
                 // Rabies Surveillance
                 _buildDashboardTile(
@@ -181,30 +186,48 @@ class SupervisorDashboardScreen extends GetView<SupervisorDashboardController> {
     return Card(
       elevation: 4,
       child: ListTile(
-        contentPadding: const EdgeInsets.all(16),
+        contentPadding: ResponsiveUtils.getResponsivePadding(Get.context!),
         leading: CircleAvatar(
           backgroundColor: color,
-          radius: 30,
-          child: Icon(icon, color: Colors.white, size: 28),
+          radius: ResponsiveUtils.getIconSize(Get.context!, 30),
+          child: Icon(
+            icon,
+            color: Colors.white,
+            size: ResponsiveUtils.getIconSize(Get.context!, 28),
+          ),
         ),
         title: Text(
           title,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: ResponsiveUtils.getResponsiveFontSize(Get.context!, 16),
+          ),
         ),
         subtitle: Padding(
-          padding: const EdgeInsets.only(top: 8),
+          padding: EdgeInsets.only(
+            top: ResponsiveUtils.getResponsiveSpacing(Get.context!, 8),
+          ),
           child: Text(
             subtitle,
-            style: TextStyle(color: Colors.grey[600], fontSize: 14),
+            style: TextStyle(
+              color: Colors.grey[600],
+              fontSize: ResponsiveUtils.getResponsiveFontSize(Get.context!, 14),
+            ),
           ),
         ),
         trailing: Container(
-          padding: const EdgeInsets.all(8),
+          padding: EdgeInsets.all(
+            ResponsiveUtils.getResponsiveSpacing(Get.context!, 8),
+          ),
           decoration: BoxDecoration(
             color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Icon(Icons.arrow_forward_ios, color: color, size: 16),
+          child: Icon(
+            Icons.arrow_forward_ios,
+            color: color,
+            size: ResponsiveUtils.getIconSize(Get.context!, 16),
+          ),
         ),
         onTap: onTap,
       ),

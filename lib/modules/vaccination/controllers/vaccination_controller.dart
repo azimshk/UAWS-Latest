@@ -316,17 +316,6 @@ class VaccinationController extends GetxController {
     );
   }
 
-  void _showInfoSnackbar(String message) {
-    Get.snackbar(
-      'info'.tr,
-      message,
-      backgroundColor: const Color(0xFF2196F3),
-      colorText: Colors.white,
-      snackPosition: SnackPosition.TOP,
-      duration: const Duration(seconds: 3),
-    );
-  }
-
   // Form handling methods for add/edit screens
   void updateSpecies(AnimalSpecies species) {
     selectedSpecies.value = species;

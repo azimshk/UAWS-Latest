@@ -94,8 +94,8 @@ class VaccinationListScreen extends GetView<VaccinationController> {
       floatingActionButton: FloatingActionButton(
         onPressed: controller.navigateToAddVaccination,
         backgroundColor: const Color(0xFF7B1FA2),
-        child: Icon(Icons.add, size: ResponsiveUtils.getIconSize(context, 24)),
         tooltip: 'add_vaccination'.tr,
+        child: Icon(Icons.add, size: ResponsiveUtils.getIconSize(context, 24)),
       ),
     );
   }

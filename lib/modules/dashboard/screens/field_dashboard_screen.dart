@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/field_dashboard_controller.dart';
+import '../../../shared/utils/responsive_utils.dart';
 
 class FieldDashboardScreen extends GetView<FieldDashboardController> {
   const FieldDashboardScreen({super.key});
@@ -31,7 +32,7 @@ class FieldDashboardScreen extends GetView<FieldDashboardController> {
           // Dashboard Items
           Expanded(
             child: ListView(
-              padding: const EdgeInsets.all(16.0),
+              padding: context.responsivePadding,
               children: [
                 // Start Pickup (Sterilization)
                 _buildDashboardTile(
@@ -42,7 +43,9 @@ class FieldDashboardScreen extends GetView<FieldDashboardController> {
                   color: const Color(0xFF2E7D32),
                 ),
 
-                const SizedBox(height: 12),
+                SizedBox(
+                  height: ResponsiveUtils.getResponsiveSpacing(context, 12),
+                ),
 
                 // Add Vaccination Entry
                 _buildDashboardTile(

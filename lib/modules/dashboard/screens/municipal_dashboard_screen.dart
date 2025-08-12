@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/municipal_dashboard_controller.dart';
+import '../../../shared/utils/responsive_utils.dart';
 
 class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
   const MunicipalDashboardScreen({super.key});
@@ -15,21 +16,26 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
         foregroundColor: Colors.white,
         centerTitle: true,
         automaticallyImplyLeading: false,
+        toolbarHeight: ResponsiveUtils.getAppBarHeight(context),
         actions: [
-          Obx(() => IconButton(
-            onPressed: controller.isLoading.value ? null : controller.refreshStats,
-            icon: controller.isLoading.value
-                ? const SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-              ),
-            )
-                : const Icon(Icons.refresh),
-            tooltip: 'refresh_stats'.tr,
-          )),
+          Obx(
+            () => IconButton(
+              onPressed: controller.isLoading.value
+                  ? null
+                  : controller.refreshStats,
+              icon: controller.isLoading.value
+                  ? SizedBox(
+                      width: ResponsiveUtils.getIconSize(context, 20),
+                      height: ResponsiveUtils.getIconSize(context, 20),
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      ),
+                    )
+                  : const Icon(Icons.refresh),
+              tooltip: 'refresh_stats'.tr,
+            ),
+          ),
           IconButton(
             onPressed: controller.logout,
             icon: const Icon(Icons.logout),
@@ -83,10 +89,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            const Color(0xFF2E7D32),
-            const Color(0xFF4CAF50),
-          ],
+          colors: [const Color(0xFF2E7D32), const Color(0xFF4CAF50)],
         ),
       ),
       child: Column(
@@ -94,11 +97,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
         children: [
           Row(
             children: [
-              const Icon(
-                Icons.account_balance,
-                color: Colors.white,
-                size: 32,
-              ),
+              const Icon(Icons.account_balance, color: Colors.white, size: 32),
               const SizedBox(width: 12),
               Expanded(
                 child: Text(
@@ -115,10 +114,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
           const SizedBox(height: 8),
           Text(
             '${'monitoring_city'.tr}: ${user?.assignedCity}',
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.white70,
-            ),
+            style: const TextStyle(fontSize: 16, color: Colors.white70),
           ),
           const SizedBox(height: 4),
           Container(
@@ -147,10 +143,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
       children: [
         Text(
           'stats_overview'.tr,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 16),
 
@@ -195,65 +188,59 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
     required RxMap<String, int> stats,
     required VoidCallback onTap,
   }) {
-    return Obx(() => Card(
-      elevation: 4,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: color,
-                    radius: 20,
-                    child: Icon(
-                      icon,
-                      color: Colors.white,
-                      size: 20,
+    return Obx(
+      () => Card(
+        elevation: 4,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(12),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: color,
+                      radius: 20,
+                      child: Icon(icon, color: Colors.white, size: 20),
                     ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Text(
-                      title,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                  ),
-                  const Icon(
-                    Icons.visibility,
-                    color: Colors.grey,
-                    size: 20,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              GridView.count(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                childAspectRatio: 2.5,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 8,
-                children: stats.entries.map((entry) {
-                  return _buildStatItem(
-                    label: entry.key.tr,
-                    value: entry.value.toString(),
-                    color: color,
-                  );
-                }).toList(),
-              ),
-            ],
+                    const Icon(Icons.visibility, color: Colors.grey, size: 20),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                GridView.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 2,
+                  childAspectRatio: 2.5,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 8,
+                  children: stats.entries.map((entry) {
+                    return _buildStatItem(
+                      label: entry.key.tr,
+                      value: entry.value.toString(),
+                      color: color,
+                    );
+                  }).toList(),
+                ),
+              ],
+            ),
           ),
         ),
       ),
-    ));
+    );
   }
 
   Widget _buildStatItem({
@@ -281,10 +268,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
           const SizedBox(height: 2),
           Text(
             label,
-            style: TextStyle(
-              fontSize: 10,
-              color: color.withValues(alpha: 0.8),
-            ),
+            style: TextStyle(fontSize: 10, color: color.withValues(alpha: 0.8)),
             textAlign: TextAlign.center,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -300,36 +284,37 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
       children: [
         Text(
           'quick_actions'.tr,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 16),
         Row(
           children: [
             Expanded(
-              child: Obx(() => ElevatedButton.icon(
-                onPressed: controller.isGeneratingReport.value
-                    ? null
-                    : controller.downloadCityReport,
-                icon: controller.isGeneratingReport.value
-                    ? const SizedBox(
-                  width: 16,
-                  height: 16,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              child: Obx(
+                () => ElevatedButton.icon(
+                  onPressed: controller.isGeneratingReport.value
+                      ? null
+                      : controller.downloadCityReport,
+                  icon: controller.isGeneratingReport.value
+                      ? const SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              Colors.white,
+                            ),
+                          ),
+                        )
+                      : const Icon(Icons.download),
+                  label: Text('download_report'.tr),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF2E7D32),
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                   ),
-                )
-                    : const Icon(Icons.download),
-                label: Text('download_report'.tr),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF2E7D32),
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 12),
                 ),
-              )),
+              ),
             ),
             const SizedBox(width: 12),
             Expanded(
@@ -356,10 +341,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
       children: [
         Text(
           'quick_access'.tr,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 16),
         GridView.count(
@@ -424,11 +406,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
               CircleAvatar(
                 backgroundColor: color.withValues(alpha: 0.2),
                 radius: 24,
-                child: Icon(
-                  icon,
-                  color: color,
-                  size: 24,
-                ),
+                child: Icon(icon, color: color, size: 24),
               ),
               const SizedBox(height: 12),
               Text(
@@ -444,10 +422,7 @@ class MunicipalDashboardScreen extends GetView<MunicipalDashboardController> {
               const SizedBox(height: 4),
               Text(
                 subtitle,
-                style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.grey[600],
-                ),
+                style: TextStyle(fontSize: 11, color: Colors.grey[600]),
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
