@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
 import '../animations/premium_animations.dart';
+import '../../utils/responsive_utils.dart';
 
 /// Premium elevated button with sophisticated styling
 class PremiumButton extends StatefulWidget {
@@ -80,14 +81,52 @@ class _PremiumButtonState extends State<PremiumButton>
   Widget build(BuildContext context) {
     final isDisabled = widget.onPressed == null || widget.isLoading;
 
+    // Responsive sizing
+    final responsiveHeight = context.isMobile
+        ? 52.0
+        : context.isTablet
+        ? 56.0
+        : 60.0;
+    final responsiveIconSize = context.isMobile
+        ? 18.0
+        : context.isTablet
+        ? 20.0
+        : 22.0;
+    final responsiveFontSize = context.isMobile
+        ? 14.0
+        : context.isTablet
+        ? 15.0
+        : 16.0;
+    final responsiveBorderRadius =
+        widget.borderRadius ??
+        (context.isMobile
+            ? 14.0
+            : context.isTablet
+            ? 16.0
+            : 18.0);
+    final responsivePadding =
+        widget.padding ??
+        EdgeInsets.symmetric(
+          horizontal: context.isMobile
+              ? 20.0
+              : context.isTablet
+              ? 24.0
+              : 28.0,
+          vertical: context.isMobile
+              ? 12.0
+              : context.isTablet
+              ? 14.0
+              : 16.0,
+        );
+
     Widget buttonChild = Row(
       mainAxisSize: widget.fullWidth ? MainAxisSize.max : MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         if (widget.isLoading) ...[
           SizedBox(
-            width: 20,
-            height: 20,
+            width: responsiveIconSize,
+            height: responsiveIconSize,
             child: CircularProgressIndicator(
               strokeWidth: 2,
               valueColor: AlwaysStoppedAnimation<Color>(
@@ -95,14 +134,14 @@ class _PremiumButtonState extends State<PremiumButton>
               ),
             ),
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: context.isMobile ? 10 : 12),
         ] else if (widget.icon != null) ...[
           Icon(
             widget.icon,
-            size: 20,
+            size: responsiveIconSize,
             color: widget.foregroundColor ?? Colors.white,
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: context.isMobile ? 10 : 12),
         ],
         Text(
           widget.text,
@@ -112,6 +151,7 @@ class _PremiumButtonState extends State<PremiumButton>
                 color: widget.foregroundColor ?? Colors.white,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 0.5,
+                fontSize: responsiveFontSize,
               ),
         ),
       ],
@@ -126,53 +166,55 @@ class _PremiumButtonState extends State<PremiumButton>
             onTapDown: (_) => _handleTapDown(),
             onTapUp: (_) => _handleTapUp(),
             onTapCancel: _handleTapCancel,
-            child: Container(
-              width: widget.fullWidth ? double.infinity : null,
-              height: 56,
-              decoration: BoxDecoration(
-                gradient: isDisabled
-                    ? null
-                    : LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          widget.backgroundColor ?? AppTheme.primaryColor,
-                          (widget.backgroundColor ?? AppTheme.primaryColor)
-                              .withValues(alpha: 0.8),
-                        ],
-                      ),
-                color: isDisabled
-                    ? AppTheme.quaternaryTextColor.withValues(alpha: 0.3)
-                    : null,
-                borderRadius: BorderRadius.circular(widget.borderRadius ?? 16),
-                boxShadow: isDisabled
-                    ? null
-                    : [
-                        BoxShadow(
-                          color:
-                              (widget.backgroundColor ?? AppTheme.primaryColor)
-                                  .withValues(alpha: 0.3),
-                          offset: const Offset(0, 4),
-                          blurRadius: 12,
-                          spreadRadius: 0,
-                        ),
-                      ],
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: widget.fullWidth
+                    ? double.infinity
+                    : context.maxContentWidth,
+                minHeight: responsiveHeight,
               ),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(
-                    widget.borderRadius ?? 16,
-                  ),
-                  onTap: isDisabled ? null : widget.onPressed,
-                  child: Container(
-                    padding:
-                        widget.padding ??
-                        const EdgeInsets.symmetric(
-                          horizontal: 32,
-                          vertical: 16,
+              child: Container(
+                width: widget.fullWidth ? double.infinity : null,
+                padding: responsivePadding,
+                decoration: BoxDecoration(
+                  gradient: isDisabled
+                      ? null
+                      : LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            widget.backgroundColor ?? AppTheme.primaryColor,
+                            (widget.backgroundColor ?? AppTheme.primaryColor)
+                                .withValues(alpha: 0.8),
+                          ],
                         ),
-                    child: buttonChild,
+                  color: isDisabled
+                      ? AppTheme.quaternaryTextColor.withValues(alpha: 0.3)
+                      : null,
+                  borderRadius: BorderRadius.circular(responsiveBorderRadius),
+                  boxShadow: isDisabled
+                      ? null
+                      : [
+                          BoxShadow(
+                            color:
+                                (widget.backgroundColor ??
+                                        AppTheme.primaryColor)
+                                    .withValues(alpha: 0.3),
+                            offset: const Offset(0, 4),
+                            blurRadius: 12,
+                            spreadRadius: 0,
+                          ),
+                        ],
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(responsiveBorderRadius),
+                    onTap: isDisabled ? null : widget.onPressed,
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: buttonChild,
+                    ),
                   ),
                 ),
               ),

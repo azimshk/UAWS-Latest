@@ -94,13 +94,20 @@ class SterilizationListScreen extends GetView<SterilizationController> {
               return RefreshIndicator(
                 onRefresh: controller.refreshSterilizations,
                 color: const Color(0xFF2E7D32),
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(16.0),
-                  itemCount: sterilizations.length,
-                  itemBuilder: (context, index) {
-                    final sterilization = sterilizations[index];
-                    return _buildSterilizationCard(sterilization);
-                  },
+                child: SingleChildScrollView(
+                  padding: ResponsiveUtils.getResponsivePadding(context),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: ResponsiveUtils.getMaxContentWidth(context),
+                    ),
+                    child: Center(
+                      child: ResponsiveUtils.isDesktop(context)
+                          ? _buildDesktopGrid(sterilizations)
+                          : ResponsiveUtils.isTablet(context)
+                          ? _buildTabletGrid(sterilizations)
+                          : _buildMobileList(sterilizations),
+                    ),
+                  ),
                 ),
               );
             }),
@@ -239,14 +246,23 @@ class SterilizationListScreen extends GetView<SterilizationController> {
   }
 
   Widget _buildSearchBar() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: PremiumAnimations.slideIn(
-        direction: SlideDirection.right,
-        child: PremiumSearchField(
-          hintText: 'search_sterilizations'.tr,
-          onChanged: controller.searchSterilizations,
-          prefixIcon: const Icon(Icons.search),
+    return Builder(
+      builder: (context) => Padding(
+        padding: ResponsiveUtils.getResponsivePadding(context),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: ResponsiveUtils.getMaxContentWidth(context),
+          ),
+          child: Center(
+            child: PremiumAnimations.slideIn(
+              direction: SlideDirection.right,
+              child: PremiumSearchField(
+                hintText: 'search_sterilizations'.tr,
+                onChanged: controller.searchSterilizations,
+                prefixIcon: const Icon(Icons.search),
+              ),
+            ),
+          ),
         ),
       ),
     );
@@ -453,6 +469,52 @@ class SterilizationListScreen extends GetView<SterilizationController> {
           ),
         ),
       ),
+    );
+  }
+
+  // Responsive layout methods
+  Widget _buildMobileList(List<SterilizationModel> sterilizations) {
+    return Column(
+      children: sterilizations
+          .map(
+            (sterilization) => Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: _buildSterilizationCard(sterilization),
+            ),
+          )
+          .toList(),
+    );
+  }
+
+  Widget _buildTabletGrid(List<SterilizationModel> sterilizations) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
+        childAspectRatio: 1.2,
+      ),
+      itemCount: sterilizations.length,
+      itemBuilder: (context, index) =>
+          _buildSterilizationCard(sterilizations[index]),
+    );
+  }
+
+  Widget _buildDesktopGrid(List<SterilizationModel> sterilizations) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        crossAxisSpacing: 24,
+        mainAxisSpacing: 24,
+        childAspectRatio: 1.1,
+      ),
+      itemCount: sterilizations.length,
+      itemBuilder: (context, index) =>
+          _buildSterilizationCard(sterilizations[index]),
     );
   }
 

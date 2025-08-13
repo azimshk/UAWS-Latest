@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
 import '../animations/premium_animations.dart';
+import '../../utils/responsive_utils.dart';
 
 /// Premium card widget with sophisticated styling and animations
 class PremiumCard extends StatefulWidget {
@@ -126,6 +127,24 @@ class _PremiumCardState extends State<PremiumCard>
 
   @override
   Widget build(BuildContext context) {
+    // Get responsive margins and padding
+    final responsiveMargin =
+        widget.margin ??
+        context.responsivePadding.copyWith(
+          top: context.responsivePadding.top * 0.5,
+          bottom: context.responsivePadding.bottom * 0.5,
+        );
+
+    final responsivePadding =
+        widget.padding ??
+        EdgeInsets.all(
+          context.isMobile
+              ? 16.0
+              : context.isTablet
+              ? 20.0
+              : 24.0,
+        );
+
     return PremiumAnimations.fadeInScale(
       child: AnimatedBuilder(
         animation: _animationController,
@@ -139,35 +158,48 @@ class _PremiumCardState extends State<PremiumCard>
                 onTapDown: _handleTapDown,
                 onTapUp: _handleTapUp,
                 onTapCancel: _handleTapCancel,
-                child: Container(
-                  margin: widget.margin ?? const EdgeInsets.all(8),
-                  padding: widget.padding ?? const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: _colorAnimation.value,
-                    borderRadius:
-                        widget.borderRadius ?? BorderRadius.circular(20),
-                    border:
-                        widget.border ??
-                        Border.all(
-                          color: AppTheme.quaternaryTextColor.withValues(
-                            alpha: 0.1,
-                          ),
-                          width: 1,
-                        ),
-                    boxShadow:
-                        widget.boxShadow ??
-                        [
-                          BoxShadow(
-                            color: AppTheme.primaryColor.withValues(
-                              alpha: 0.04 + (_elevationAnimation.value * 0.01),
-                            ),
-                            offset: Offset(0, 2 + _elevationAnimation.value),
-                            blurRadius: 8 + _elevationAnimation.value,
-                            spreadRadius: 0,
-                          ),
-                        ],
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: context.maxContentWidth,
                   ),
-                  child: widget.child,
+                  child: Container(
+                    margin: responsiveMargin,
+                    padding: responsivePadding,
+                    decoration: BoxDecoration(
+                      color: _colorAnimation.value,
+                      borderRadius:
+                          widget.borderRadius ??
+                          BorderRadius.circular(
+                            context.isMobile
+                                ? 16
+                                : context.isTablet
+                                ? 20
+                                : 24,
+                          ),
+                      border:
+                          widget.border ??
+                          Border.all(
+                            color: AppTheme.quaternaryTextColor.withValues(
+                              alpha: 0.1,
+                            ),
+                            width: 1,
+                          ),
+                      boxShadow:
+                          widget.boxShadow ??
+                          [
+                            BoxShadow(
+                              color: AppTheme.primaryColor.withValues(
+                                alpha:
+                                    0.04 + (_elevationAnimation.value * 0.01),
+                              ),
+                              offset: Offset(0, 2 + _elevationAnimation.value),
+                              blurRadius: 8 + _elevationAnimation.value,
+                              spreadRadius: 0,
+                            ),
+                          ],
+                    ),
+                    child: widget.child,
+                  ),
                 ),
               ),
             ),
@@ -203,22 +235,53 @@ class GlassMorphismCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: margin ?? const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        borderRadius: borderRadius ?? BorderRadius.circular(20),
-        border:
-            border ??
-            Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1),
-      ),
-      child: ClipRRect(
-        borderRadius: borderRadius ?? BorderRadius.circular(20),
-        child: Container(
-          padding: padding ?? const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: (color ?? Colors.white).withValues(alpha: opacity),
+    // Responsive styling
+    final responsiveMargin =
+        margin ??
+        context.responsivePadding.copyWith(
+          top: context.responsivePadding.top * 0.5,
+          bottom: context.responsivePadding.bottom * 0.5,
+        );
+
+    final responsivePadding =
+        padding ??
+        EdgeInsets.all(
+          context.isMobile
+              ? 16.0
+              : context.isTablet
+              ? 20.0
+              : 24.0,
+        );
+
+    final responsiveBorderRadius =
+        borderRadius ??
+        BorderRadius.circular(
+          context.isMobile
+              ? 16
+              : context.isTablet
+              ? 20
+              : 24,
+        );
+
+    return ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: context.maxContentWidth),
+      child: Container(
+        margin: responsiveMargin,
+        decoration: BoxDecoration(
+          borderRadius: responsiveBorderRadius,
+          border:
+              border ??
+              Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1),
+        ),
+        child: ClipRRect(
+          borderRadius: responsiveBorderRadius,
+          child: Container(
+            padding: responsivePadding,
+            decoration: BoxDecoration(
+              color: (color ?? Colors.white).withValues(alpha: opacity),
+            ),
+            child: child,
           ),
-          child: child,
         ),
       ),
     );
@@ -248,15 +311,46 @@ class GradientCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget cardWidget = Container(
-      margin: margin ?? const EdgeInsets.all(8),
-      padding: padding ?? const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: gradient,
-        borderRadius: borderRadius ?? BorderRadius.circular(20),
-        boxShadow: boxShadow ?? AppTheme.premiumShadow,
+    // Responsive styling
+    final responsiveMargin =
+        margin ??
+        context.responsivePadding.copyWith(
+          top: context.responsivePadding.top * 0.5,
+          bottom: context.responsivePadding.bottom * 0.5,
+        );
+
+    final responsivePadding =
+        padding ??
+        EdgeInsets.all(
+          context.isMobile
+              ? 16.0
+              : context.isTablet
+              ? 20.0
+              : 24.0,
+        );
+
+    final responsiveBorderRadius =
+        borderRadius ??
+        BorderRadius.circular(
+          context.isMobile
+              ? 16
+              : context.isTablet
+              ? 20
+              : 24,
+        );
+
+    Widget cardWidget = ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: context.maxContentWidth),
+      child: Container(
+        margin: responsiveMargin,
+        padding: responsivePadding,
+        decoration: BoxDecoration(
+          gradient: gradient,
+          borderRadius: responsiveBorderRadius,
+          boxShadow: boxShadow ?? AppTheme.premiumShadow,
+        ),
+        child: child,
       ),
-      child: child,
     );
 
     if (onTap != null) {
@@ -288,29 +382,71 @@ class FloatingActionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Responsive sizing
+    final responsiveIconSize = context.isMobile
+        ? 24.0
+        : context.isTablet
+        ? 26.0
+        : 28.0;
+    final responsivePadding = extended
+        ? EdgeInsets.symmetric(
+            horizontal: context.isMobile
+                ? 20
+                : context.isTablet
+                ? 24
+                : 28,
+            vertical: context.isMobile
+                ? 14
+                : context.isTablet
+                ? 16
+                : 18,
+          )
+        : EdgeInsets.all(
+            context.isMobile
+                ? 14
+                : context.isTablet
+                ? 16
+                : 18,
+          );
+    final responsiveBorderRadius = extended
+        ? (context.isMobile
+              ? 20.0
+              : context.isTablet
+              ? 24.0
+              : 28.0)
+        : (context.isMobile
+              ? 24.0
+              : context.isTablet
+              ? 28.0
+              : 32.0);
+
     return PremiumAnimations.floating(
       child: PremiumAnimations.bounceTouch(
         onTap: onTap,
         child: Container(
-          padding: extended
-              ? const EdgeInsets.symmetric(horizontal: 24, vertical: 16)
-              : const EdgeInsets.all(16),
+          padding: responsivePadding,
           decoration: BoxDecoration(
             color: backgroundColor ?? AppTheme.primaryColor,
-            borderRadius: BorderRadius.circular(extended ? 24 : 28),
+            borderRadius: BorderRadius.circular(responsiveBorderRadius),
             boxShadow: AppTheme.floatingShadow,
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              if (icon != null) Icon(icon, color: Colors.white, size: 24),
+              if (icon != null)
+                Icon(icon, color: Colors.white, size: responsiveIconSize),
               if (extended && label != null) ...[
-                const SizedBox(width: 12),
+                SizedBox(width: context.isMobile ? 10 : 12),
                 Text(
                   label!,
                   style: Theme.of(context).textTheme.labelLarge?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
+                    fontSize: context.isMobile
+                        ? 14
+                        : context.isTablet
+                        ? 15
+                        : 16,
                   ),
                 ),
               ],

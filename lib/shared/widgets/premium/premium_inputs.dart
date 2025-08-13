@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../core/theme/app_theme.dart';
 import '../animations/premium_animations.dart';
+import '../../utils/responsive_utils.dart';
 
 /// Premium text field with sophisticated styling and animations
 class PremiumTextField extends StatefulWidget {
@@ -138,148 +139,182 @@ class _PremiumTextFieldState extends State<PremiumTextField>
 
   @override
   Widget build(BuildContext context) {
+    // Responsive styling
+    final responsiveBorderRadius =
+        widget.borderRadius ??
+        (context.isMobile
+            ? 14.0
+            : context.isTablet
+            ? 16.0
+            : 18.0);
+    final responsiveFontSize = context.isMobile
+        ? 14.0
+        : context.isTablet
+        ? 15.0
+        : 16.0;
+    final responsivePadding = EdgeInsets.symmetric(
+      horizontal: context.isMobile
+          ? 16.0
+          : context.isTablet
+          ? 18.0
+          : 20.0,
+      vertical: context.isMobile
+          ? 14.0
+          : context.isTablet
+          ? 16.0
+          : 18.0,
+    );
+
     return PremiumAnimations.fadeInScale(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (widget.labelText != null && widget.showFloatingLabel)
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: context.maxContentWidth),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (widget.labelText != null && widget.showFloatingLabel)
+              AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: _labelScaleAnimation.value,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      widget.labelText!,
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                        color: _isFocused
+                            ? AppTheme.primaryColor
+                            : AppTheme.secondaryTextColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: responsiveFontSize * 0.9,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            if (widget.labelText != null && widget.showFloatingLabel)
+              SizedBox(height: context.isMobile ? 6 : 8),
             AnimatedBuilder(
               animation: _controller,
               builder: (context, child) {
-                return Transform.scale(
-                  scale: _labelScaleAnimation.value,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    widget.labelText!,
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                      color: _isFocused
-                          ? AppTheme.primaryColor
-                          : AppTheme.secondaryTextColor,
-                      fontWeight: FontWeight.w500,
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(responsiveBorderRadius),
+                    boxShadow: _isFocused
+                        ? [
+                            BoxShadow(
+                              color: AppTheme.primaryColor.withValues(
+                                alpha: 0.1,
+                              ),
+                              offset: const Offset(0, 4),
+                              blurRadius: 12,
+                              spreadRadius: 0,
+                            ),
+                          ]
+                        : null,
+                  ),
+                  child: TextFormField(
+                    controller: widget.controller,
+                    focusNode: _focusNode,
+                    validator: widget.validator,
+                    onChanged: widget.onChanged,
+                    onFieldSubmitted: widget.onSubmitted,
+                    keyboardType: widget.keyboardType,
+                    textInputAction: widget.textInputAction,
+                    obscureText: widget.obscureText,
+                    maxLines: widget.maxLines,
+                    minLines: widget.minLines,
+                    maxLength: widget.maxLength,
+                    enabled: widget.enabled,
+                    readOnly: widget.readOnly,
+                    inputFormatters: widget.inputFormatters,
+                    style:
+                        widget.textStyle ??
+                        Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontWeight: FontWeight.w500,
+                          fontSize: responsiveFontSize,
+                        ),
+                    decoration: InputDecoration(
+                      labelText: widget.showFloatingLabel
+                          ? null
+                          : widget.labelText,
+                      hintText: widget.hintText,
+                      prefixIcon: widget.prefixIcon,
+                      suffixIcon: widget.suffixIcon,
+                      filled: true,
+                      fillColor: widget.fillColor ?? AppTheme.surfaceElevated,
+                      contentPadding:
+                          widget.contentPadding ?? responsivePadding,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(
+                          responsiveBorderRadius,
+                        ),
+                        borderSide: BorderSide.none,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(
+                          responsiveBorderRadius,
+                        ),
+                        borderSide: BorderSide(
+                          color: _borderColorAnimation.value!,
+                          width: 1,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(
+                          responsiveBorderRadius,
+                        ),
+                        borderSide: const BorderSide(
+                          color: AppTheme.primaryColor,
+                          width: 2,
+                        ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(
+                          responsiveBorderRadius,
+                        ),
+                        borderSide: const BorderSide(
+                          color: AppTheme.errorColor,
+                          width: 1,
+                        ),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(
+                          responsiveBorderRadius,
+                        ),
+                        borderSide: const BorderSide(
+                          color: AppTheme.errorColor,
+                          width: 2,
+                        ),
+                      ),
+                      hintStyle: Theme.of(context).textTheme.bodyLarge
+                          ?.copyWith(
+                            color: AppTheme.tertiaryTextColor,
+                            fontWeight: FontWeight.w400,
+                            fontSize: responsiveFontSize,
+                          ),
+                      labelStyle: Theme.of(context).textTheme.bodyLarge
+                          ?.copyWith(
+                            color: _isFocused
+                                ? AppTheme.primaryColor
+                                : AppTheme.secondaryTextColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: responsiveFontSize,
+                          ),
+                      floatingLabelStyle: Theme.of(context)
+                          .textTheme
+                          .labelMedium
+                          ?.copyWith(
+                            color: AppTheme.primaryColor,
+                            fontWeight: FontWeight.w600,
+                            fontSize: responsiveFontSize * 0.9,
+                          ),
                     ),
                   ),
                 );
               },
             ),
-          if (widget.labelText != null && widget.showFloatingLabel)
-            const SizedBox(height: 8),
-          AnimatedBuilder(
-            animation: _controller,
-            builder: (context, child) {
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    widget.borderRadius ?? 16,
-                  ),
-                  boxShadow: _isFocused
-                      ? [
-                          BoxShadow(
-                            color: AppTheme.primaryColor.withValues(alpha: 0.1),
-                            offset: const Offset(0, 4),
-                            blurRadius: 12,
-                            spreadRadius: 0,
-                          ),
-                        ]
-                      : null,
-                ),
-                child: TextFormField(
-                  controller: widget.controller,
-                  focusNode: _focusNode,
-                  validator: widget.validator,
-                  onChanged: widget.onChanged,
-                  onFieldSubmitted: widget.onSubmitted,
-                  keyboardType: widget.keyboardType,
-                  textInputAction: widget.textInputAction,
-                  obscureText: widget.obscureText,
-                  maxLines: widget.maxLines,
-                  minLines: widget.minLines,
-                  maxLength: widget.maxLength,
-                  enabled: widget.enabled,
-                  readOnly: widget.readOnly,
-                  inputFormatters: widget.inputFormatters,
-                  style:
-                      widget.textStyle ??
-                      Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        fontWeight: FontWeight.w500,
-                      ),
-                  decoration: InputDecoration(
-                    labelText: widget.showFloatingLabel
-                        ? null
-                        : widget.labelText,
-                    hintText: widget.hintText,
-                    prefixIcon: widget.prefixIcon,
-                    suffixIcon: widget.suffixIcon,
-                    filled: true,
-                    fillColor: widget.fillColor ?? AppTheme.surfaceElevated,
-                    contentPadding:
-                        widget.contentPadding ??
-                        const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 16,
-                        ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(
-                        widget.borderRadius ?? 16,
-                      ),
-                      borderSide: BorderSide.none,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(
-                        widget.borderRadius ?? 16,
-                      ),
-                      borderSide: BorderSide(
-                        color: _borderColorAnimation.value!,
-                        width: 1,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(
-                        widget.borderRadius ?? 16,
-                      ),
-                      borderSide: const BorderSide(
-                        color: AppTheme.primaryColor,
-                        width: 2,
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(
-                        widget.borderRadius ?? 16,
-                      ),
-                      borderSide: const BorderSide(
-                        color: AppTheme.errorColor,
-                        width: 1,
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(
-                        widget.borderRadius ?? 16,
-                      ),
-                      borderSide: const BorderSide(
-                        color: AppTheme.errorColor,
-                        width: 2,
-                      ),
-                    ),
-                    hintStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: AppTheme.tertiaryTextColor,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    labelStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: _isFocused
-                          ? AppTheme.primaryColor
-                          : AppTheme.secondaryTextColor,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    floatingLabelStyle: Theme.of(context).textTheme.labelMedium
-                        ?.copyWith(
-                          color: AppTheme.primaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
